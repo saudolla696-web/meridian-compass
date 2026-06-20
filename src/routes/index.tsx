@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState, useMemo, type FormEvent } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { createFileRoute } from "@tanstack/react-router";
-import logoMark from "../assets/logo-mark.png.asset.json";
-import logoLockup from "../assets/logo-lockup.png.asset.json";
+import { submitContactForm } from "../lib/supabase";
+
+const logoMarkUrl = "/logo-mark.png";
+const logoLockupUrl = "/logo-lockup.png";
 
 export const Route = createFileRoute("/")({
   component: Page,
@@ -66,7 +68,7 @@ function Nav() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#0A1628]/85 backdrop-blur-md border-b border-white/5" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
         <a href="#top" onClick={(e) => { e.preventDefault(); smoothScroll("#top"); }} className="flex items-center gap-2.5">
-          <img src={logoMark.url} alt="" className="h-7 w-auto" />
+          <img src={logoMarkUrl} alt="" className="h-7 w-auto" />
           <span className="font-serif text-ivory text-xl tracking-wide leading-none">MERIDIAN</span>
           <span className="text-slate-muted text-[0.6rem] tracking-[0.25em] uppercase mt-1">Digital</span>
         </a>
@@ -217,7 +219,7 @@ function Hero() {
       <HeroCanvas />
       <Dust />
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <img src={logoLockup.url} alt="Meridian Digital" className="mx-auto w-[200px] md:w-[220px] mb-10" />
+        <img src={logoLockupUrl} alt="Meridian Digital" className="mx-auto w-[200px] md:w-[220px] mb-10" />
         <div className="label-eyebrow mb-6">Meridian Digital — KwaZulu-Natal</div>
         <h1 className="font-serif text-ivory leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem]">
           <span className="italic block">Every business</span>
@@ -526,8 +528,6 @@ function FAQ() {
 }
 
 /* ---------------- Contact ---------------- */
-const CONTACT_ENDPOINT = "https://YOUR-PROJECT-NAME.vercel.app/api/contact";
-
 function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle");
   const loadedAt = useRef<string>(String(Date.now()));
@@ -546,12 +546,8 @@ function Contact() {
     };
     setStatus("sending");
     try {
-      const res = await fetch(CONTACT_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (res.ok) {
+      const result = await submitContactForm(payload);
+      if (result.ok) {
         setStatus("ok");
         (e.target as HTMLFormElement).reset();
       } else setStatus("err");
@@ -626,7 +622,7 @@ function Footer() {
     <footer className="bg-[#060D18] border-t border-white/5 py-14 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <div className="flex items-center justify-center gap-2.5 mb-4">
-          <img src={logoMark.url} alt="" className="h-6 w-auto" />
+          <img src={logoMarkUrl} alt="" className="h-6 w-auto" />
           <span className="font-serif text-ivory text-lg tracking-wide">MERIDIAN</span>
           <span className="text-slate-muted text-[0.55rem] tracking-[0.25em] uppercase mt-1">Digital</span>
         </div>
