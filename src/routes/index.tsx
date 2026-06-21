@@ -18,9 +18,13 @@ const NAV_LINKS = [
   { href: "#faq", label: "FAQ" },
 ];
 
+const HEADER_OFFSET = 84;
+
 function smoothScroll(hash: string) {
   const el = document.querySelector(hash);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+  window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
 }
 
 /* ---------------- Reveal ---------------- */
@@ -57,17 +61,41 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const handleNav = (href: string) => { setOpen(false); smoothScroll(href); };
+
+  // Lock background scroll while the mobile menu is open
+  useEffect(() => {
+    if (!open) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prevOverflow; };
+  }, [open]);
+
+  // Close on Escape
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const handleNav = (href: string) => {
+    setOpen(false);
+    // Defer to the next frame so the closing menu's layout settles before
+    // the scroll target's position is measured, since otherwise the two can race.
+    requestAnimationFrame(() => smoothScroll(href));
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#0A1628]/85 backdrop-blur-md border-b border-white/5" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
-        <a href="#top" onClick={(e) => { e.preventDefault(); smoothScroll("#top"); }} className="flex items-center gap-2.5">
+        <a href="#top" onClick={(e) => { e.preventDefault(); setOpen(false); smoothScroll("#top"); }} className="flex items-center gap-2.5">
           <img src={logoMarkUrl} alt="" className="h-7 w-auto" />
           <span className="font-serif text-ivory text-xl tracking-wide leading-none">MERIDIAN</span>
           <span className="text-slate-muted text-[0.6rem] tracking-[0.25em] uppercase mt-1">Digital</span>
@@ -79,24 +107,40 @@ function Nav() {
           ))}
           <a href="#contact" onClick={(e) => { e.preventDefault(); handleNav("#contact"); }} className="btn-ghost-gold">Chart My Course</a>
         </nav>
-        <button aria-label="Toggle menu" onClick={() => setOpen((o) => !o)} className="lg:hidden text-ivory p-2">
+        <button
+          aria-label="Toggle menu"
+          aria-expanded={open}
+          onClick={() => setOpen((o) => !o)}
+          className="lg:hidden text-ivory p-3 -mr-1 relative z-[60]"
+        >
           <div className="w-6 h-[2px] bg-ivory mb-1.5" style={{ transform: open ? "translateY(7px) rotate(45deg)" : "none", transition: "transform .25s" }} />
           <div className="w-6 h-[2px] bg-ivory mb-1.5" style={{ opacity: open ? 0 : 1, transition: "opacity .2s" }} />
           <div className="w-6 h-[2px] bg-ivory" style={{ transform: open ? "translateY(-7px) rotate(-45deg)" : "none", transition: "transform .25s" }} />
         </button>
       </div>
+
       <AnimatePresence>
         {open && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden overflow-hidden bg-[#060D18] border-t border-white/5">
-            <div className="px-6 py-6 flex flex-col gap-4">
-              {NAV_LINKS.map((l) => (
-                <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); handleNav(l.href); }}
-                  className="text-ivory/90 text-base tracking-wide py-1">{l.label}</a>
-              ))}
-              <a href="#contact" onClick={(e) => { e.preventDefault(); handleNav("#contact"); }} className="btn-ghost-gold self-start mt-2">Chart My Course</a>
-            </div>
-          </motion.div>
+          <>
+            <motion.div
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              className="lg:hidden fixed inset-0 top-[68px] bg-black/40 z-[55]"
+              onClick={() => setOpen(false)}
+              aria-hidden
+            />
+            <motion.div
+              initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
+              className="lg:hidden overflow-hidden bg-[#060D18] border-t border-white/5 relative z-[56]"
+            >
+              <nav className="px-6 py-4 flex flex-col">
+                {NAV_LINKS.map((l) => (
+                  <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); handleNav(l.href); }}
+                    className="text-ivory/90 text-base tracking-wide py-3.5 border-b border-white/5 active:bg-white/5 transition-colors">{l.label}</a>
+                ))}
+                <a href="#contact" onClick={(e) => { e.preventDefault(); handleNav("#contact"); }} className="btn-ghost-gold self-start mt-5 mb-2">Chart My Course</a>
+              </nav>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
@@ -452,7 +496,7 @@ function Founding() {
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 border-y border-white/10 py-10">
             {stats.map((s) => (
               <div key={s.l}>
-                <div className="font-serif text-gold text-3xl md:text-4xl mb-2">{s.v}</div>
+                <div className="font-serif text-gold text-2xl sm:text-3xl md:text-4xl mb-2">{s.v}</div>
                 <div className="text-slate-muted text-[0.7rem] uppercase tracking-[0.18em]">{s.l}</div>
               </div>
             ))}
@@ -556,7 +600,7 @@ function Contact() {
 
   return (
     <section id="contact" className="py-28 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
         <Reveal>
           <div>
             <div className="label-eyebrow mb-4">Contact</div>
