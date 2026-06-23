@@ -12,6 +12,8 @@ import appCss from "../styles.css?url";
 const faviconUrl = "/favicon-64.png";
 const appleTouchIconUrl = "/apple-touch-icon.png";
 
+const SITE_URL = "https://www.meridiandigital.co.za";
+
 const professionalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -19,7 +21,11 @@ const professionalServiceJsonLd = {
   telephone: "+27658839408",
   areaServed: "KwaZulu-Natal, South Africa",
   parentOrganization: { "@type": "Organization", name: "Meridian Holdings Group" },
-  url: "/",
+  founder: { "@type": "Person", name: "Saud Olla", jobTitle: "Founder", sameAs: ["https://www.linkedin.com/in/saud-zeyn-olla-0134a420a/"] },
+  image: `${SITE_URL}/logo-lockup.png`,
+  logo: `${SITE_URL}/logo-mark.png`,
+  sameAs: ["https://www.linkedin.com/company/meridian-digital-holdings/"],
+  url: SITE_URL,
 };
 
 const faqJsonLd = {
@@ -70,15 +76,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Meridian Digital — Web Design, SEO & AEO in KwaZulu-Natal" },
       { property: "og:description", content: "Websites, search presence, and growth systems engineered in a single day — built to be found, chosen, and remembered." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-      // og:image needs a real hosted image (not data URI) once this is live.
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: `${SITE_URL}/logo-lockup.png` },
+      { property: "og:image:width", content: "575" },
+      { property: "og:image:height", content: "503" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Meridian Digital" },
       { name: "twitter:description", content: "Web design, SEO & AEO for KwaZulu-Natal businesses." },
+      { name: "twitter:image", content: `${SITE_URL}/logo-lockup.png` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: SITE_URL },
       { rel: "icon", type: "image/png", href: faviconUrl },
       { rel: "apple-touch-icon", href: appleTouchIconUrl },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

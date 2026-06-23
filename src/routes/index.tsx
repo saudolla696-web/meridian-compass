@@ -425,8 +425,6 @@ function Process() {
 /* ---------------- Proof ---------------- */
 const PROOF = [
   { initials: "CMM", slug: "countrymilemotors.co.za", name: "Country Mile Motors", meta: "Used Vehicle Dealership · Harding, KZN", body: "Full static site and client proposal built from a standing start — stock listings, financing enquiries, and a dealership that finally looks the part online." },
-  { initials: "BC", slug: "bottegacoffee.co.za", name: "Bottega Coffee", meta: "Halaal Coffee Shop · Pietermaritzburg & Durban", body: "Comprehensive rebuild across two locations — menu, story, and find-us all rebuilt to match the brand actually behind the counter." },
-  { initials: "SHW", slug: "sterlinghamiltonwright.co.za", name: "Sterling Hamilton Wright", meta: "FSP-Licensed Insurance Brokerage · Pietermaritzburg", body: "A regulated financial services brand needed a site that reads as trustworthy on sight — licence number visible, language plain, nothing oversold." },
 ];
 
 function BrowserCard({ p, i }: { p: typeof PROOF[number]; i: number }) {
@@ -462,12 +460,16 @@ function Proof() {
           <div className="text-center mb-16">
             <div className="label-eyebrow mb-4">Proof</div>
             <h2 className="font-serif text-ivory text-4xl md:text-5xl max-w-3xl mx-auto leading-tight">
-              Three businesses. Three different problems. <span className="italic text-gold-soft">Same route.</span>
+              A look at how we build. <span className="italic text-gold-soft">Same route, every time.</span>
             </h2>
           </div>
         </Reveal>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {PROOF.map((p, i) => <BrowserCard key={p.name} p={p} i={i} />)}
+        <div className="flex flex-wrap justify-center gap-8">
+          {PROOF.map((p, i) => (
+            <div key={p.name} className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] max-w-md">
+              <BrowserCard p={p} i={i} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -506,7 +508,14 @@ function Founding() {
           <p className="text-ivory/70 max-w-2xl mx-auto mt-10 text-sm md:text-base leading-relaxed font-light">
             No call centre, no account handoff — you deal directly with the people who build and run it. Once the cohort is full, the rate closes with it. Spots remaining? Ask us directly — we'll tell you straight.
           </p>
-          <a href="#contact" onClick={(e) => { e.preventDefault(); smoothScroll("#contact"); }} className="btn-gold btn-gold-hover mt-10">
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <div className="w-12 h-12 rounded-full border border-gold/40 flex items-center justify-center font-serif text-gold text-sm shrink-0">SO</div>
+            <div className="text-left">
+              <p className="text-ivory text-sm font-medium">Saud Olla</p>
+              <p className="text-slate-muted text-xs tracking-wide">Founder, Meridian Digital</p>
+            </div>
+          </div>
+          <a href="#contact" onClick={(e) => { e.preventDefault(); smoothScroll("#contact"); }} className="btn-gold btn-gold-hover mt-8">
             Reserve a Founding Place
           </a>
         </Reveal>
@@ -671,7 +680,10 @@ function Footer() {
           <span className="text-slate-muted text-[0.55rem] tracking-[0.25em] uppercase mt-1">Digital</span>
         </div>
         <p className="text-slate-muted text-xs tracking-wide mb-1">A division of Meridian Holdings Group</p>
-        <p className="text-slate-muted/70 text-xs">© 2026 Meridian Digital. KwaZulu-Natal, South Africa.</p>
+        <a href="https://www.linkedin.com/company/meridian-digital-holdings/" target="_blank" rel="noopener noreferrer" className="text-slate-muted hover:text-gold text-xs tracking-wide underline underline-offset-2 transition-colors">
+          Follow on LinkedIn
+        </a>
+        <p className="text-slate-muted/70 text-xs mt-3">© 2026 Meridian Digital. KwaZulu-Natal, South Africa.</p>
       </div>
     </footer>
   );
