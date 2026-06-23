@@ -5,6 +5,7 @@ import { submitContactForm } from "../lib/supabase";
 
 const logoMarkUrl = "/logo-mark.png";
 const logoLockupUrl = "/logo-lockup.png";
+const proofInterceptorUrl = "/proof-interceptor.jpg";
 
 export const Route = createFileRoute("/")({
   component: Page,
@@ -424,6 +425,7 @@ function Process() {
 
 /* ---------------- Proof ---------------- */
 const PROOF = [
+  { initials: "IRR", slug: "interceptorsecurity.co.za", name: "Interceptor Rapid Response", meta: "PSIRA-Registered Commercial Security · KwaZulu-Natal", body: "Full site build for a commercial guarding and access-control provider — service breakdowns, coverage-area pages, and a capability statement download, live and verified at interceptorsecurity.co.za.", image: proofInterceptorUrl },
   { initials: "CMM", slug: "countrymilemotors.co.za", name: "Country Mile Motors", meta: "Used Vehicle Dealership · Harding, KZN", body: "Full static site and client proposal built from a standing start — stock listings, financing enquiries, and a dealership that finally looks the part online." },
 ];
 
@@ -439,8 +441,14 @@ function BrowserCard({ p, i }: { p: typeof PROOF[number]; i: number }) {
         </div>
         <div className="relative aspect-[16/10] flex items-center justify-center overflow-hidden"
           style={{ background: "linear-gradient(135deg, #0A1628 0%, #11203A 60%, #0c1a30 100%)" }}>
-          <span className="font-serif italic text-gold-soft/40 text-7xl select-none">{p.initials}</span>
-          <span className="absolute bottom-3 right-3 text-[0.6rem] tracking-[0.25em] uppercase text-slate-muted/70 border border-slate-muted/30 px-2 py-0.5">Screenshot pending</span>
+          {p.image ? (
+            <img src={p.image} alt={`${p.name} website screenshot`} className="absolute inset-0 w-full h-full object-cover object-top" />
+          ) : (
+            <>
+              <span className="font-serif italic text-gold-soft/40 text-7xl select-none">{p.initials}</span>
+              <span className="absolute bottom-3 right-3 text-[0.6rem] tracking-[0.25em] uppercase text-slate-muted/70 border border-slate-muted/30 px-2 py-0.5">Screenshot pending</span>
+            </>
+          )}
         </div>
         <div className="p-6 flex-1 flex flex-col">
           <h3 className="font-serif text-ivory text-xl mb-1">{p.name}</h3>
