@@ -426,7 +426,6 @@ function Process() {
 /* ---------------- Proof ---------------- */
 const PROOF = [
   { initials: "IRR", slug: "interceptorsecurity.co.za", name: "Interceptor Rapid Response", meta: "PSIRA-Registered Commercial Security · KwaZulu-Natal", body: "Full site build for a commercial guarding and access-control provider — service breakdowns, coverage-area pages, and a capability statement download, live and verified at interceptorsecurity.co.za.", image: proofInterceptorUrl },
-  { initials: "CMM", slug: "countrymilemotors.co.za", name: "Country Mile Motors", meta: "Used Vehicle Dealership · Harding, KZN", body: "Full static site and client proposal built from a standing start — stock listings, financing enquiries, and a dealership that finally looks the part online." },
 ];
 
 function BrowserCard({ p, i }: { p: typeof PROOF[number]; i: number }) {
