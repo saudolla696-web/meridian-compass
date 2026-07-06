@@ -40,7 +40,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Meridian Digital builds brand-true websites, search visibility, and answer-engine presence for KwaZulu-Natal businesses. Engineered in a day, built to be found, chosen, and remembered.",
+          "Free 10-point audit of your website and Google presence. Meridian Digital builds websites and search visibility for KwaZulu-Natal businesses — live in days, not months.",
       },
       {
         property: "og:title",
@@ -49,7 +49,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Websites, search presence, and growth systems engineered in a single day — built to be found, chosen, and remembered.",
+          "Websites, search presence, and Google visibility for KwaZulu-Natal businesses — live in days, not months. Free audit, no obligation.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },

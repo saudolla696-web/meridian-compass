@@ -4,26 +4,26 @@ export const SERVICES = [
   {
     bearing: "000°",
     dir: "North",
-    title: "Web Design & Build",
-    body: "A fully built, brand-true website — live in a single day, not a season of revisions. Modern tools, designed like a flagship, not a template.",
+    title: "Web Design",
+    body: "A fast, professional site that works on every phone and turns visitors into phone calls. Live in days, not months.",
   },
   {
     bearing: "090°",
     dir: "East",
-    title: "Search Visibility",
-    body: "Found by the people already looking for you. We tune your presence for Google's results, Google's map, and the customers nearby who need you today.",
+    title: "SEO",
+    body: "Show up when people in your area search for what you do. Rankings you can see, explained in plain language.",
   },
   {
     bearing: "180°",
     dir: "South",
-    title: "Systems & CRM",
-    body: "A Google Business Profile that converts, and a CRM that remembers every lead so you don't have to. The quiet infrastructure behind real growth.",
+    title: "Google Business Profile",
+    body: "The map listing that drives local calls. Set up properly, optimised, and kept active.",
   },
   {
     bearing: "270°",
     dir: "West",
-    title: "Answer Engine Optimisation",
-    body: "The next search engine doesn't scroll — it answers. We structure your business to be the answer an AI gives, not the link it skips past.",
+    title: "AEO",
+    body: 'When people ask AI assistants "who\'s a good [your trade] near me," your business is the answer. We structure your site so machines can recommend you.',
   },
 ];
 
@@ -34,7 +34,7 @@ export const STEPS = [
   },
   {
     title: "Build",
-    body: "Your site takes shape within a day — brand-matched, written with intent, built on modern infrastructure.",
+    body: "Your site takes shape in days, not months — brand-matched, written with intent, built on modern infrastructure.",
   },
   {
     title: "Calibrate",

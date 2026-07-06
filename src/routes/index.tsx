@@ -2,7 +2,6 @@ import { useEffect, useMemo, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "../components/site/Reveal";
-import { ContactForm } from "../components/site/ContactForm";
 import { SERVICES, SITE_URL } from "../lib/site-content";
 
 export const Route = createFileRoute("/")({
@@ -12,7 +11,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Meridian Digital builds brand-true websites, search visibility, and answer-engine presence for KwaZulu-Natal businesses. Engineered in a day, built to be found, chosen, and remembered.",
+          "Free 10-point audit of your website and Google presence. Meridian Digital builds websites and search visibility for KwaZulu-Natal businesses — live in days, not months.",
       },
       {
         property: "og:title",
@@ -21,7 +20,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Websites, search presence, and growth systems engineered in a single day — built to be found, chosen, and remembered.",
+          "Websites, search presence, and Google visibility for KwaZulu-Natal businesses — live in days, not months. Free audit, no obligation.",
       },
       { property: "og:url", content: SITE_URL },
     ],
@@ -29,15 +28,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Page,
 });
-
-const HEADER_OFFSET = 84;
-
-function smoothScroll(hash: string) {
-  const el = document.querySelector(hash);
-  if (!el) return;
-  const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
-  window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
-}
 
 /* ---------------- Hero canvas waves ---------------- */
 function HeroCanvas() {
@@ -178,44 +168,81 @@ function Hero() {
         />
         <div className="label-eyebrow mb-6">Meridian Digital — KwaZulu-Natal</div>
         <h1 className="font-serif text-ivory leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem]">
-          <span className="italic block">Every business</span>
-          <span className="block">has its meridian.</span>
+          <span className="italic block">Your customers are searching.</span>
+          <span className="block">They're finding someone else.</span>
         </h1>
         <p className="mt-8 text-ivory/75 max-w-2xl mx-auto text-base md:text-[1.05rem] leading-relaxed font-light">
-          A meridian is the line the sun crosses at its highest point — the instant a position is
-          fixed beyond doubt. We build the websites, search presence, and growth systems that fix
-          yours: engineered in a single day, built to be found, chosen, and remembered.
+          We build websites and Google presence for KwaZulu-Natal businesses — so when someone
+          searches for what you do, they find you, trust you, and phone you.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
           <Link to="/contact" className="btn-gold btn-gold-hover">
             Get Your Free Audit
           </Link>
           <a
-            href="#services-preview"
-            onClick={(e) => {
-              e.preventDefault();
-              smoothScroll("#services-preview");
-            }}
+            href="https://wa.me/27658839408"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-ivory/70 hover:text-gold text-sm tracking-wide transition-colors"
           >
-            See how we build ↓
+            WhatsApp Us
           </a>
         </div>
+        <p className="mt-6 text-slate-muted text-xs md:text-sm max-w-md mx-auto">
+          Free 10-point audit of your website and Google presence. Three specific things to fix —
+          useful whether you hire us or not.
+        </p>
       </div>
     </section>
   );
 }
 
-/* ---------------- Philosophy strip ---------------- */
-function Philosophy() {
+/* ---------------- Problem section ---------------- */
+const PROBLEMS = [
+  {
+    title: "We're invisible on Google.",
+    body: "Customers search for your service in your area — and your competitors come up first, or you don't come up at all.",
+  },
+  {
+    title: "Our website embarrasses us.",
+    body: "It's outdated, slow on phones, or a Facebook page standing in for a real site. People judge before they call.",
+  },
+  {
+    title: "We don't know what's broken.",
+    body: "You've paid for websites or marketing before and can't tell what worked. Nobody explained anything in plain terms.",
+  },
+];
+
+function Problem() {
   return (
     <section className="py-28 px-6 border-t border-b border-white/5 bg-[#0c1a30]">
-      <Reveal>
-        <p className="max-w-3xl mx-auto text-center font-serif italic text-ivory/90 text-2xl md:text-3xl leading-relaxed">
-          "A position isn't real until it's fixed. We exist to fix yours — in search, in front of
-          customers, and in the minds of the people deciding who to trust."
-        </p>
-      </Reveal>
+      <div className="max-w-5xl mx-auto">
+        <Reveal>
+          <h2 className="font-serif text-ivory text-4xl md:text-5xl text-center mb-16">
+            Sound <span className="italic text-gold-soft">familiar?</span>
+          </h2>
+        </Reveal>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {PROBLEMS.map((p, i) => (
+            <Reveal key={p.title} delay={i * 0.08}>
+              <div className="bg-[#0A1628] border border-white/8 p-7 h-full">
+                <p className="font-serif italic text-ivory text-lg mb-3">"{p.title}"</p>
+                <p className="text-ivory/65 text-sm leading-relaxed font-light">{p.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal delay={0.3}>
+          <div className="text-center mt-14">
+            <p className="text-ivory/80 font-light text-lg mb-8">
+              We'll show you exactly what's broken — for free — before you spend a rand.
+            </p>
+            <Link to="/contact" className="btn-gold btn-gold-hover">
+              Get Your Free Audit
+            </Link>
+          </div>
+        </Reveal>
+      </div>
     </section>
   );
 }
@@ -294,21 +321,19 @@ function Founding() {
             ))}
           </div>
         </Reveal>
-        <Reveal delay={0.2}>
+        <Reveal delay={0.18}>
           <p className="text-ivory/70 max-w-2xl mx-auto mt-10 text-sm md:text-base leading-relaxed font-light">
+            What's one new customer worth to you? For most of the businesses we work with —
+            plumbers, electricians, brokers, attorneys — a single new client covers this for months.
+            If your website isn't producing at least that, it's costing you more than we do.
+          </p>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="text-ivory/70 max-w-2xl mx-auto mt-6 text-sm md:text-base leading-relaxed font-light">
             No call centre, no account handoff — you deal directly with the people who build and run
             it. Once the cohort is full, the rate closes with it. Spots remaining? Ask us directly —
             we'll tell you straight.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-4">
-            <div className="w-12 h-12 rounded-full border border-gold/40 flex items-center justify-center font-serif text-gold text-sm shrink-0">
-              SO
-            </div>
-            <div className="text-left">
-              <p className="text-ivory text-sm font-medium">Saud Olla</p>
-              <p className="text-slate-muted text-xs tracking-wide">Founder, Meridian Digital</p>
-            </div>
-          </div>
           <Link to="/contact" className="btn-gold btn-gold-hover mt-8">
             Get Your Free Audit
           </Link>
@@ -318,37 +343,82 @@ function Founding() {
   );
 }
 
-/* ---------------- Contact ---------------- */
-function Contact() {
+/* ---------------- Founder ---------------- */
+function Founder() {
   return (
-    <section id="contact" className="py-28 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+    <section className="py-28 px-6 bg-[#0c1a30] border-t border-b border-white/5">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[220px_1fr] gap-10 md:gap-14 items-start">
         <Reveal>
-          <div>
-            <div className="label-eyebrow mb-4">Contact</div>
-            <h2 className="font-serif text-ivory text-4xl md:text-5xl mb-6 leading-tight">
-              Let's chart <span className="italic text-gold-soft">your course.</span>
-            </h2>
-            <p className="text-ivory/70 leading-relaxed font-light text-[1.02rem] max-w-md">
-              Tell us about the business. We'll tell you, plainly, what it would take to get you
-              found, chosen, and remembered — no obligation, no jargon.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a href="tel:+27658839408" className="btn-ghost-gold">
-                065 883 9408
-              </a>
-              <a
-                href="https://wa.me/27658839408"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost-gold"
-              >
-                Message on WhatsApp →
-              </a>
-            </div>
+          <div className="mx-auto md:mx-0 w-[180px] md:w-full aspect-square bg-[#0A1628] border border-white/10 flex items-center justify-center text-center p-4">
+            <span className="text-slate-muted text-xs leading-relaxed">
+              [FILL: founder photo — add to /public and reference here before publishing]
+            </span>
           </div>
         </Reveal>
-        <ContactForm />
+        <Reveal delay={0.1}>
+          <div className="label-eyebrow mb-4">Who you're dealing with</div>
+          <p className="text-ivory/80 leading-relaxed font-light mb-5">
+            Meridian Digital is run by Saud Zeyn Olla, founder of the Meridian Holdings Group in
+            KwaZulu-Natal. When you call, you get the person who builds your site and answers for
+            the results — not an account manager, not a call centre, not a ticket number.
+          </p>
+          <p className="text-ivory/70 leading-relaxed font-light mb-8">
+            We're a young agency and we don't pretend otherwise. What you get in exchange:
+            founder-level attention on your project, straight answers about what's working and what
+            isn't, and pricing that reflects where we are — not where the big agencies' overheads
+            are.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a href="tel:+27658839408" className="btn-ghost-gold">
+              065 883 9408
+            </a>
+            <a
+              href="https://wa.me/27658839408"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost-gold"
+            >
+              WhatsApp Us
+            </a>
+            {/* [FILL: site email address — add a mailto: link here once confirmed] */}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Closing CTA ---------------- */
+function ClosingCta() {
+  return (
+    <section id="contact" className="py-28 px-6 text-center">
+      <div className="max-w-2xl mx-auto">
+        <Reveal>
+          <div className="label-eyebrow mb-4">Get Started</div>
+          <h2 className="font-serif text-ivory text-4xl md:text-5xl mb-6 leading-tight">
+            Get your free <span className="italic text-gold-soft">10-point audit.</span>
+          </h2>
+          <p className="text-ivory/70 leading-relaxed font-light text-[1.02rem] max-w-md mx-auto mb-10">
+            No obligation, no jargon — just the three most important things to fix in your online
+            presence.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <Link to="/contact" className="btn-gold btn-gold-hover">
+              Get Your Free Audit
+            </Link>
+            <a href="tel:+27658839408" className="btn-ghost-gold">
+              065 883 9408
+            </a>
+            <a
+              href="https://wa.me/27658839408"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost-gold"
+            >
+              WhatsApp Us
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -359,10 +429,11 @@ function Page() {
   return (
     <>
       <Hero />
-      <Philosophy />
+      <Problem />
       <ServicesPreview />
       <Founding />
-      <Contact />
+      <Founder />
+      <ClosingCta />
     </>
   );
 }
