@@ -81,6 +81,15 @@ export type CaseStudy = {
   meta: string;
   body: string;
   image?: string;
+  /** One-line affiliation disclosure shown on the case-studies index card. */
+  disclosureLine?: string;
+  /** Full-page structured content. If present, the case-study page renders
+   * these sections instead of the plain `body` paragraph. */
+  disclosure?: string;
+  brief?: string;
+  whatWeBuilt?: string;
+  trustEngineering?: string;
+  results?: string;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -92,5 +101,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     meta: "PSIRA-Registered Commercial Security · KwaZulu-Natal",
     body: "Full site build for a commercial guarding and access-control provider — service breakdowns, coverage-area pages, and a capability statement download, live and verified at interceptorsecurity.co.za.",
     image: "/proof-interceptor.jpg",
+    disclosureLine: "Our own security division — built the way we'd build yours.",
+    disclosure:
+      "Full disclosure: Interceptor Rapid Response is our own commercial security division within the Meridian Holdings Group. We're showing it because it's the most honest demonstration we can offer — this is how we build when it's our own money and our own reputation on the line. Your site gets built the same way.",
+    brief:
+      "Reposition a PSIRA-registered security company toward commercial manned guarding (business parks, shopping centres, industrial multi-tenants) and give it a web presence that wins procurement-level trust.",
+    whatWeBuilt:
+      "Nine pages — home, about, coverage areas, capability statement, blog, insights, contact, plus privacy policy and terms of service — mobile-first, with WhatsApp integration pre-filled for site-assessment enquiries and a downloadable capability statement for procurement-level review.",
+    trustEngineering:
+      "PSIRA registration (number 4509059) displayed prominently across the site, a downloadable capability statement, and coverage-area detail built for corporate and business-park decision-makers — the same regulatory-trust-signal approach we bring to licensed trades: PIRB-registered plumbers, DoL-registered electricians, FSP-licensed brokers.",
+    results:
+      "The rebuilt site went live in [FILL: month/year]. We'll publish traffic and enquiry numbers here as they accumulate — real figures only, the same standard we'll hold your reporting to.",
   },
 ];

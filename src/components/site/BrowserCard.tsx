@@ -39,7 +39,10 @@ export function BrowserCard({ p, i }: { p: CaseStudy; i: number }) {
           </div>
           <div className="p-6 flex-1 flex flex-col">
             <h3 className="font-serif text-ivory text-xl mb-1">{p.name}</h3>
-            <p className="text-slate-muted text-xs tracking-wide mb-4">{p.meta}</p>
+            <p className="text-slate-muted text-xs tracking-wide mb-3">{p.meta}</p>
+            {p.disclosureLine && (
+              <p className="text-gold-soft/90 text-xs italic font-light mb-3">{p.disclosureLine}</p>
+            )}
             <p className="text-ivory/70 text-sm leading-relaxed font-light">{p.body}</p>
           </div>
         </div>
