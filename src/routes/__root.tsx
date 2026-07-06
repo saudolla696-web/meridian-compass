@@ -16,11 +16,11 @@ const professionalServiceJsonLd = {
   "@type": "ProfessionalService",
   name: "Meridian Digital",
   telephone: "+27658839408",
-  areaServed: "KwaZulu-Natal, South Africa",
+  areaServed: ["Durban", "Pietermaritzburg", "KwaZulu-Natal"],
   parentOrganization: { "@type": "Organization", name: "Meridian Holdings Group" },
   founder: {
     "@type": "Person",
-    name: "Saud Olla",
+    name: "Saud Zeyn Olla",
     jobTitle: "Founder",
     sameAs: ["https://www.linkedin.com/in/saud-zeyn-olla-0134a420a/"],
   },
@@ -28,6 +28,7 @@ const professionalServiceJsonLd = {
   logo: `${SITE_URL}/logo-mark.png`,
   sameAs: ["https://www.linkedin.com/company/meridian-digital-holdings/"],
   url: SITE_URL,
+  // [FILL: street address / suburb if Saud wants a specific town listed as the registered locality]
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -53,16 +54,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
-      { property: "og:image", content: `${SITE_URL}/logo-lockup.png` },
-      { property: "og:image:width", content: "575" },
-      { property: "og:image:height", content: "503" },
+      { property: "og:image", content: `${SITE_URL}/og-image.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Meridian Digital" },
       {
         name: "twitter:description",
         content: "Web design, SEO & AEO for KwaZulu-Natal businesses.",
       },
-      { name: "twitter:image", content: `${SITE_URL}/logo-lockup.png` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

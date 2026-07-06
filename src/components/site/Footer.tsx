@@ -55,6 +55,62 @@ export function Footer() {
             Contact
           </Link>
         </nav>
+        <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-6 pt-6 border-t border-white/5 max-w-2xl mx-auto">
+          <Link
+            to="/services/web-design"
+            className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+          >
+            Web Design
+          </Link>
+          <Link
+            to="/services/seo"
+            className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+          >
+            SEO
+          </Link>
+          <Link
+            to="/services/google-business-profile"
+            className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+          >
+            Google Business Profile
+          </Link>
+          <Link
+            to="/services/aeo"
+            className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+          >
+            AEO
+          </Link>
+          <Link
+            to="/for/plumbers-electricians"
+            className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+          >
+            Plumbers & Electricians
+          </Link>
+          <Link
+            to="/for/financial-advisors-brokers"
+            className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+          >
+            Financial Advisors & Brokers
+          </Link>
+          <Link
+            to="/for/attorneys"
+            className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+          >
+            Attorneys
+          </Link>
+          <Link
+            to="/web-design-durban"
+            className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+          >
+            Web Design Durban
+          </Link>
+          <Link
+            to="/web-design-pietermaritzburg"
+            className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+          >
+            Web Design Pietermaritzburg
+          </Link>
+        </nav>
         <p className="text-slate-muted/70 text-xs">
           © 2026 Meridian Digital. KwaZulu-Natal, South Africa.
         </p>

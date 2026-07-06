@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Reveal } from "../components/site/Reveal";
-import { SERVICES, STEPS, SITE_URL } from "../lib/site-content";
+import { Reveal } from "../../components/site/Reveal";
+import { SERVICES, STEPS, SITE_URL } from "../../lib/site-content";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Services — Web Design, Search Visibility, CRM & AEO | Meridian Digital" },
