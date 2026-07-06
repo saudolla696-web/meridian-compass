@@ -67,7 +67,7 @@ export function Nav() {
             </Link>
           ))}
           <Link to="/contact" className="btn-ghost-gold">
-            Chart My Course
+            Get Your Free Audit
           </Link>
         </nav>
         <button
@@ -132,7 +132,7 @@ export function Nav() {
                   onClick={() => setOpen(false)}
                   className="btn-ghost-gold self-start mt-5 mb-2"
                 >
-                  Chart My Course
+                  Get Your Free Audit
                 </Link>
               </nav>
             </motion.div>

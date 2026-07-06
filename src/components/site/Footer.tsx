@@ -24,6 +24,11 @@ export function Footer() {
         >
           Follow on LinkedIn
         </a>
+        <div className="mt-8 mb-2">
+          <Link to="/contact" className="btn-gold btn-gold-hover">
+            Get Your Free Audit
+          </Link>
+        </div>
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 mb-6">
           <Link
             to="/services"

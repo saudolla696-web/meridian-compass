@@ -187,16 +187,9 @@ function Hero() {
           yours: engineered in a single day, built to be found, chosen, and remembered.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              smoothScroll("#contact");
-            }}
-            className="btn-gold btn-gold-hover"
-          >
-            Chart My Course
-          </a>
+          <Link to="/contact" className="btn-gold btn-gold-hover">
+            Get Your Free Audit
+          </Link>
           <a
             href="#services-preview"
             onClick={(e) => {
@@ -316,16 +309,9 @@ function Founding() {
               <p className="text-slate-muted text-xs tracking-wide">Founder, Meridian Digital</p>
             </div>
           </div>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              smoothScroll("#contact");
-            }}
-            className="btn-gold btn-gold-hover mt-8"
-          >
-            Reserve a Founding Place
-          </a>
+          <Link to="/contact" className="btn-gold btn-gold-hover mt-8">
+            Get Your Free Audit
+          </Link>
         </Reveal>
       </div>
     </section>
