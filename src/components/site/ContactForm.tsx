@@ -2,7 +2,17 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { submitContactForm } from "../../lib/supabase";
 import { Reveal } from "./Reveal";
 
-function Field({ label, name, required }: { label: string; name: string; required?: boolean }) {
+function Field({
+  label,
+  name,
+  required,
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  required?: boolean;
+  placeholder?: string;
+}) {
   return (
     <div>
       <label className="block text-slate-muted text-[0.7rem] tracking-[0.2em] uppercase mb-2">
@@ -11,8 +21,9 @@ function Field({ label, name, required }: { label: string; name: string; require
       <input
         name={name}
         required={required}
+        placeholder={placeholder}
         type="text"
-        className="w-full bg-[#0A1628] border border-white/10 px-4 py-3 text-ivory text-sm focus:border-gold transition-colors outline-none"
+        className="w-full bg-[#0A1628] border border-white/10 px-4 py-3 text-ivory text-sm focus:border-gold transition-colors outline-none placeholder:text-slate-muted/50"
       />
     </div>
   );
@@ -31,6 +42,7 @@ export function ContactForm() {
     const payload = {
       name: String(fd.get("name") || ""),
       business: String(fd.get("business") || ""),
+      website: String(fd.get("website") || ""),
       contact: String(fd.get("contact") || ""),
       message: String(fd.get("message") || ""),
       _hp: String(fd.get("_hp") || ""),
@@ -72,17 +84,21 @@ export function ContactForm() {
           </label>
         </div>
 
-        <Field label="Name" name="name" required />
-        <Field label="Business" name="business" required />
-        <Field label="Phone or Email" name="contact" required />
+        <Field label="Your name" name="name" required />
+        <Field label="Business name" name="business" required />
+        <Field
+          label="Website or Facebook page URL"
+          name="website"
+          placeholder="Leave blank if you don't have one — that's fine"
+        />
+        <Field label="Phone or email — where should we send the audit?" name="contact" required />
         <div>
           <label className="block text-slate-muted text-[0.7rem] tracking-[0.2em] uppercase mb-2">
-            What are you trying to fix?
+            Anything specific bothering you?
           </label>
           <textarea
             name="message"
             rows={4}
-            required
             className="w-full bg-[#0A1628] border border-white/10 px-4 py-3 text-ivory text-sm focus:border-gold transition-colors outline-none resize-none"
           />
         </div>
@@ -91,10 +107,13 @@ export function ContactForm() {
           disabled={status === "sending"}
           className="btn-gold btn-gold-hover w-full disabled:opacity-60"
         >
-          {status === "sending" ? "Sending…" : "Send Message"}
+          {status === "sending" ? "Sending…" : "Send Me My Free Audit"}
         </button>
         {status === "ok" && (
-          <p className="text-teal text-sm">Thank you — we'll be in touch shortly.</p>
+          <p className="text-teal text-sm">
+            Got it. Your audit will be with you within 2 business days. If you gave us a phone
+            number, it'll arrive on WhatsApp.
+          </p>
         )}
         {status === "err" && (
           <p className="text-amber text-sm">
