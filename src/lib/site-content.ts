@@ -48,16 +48,24 @@ export const STEPS = [
 
 export const FAQS = [
   {
-    q: "If you build it in a day, how is it not cheap?",
-    a: "Speed comes from the workflow, not from cutting corners — modern AI-assisted tools handle the scaffolding so the time we'd normally spend on boilerplate goes into your actual brand, copy, and structure instead. The build is fast. The thinking behind it isn't rushed.",
+    q: "How fast is 'days, not months'?",
+    a: "Most builds go live within the first week. Speed comes from a modern toolchain and a tight process, not from cutting corners — you'll see the site before it launches and nothing goes live without your sign-off.",
+  },
+  {
+    q: "What exactly is the free audit?",
+    a: "Ten specific checks on your website and Google presence — speed, mobile experience, whether Google can actually read your pages, how you show up on Maps, and whether AI assistants can find you. You get the three most important findings in plain language, with no obligation.",
   },
   {
     q: "What is Answer Engine Optimisation (AEO), in plain terms?",
     a: "SEO gets you ranked in a list of links. AEO gets your business named directly when someone asks an AI assistant a question — 'best coffee shop in Pietermaritzburg,' 'Toyota dealership near Harding.' It's structuring your site and listings so the answer engines have a clear, correct answer to give, with your business as the source.",
   },
   {
-    q: "What happens once the Founding Client Programme is full?",
-    a: "The R6,500 once-off and R3,200 per month rate is locked for the first ten businesses only. After that, pricing moves to standard rates. Existing Founding Clients keep their locked terms for the full 12 months regardless.",
+    q: "Do you have client case studies?",
+    a: "One published so far — our own security division, fully disclosed, because we'd rather show you honest work than pad this page. Founding clients get founder pricing partly because their results become the case studies. Early has its advantages.",
+  },
+  {
+    q: "What happens once the Founding Client rate is no longer available?",
+    a: "Founding pricing is tied to the case-study trade: when we publish results for a business, that page fills up. Once it does, pricing moves to standard rates for new clients. Existing Founding Clients keep their locked R6,500 / R3,200 terms for the full 12 months regardless.",
   },
   {
     q: "Do you only work with businesses in KwaZulu-Natal?",

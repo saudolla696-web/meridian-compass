@@ -7,7 +7,7 @@ const logoMarkUrl = "/logo-mark.png";
 const NAV_LINKS = [
   { to: "/services" as const, label: "Services" },
   { to: "/case-studies" as const, label: "Case Studies" },
-  { to: "/" as const, hash: "founding", label: "Founding Cohort" },
+  { to: "/" as const, hash: "founding", label: "Pricing" },
   { to: "/faq" as const, label: "FAQ" },
 ];
 

@@ -294,21 +294,20 @@ function Founding() {
     { v: "R6,500", l: "Once-off build" },
     { v: "R3,200", l: "Per month thereafter" },
     { v: "12", l: "Months locked in" },
-    { v: "10", l: "Founding places, total" },
   ];
   return (
     <section id="founding" className="py-24 px-6">
       <div className="max-w-5xl mx-auto bg-[#11203A] border border-gold/20 px-8 md:px-16 py-16 md:py-20 text-center relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-12 bg-gradient-to-b from-transparent to-gold" />
         <Reveal>
-          <div className="label-eyebrow mb-4">Founding Client Programme</div>
+          <div className="label-eyebrow mb-4">Founding Client Rate</div>
           <h2 className="font-serif text-ivory text-3xl md:text-5xl max-w-3xl mx-auto leading-tight">
-            Ten businesses. One year.{" "}
-            <span className="italic text-gold-soft">A direct line to the people building it.</span>
+            The Founding Client rate{" "}
+            <span className="italic text-gold-soft">— and why it exists.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.15}>
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 border-y border-white/10 py-10">
+          <div className="mt-14 grid grid-cols-3 gap-8 md:gap-4 border-y border-white/10 py-10">
             {stats.map((s) => (
               <div key={s.l}>
                 <div className="font-serif text-gold text-2xl sm:text-3xl md:text-4xl mb-2">
@@ -330,9 +329,16 @@ function Founding() {
         </Reveal>
         <Reveal delay={0.2}>
           <p className="text-ivory/70 max-w-2xl mx-auto mt-6 text-sm md:text-base leading-relaxed font-light">
-            No call centre, no account handoff — you deal directly with the people who build and run
-            it. Once the cohort is full, the rate closes with it. Spots remaining? Ask us directly —
-            we'll tell you straight.
+            We're early. You can see that — we've shown you our own work, not a wall of logos. Early
+            is worth something to you: founder pricing, founder attention, and a partner with
+            everything to prove.
+          </p>
+          <p className="text-ivory/70 max-w-2xl mx-auto mt-6 text-sm md:text-base leading-relaxed font-light">
+            In exchange, we ask for one thing: when we get you results, we publish them. Your
+            business becomes a named case study on this page — real numbers, your words.
+          </p>
+          <p className="text-ivory/80 max-w-2xl mx-auto mt-6 text-sm md:text-base leading-relaxed">
+            That's the trade. Founding rates end when the case-study page fills up.
           </p>
           <Link to="/contact" className="btn-gold btn-gold-hover mt-8">
             Get Your Free Audit
