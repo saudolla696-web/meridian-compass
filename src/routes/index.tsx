@@ -161,11 +161,6 @@ function Hero() {
       <HeroCanvas />
       <Dust />
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <img
-          src="/logo-lockup.png"
-          alt="Meridian Digital"
-          className="mx-auto w-[200px] md:w-[220px] mb-10"
-        />
         <div className="label-eyebrow mb-6">Meridian Digital — KwaZulu-Natal</div>
         <h1 className="font-serif text-ivory leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem]">
           <span className="italic block">Your customers are searching.</span>

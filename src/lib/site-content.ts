@@ -119,6 +119,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     trustEngineering:
       "PSIRA registration (number 4509059) displayed prominently across the site, a downloadable capability statement, and coverage-area detail built for corporate and business-park decision-makers — the same regulatory-trust-signal approach we bring to licensed trades: PIRB-registered plumbers, DoL-registered electricians, FSP-licensed brokers.",
     results:
-      "The rebuilt site went live in [FILL: month/year]. We'll publish traffic and enquiry numbers here as they accumulate — real figures only, the same standard we'll hold your reporting to.",
+      "The rebuilt site went live in May 2026. We'll publish traffic and enquiry numbers here as they accumulate — real figures only, the same standard we'll hold your reporting to.",
   },
 ];
