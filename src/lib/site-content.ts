@@ -4,26 +4,26 @@ export const SERVICES = [
   {
     bearing: "000°",
     dir: "North",
-    title: "Web Design & Build",
-    body: "A fully built, brand-true website — live in a single day, not a season of revisions. Modern tools, designed like a flagship, not a template.",
+    title: "Web Design",
+    body: "A fast, professional site that works on every phone and turns visitors into phone calls. Live in days, not months.",
   },
   {
     bearing: "090°",
     dir: "East",
-    title: "Search Visibility",
-    body: "Found by the people already looking for you. We tune your presence for Google's results, Google's map, and the customers nearby who need you today.",
+    title: "SEO",
+    body: "Show up when people in your area search for what you do. Rankings you can see, explained in plain language.",
   },
   {
     bearing: "180°",
     dir: "South",
-    title: "Systems & CRM",
-    body: "A Google Business Profile that converts, and a CRM that remembers every lead so you don't have to. The quiet infrastructure behind real growth.",
+    title: "Google Business Profile",
+    body: "The map listing that drives local calls. Set up properly, optimised, and kept active.",
   },
   {
     bearing: "270°",
     dir: "West",
-    title: "Answer Engine Optimisation",
-    body: "The next search engine doesn't scroll — it answers. We structure your business to be the answer an AI gives, not the link it skips past.",
+    title: "AEO",
+    body: 'When people ask AI assistants "who\'s a good [your trade] near me," your business is the answer. We structure your site so machines can recommend you.',
   },
 ];
 
@@ -34,7 +34,7 @@ export const STEPS = [
   },
   {
     title: "Build",
-    body: "Your site takes shape within a day — brand-matched, written with intent, built on modern infrastructure.",
+    body: "Your site takes shape in days, not months — brand-matched, written with intent, built on modern infrastructure.",
   },
   {
     title: "Calibrate",
@@ -48,16 +48,24 @@ export const STEPS = [
 
 export const FAQS = [
   {
-    q: "If you build it in a day, how is it not cheap?",
-    a: "Speed comes from the workflow, not from cutting corners — modern AI-assisted tools handle the scaffolding so the time we'd normally spend on boilerplate goes into your actual brand, copy, and structure instead. The build is fast. The thinking behind it isn't rushed.",
+    q: "How fast is 'days, not months'?",
+    a: "Most builds go live within the first week. Speed comes from a modern toolchain and a tight process, not from cutting corners — you'll see the site before it launches and nothing goes live without your sign-off.",
+  },
+  {
+    q: "What exactly is the free audit?",
+    a: "Ten specific checks on your website and Google presence — speed, mobile experience, whether Google can actually read your pages, how you show up on Maps, and whether AI assistants can find you. You get the three most important findings in plain language, with no obligation.",
   },
   {
     q: "What is Answer Engine Optimisation (AEO), in plain terms?",
     a: "SEO gets you ranked in a list of links. AEO gets your business named directly when someone asks an AI assistant a question — 'best coffee shop in Pietermaritzburg,' 'Toyota dealership near Harding.' It's structuring your site and listings so the answer engines have a clear, correct answer to give, with your business as the source.",
   },
   {
-    q: "What happens once the Founding Client Programme is full?",
-    a: "The R6,500 once-off and R3,200 per month rate is locked for the first ten businesses only. After that, pricing moves to standard rates. Existing Founding Clients keep their locked terms for the full 12 months regardless.",
+    q: "Do you have client case studies?",
+    a: "One published so far — our own security division, fully disclosed, because we'd rather show you honest work than pad this page. Founding clients get founder pricing partly because their results become the case studies. Early has its advantages.",
+  },
+  {
+    q: "What happens once the Founding Client rate is no longer available?",
+    a: "Founding pricing is tied to the case-study trade: when we publish results for a business, that page fills up. Once it does, pricing moves to standard rates for new clients. Existing Founding Clients keep their locked R6,500 / R3,200 terms for the full 12 months regardless.",
   },
   {
     q: "Do you only work with businesses in KwaZulu-Natal?",
@@ -81,6 +89,15 @@ export type CaseStudy = {
   meta: string;
   body: string;
   image?: string;
+  /** One-line affiliation disclosure shown on the case-studies index card. */
+  disclosureLine?: string;
+  /** Full-page structured content. If present, the case-study page renders
+   * these sections instead of the plain `body` paragraph. */
+  disclosure?: string;
+  brief?: string;
+  whatWeBuilt?: string;
+  trustEngineering?: string;
+  results?: string;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -92,5 +109,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     meta: "PSIRA-Registered Commercial Security · KwaZulu-Natal",
     body: "Full site build for a commercial guarding and access-control provider — service breakdowns, coverage-area pages, and a capability statement download, live and verified at interceptorsecurity.co.za.",
     image: "/proof-interceptor.jpg",
+    disclosureLine: "Our own security division — built the way we'd build yours.",
+    disclosure:
+      "Full disclosure: Interceptor Rapid Response is our own commercial security division within the Meridian Holdings Group. We're showing it because it's the most honest demonstration we can offer — this is how we build when it's our own money and our own reputation on the line. Your site gets built the same way.",
+    brief:
+      "Reposition a PSIRA-registered security company toward commercial manned guarding (business parks, shopping centres, industrial multi-tenants) and give it a web presence that wins procurement-level trust.",
+    whatWeBuilt:
+      "Nine pages — home, about, coverage areas, capability statement, blog, insights, contact, plus privacy policy and terms of service — mobile-first, with WhatsApp integration pre-filled for site-assessment enquiries and a downloadable capability statement for procurement-level review.",
+    trustEngineering:
+      "PSIRA registration (number 4509059) displayed prominently across the site, a downloadable capability statement, and coverage-area detail built for corporate and business-park decision-makers — the same regulatory-trust-signal approach we bring to licensed trades: PIRB-registered plumbers, DoL-registered electricians, FSP-licensed brokers.",
+    results:
+      "The rebuilt site went live in May 2026. We'll publish traffic and enquiry numbers here as they accumulate — real figures only, the same standard we'll hold your reporting to.",
   },
 ];

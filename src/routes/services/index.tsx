@@ -1,8 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Reveal } from "../components/site/Reveal";
-import { SERVICES, STEPS, SITE_URL } from "../lib/site-content";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Reveal } from "../../components/site/Reveal";
+import { SERVICES, STEPS, SITE_URL } from "../../lib/site-content";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Services — Web Design, Search Visibility, CRM & AEO | Meridian Digital" },
@@ -147,6 +147,27 @@ function ServicesPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="py-24 px-6 text-center border-t border-white/5">
+        <Reveal>
+          <h2 className="font-serif text-ivory text-3xl md:text-4xl mb-8">
+            Want to know where <span className="italic text-gold-soft">yours</span> stands?
+          </h2>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <Link to="/contact" className="btn-gold btn-gold-hover">
+              Get Your Free Audit
+            </Link>
+            <Link
+              to="/"
+              hash="founding"
+              hashScrollIntoViewOptions={{ behavior: "smooth" }}
+              className="text-ivory/70 hover:text-gold text-sm tracking-wide transition-colors"
+            >
+              See Pricing
+            </Link>
+          </div>
+        </Reveal>
       </section>
     </>
   );

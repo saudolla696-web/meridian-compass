@@ -9,16 +9,31 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ServicesRouteImport } from './routes/services'
+import { Route as WebDesignPietermaritzburgRouteImport } from './routes/web-design-pietermaritzburg'
+import { Route as WebDesignDurbanRouteImport } from './routes/web-design-durban'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies/index'
+import { Route as ServicesWebDesignRouteImport } from './routes/services/web-design'
+import { Route as ServicesSeoRouteImport } from './routes/services/seo'
+import { Route as ServicesGoogleBusinessProfileRouteImport } from './routes/services/google-business-profile'
+import { Route as ServicesAeoRouteImport } from './routes/services/aeo'
+import { Route as ForPlumbersElectriciansRouteImport } from './routes/for/plumbers-electricians'
+import { Route as ForFinancialAdvisorsBrokersRouteImport } from './routes/for/financial-advisors-brokers'
+import { Route as ForAttorneysRouteImport } from './routes/for/attorneys'
 import { Route as CaseStudiesIdRouteImport } from './routes/case-studies/$id'
 
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
+const WebDesignPietermaritzburgRoute =
+  WebDesignPietermaritzburgRouteImport.update({
+    id: '/web-design-pietermaritzburg',
+    path: '/web-design-pietermaritzburg',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WebDesignDurbanRoute = WebDesignDurbanRouteImport.update({
+  id: '/web-design-durban',
+  path: '/web-design-durban',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -36,9 +51,51 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
   id: '/case-studies/',
   path: '/case-studies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWebDesignRoute = ServicesWebDesignRouteImport.update({
+  id: '/services/web-design',
+  path: '/services/web-design',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSeoRoute = ServicesSeoRouteImport.update({
+  id: '/services/seo',
+  path: '/services/seo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesGoogleBusinessProfileRoute =
+  ServicesGoogleBusinessProfileRouteImport.update({
+    id: '/services/google-business-profile',
+    path: '/services/google-business-profile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesAeoRoute = ServicesAeoRouteImport.update({
+  id: '/services/aeo',
+  path: '/services/aeo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForPlumbersElectriciansRoute = ForPlumbersElectriciansRouteImport.update({
+  id: '/for/plumbers-electricians',
+  path: '/for/plumbers-electricians',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForFinancialAdvisorsBrokersRoute =
+  ForFinancialAdvisorsBrokersRouteImport.update({
+    id: '/for/financial-advisors-brokers',
+    path: '/for/financial-advisors-brokers',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ForAttorneysRoute = ForAttorneysRouteImport.update({
+  id: '/for/attorneys',
+  path: '/for/attorneys',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesIdRoute = CaseStudiesIdRouteImport.update({
@@ -51,26 +108,53 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/services': typeof ServicesRoute
+  '/web-design-durban': typeof WebDesignDurbanRoute
+  '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
+  '/for/attorneys': typeof ForAttorneysRoute
+  '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
+  '/for/plumbers-electricians': typeof ForPlumbersElectriciansRoute
+  '/services/aeo': typeof ServicesAeoRoute
+  '/services/google-business-profile': typeof ServicesGoogleBusinessProfileRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/web-design': typeof ServicesWebDesignRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/services': typeof ServicesRoute
+  '/web-design-durban': typeof WebDesignDurbanRoute
+  '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
+  '/for/attorneys': typeof ForAttorneysRoute
+  '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
+  '/for/plumbers-electricians': typeof ForPlumbersElectriciansRoute
+  '/services/aeo': typeof ServicesAeoRoute
+  '/services/google-business-profile': typeof ServicesGoogleBusinessProfileRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/web-design': typeof ServicesWebDesignRoute
   '/case-studies': typeof CaseStudiesIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/services': typeof ServicesRoute
+  '/web-design-durban': typeof WebDesignDurbanRoute
+  '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
+  '/for/attorneys': typeof ForAttorneysRoute
+  '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
+  '/for/plumbers-electricians': typeof ForPlumbersElectriciansRoute
+  '/services/aeo': typeof ServicesAeoRoute
+  '/services/google-business-profile': typeof ServicesGoogleBusinessProfileRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/web-design': typeof ServicesWebDesignRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -78,43 +162,86 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/faq'
-    | '/services'
+    | '/web-design-durban'
+    | '/web-design-pietermaritzburg'
     | '/case-studies/$id'
+    | '/for/attorneys'
+    | '/for/financial-advisors-brokers'
+    | '/for/plumbers-electricians'
+    | '/services/aeo'
+    | '/services/google-business-profile'
+    | '/services/seo'
+    | '/services/web-design'
     | '/case-studies/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contact'
     | '/faq'
-    | '/services'
+    | '/web-design-durban'
+    | '/web-design-pietermaritzburg'
     | '/case-studies/$id'
+    | '/for/attorneys'
+    | '/for/financial-advisors-brokers'
+    | '/for/plumbers-electricians'
+    | '/services/aeo'
+    | '/services/google-business-profile'
+    | '/services/seo'
+    | '/services/web-design'
     | '/case-studies'
+    | '/services'
   id:
     | '__root__'
     | '/'
     | '/contact'
     | '/faq'
-    | '/services'
+    | '/web-design-durban'
+    | '/web-design-pietermaritzburg'
     | '/case-studies/$id'
+    | '/for/attorneys'
+    | '/for/financial-advisors-brokers'
+    | '/for/plumbers-electricians'
+    | '/services/aeo'
+    | '/services/google-business-profile'
+    | '/services/seo'
+    | '/services/web-design'
     | '/case-studies/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
-  ServicesRoute: typeof ServicesRoute
+  WebDesignDurbanRoute: typeof WebDesignDurbanRoute
+  WebDesignPietermaritzburgRoute: typeof WebDesignPietermaritzburgRoute
   CaseStudiesIdRoute: typeof CaseStudiesIdRoute
+  ForAttorneysRoute: typeof ForAttorneysRoute
+  ForFinancialAdvisorsBrokersRoute: typeof ForFinancialAdvisorsBrokersRoute
+  ForPlumbersElectriciansRoute: typeof ForPlumbersElectriciansRoute
+  ServicesAeoRoute: typeof ServicesAeoRoute
+  ServicesGoogleBusinessProfileRoute: typeof ServicesGoogleBusinessProfileRoute
+  ServicesSeoRoute: typeof ServicesSeoRoute
+  ServicesWebDesignRoute: typeof ServicesWebDesignRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
+    '/web-design-pietermaritzburg': {
+      id: '/web-design-pietermaritzburg'
+      path: '/web-design-pietermaritzburg'
+      fullPath: '/web-design-pietermaritzburg'
+      preLoaderRoute: typeof WebDesignPietermaritzburgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-design-durban': {
+      id: '/web-design-durban'
+      path: '/web-design-durban'
+      fullPath: '/web-design-durban'
+      preLoaderRoute: typeof WebDesignDurbanRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -138,11 +265,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/case-studies/': {
       id: '/case-studies/'
       path: '/case-studies'
       fullPath: '/case-studies/'
       preLoaderRoute: typeof CaseStudiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/web-design': {
+      id: '/services/web-design'
+      path: '/services/web-design'
+      fullPath: '/services/web-design'
+      preLoaderRoute: typeof ServicesWebDesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/seo': {
+      id: '/services/seo'
+      path: '/services/seo'
+      fullPath: '/services/seo'
+      preLoaderRoute: typeof ServicesSeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/google-business-profile': {
+      id: '/services/google-business-profile'
+      path: '/services/google-business-profile'
+      fullPath: '/services/google-business-profile'
+      preLoaderRoute: typeof ServicesGoogleBusinessProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/aeo': {
+      id: '/services/aeo'
+      path: '/services/aeo'
+      fullPath: '/services/aeo'
+      preLoaderRoute: typeof ServicesAeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for/plumbers-electricians': {
+      id: '/for/plumbers-electricians'
+      path: '/for/plumbers-electricians'
+      fullPath: '/for/plumbers-electricians'
+      preLoaderRoute: typeof ForPlumbersElectriciansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for/financial-advisors-brokers': {
+      id: '/for/financial-advisors-brokers'
+      path: '/for/financial-advisors-brokers'
+      fullPath: '/for/financial-advisors-brokers'
+      preLoaderRoute: typeof ForFinancialAdvisorsBrokersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for/attorneys': {
+      id: '/for/attorneys'
+      path: '/for/attorneys'
+      fullPath: '/for/attorneys'
+      preLoaderRoute: typeof ForAttorneysRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies/$id': {
@@ -159,9 +342,18 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
-  ServicesRoute: ServicesRoute,
+  WebDesignDurbanRoute: WebDesignDurbanRoute,
+  WebDesignPietermaritzburgRoute: WebDesignPietermaritzburgRoute,
   CaseStudiesIdRoute: CaseStudiesIdRoute,
+  ForAttorneysRoute: ForAttorneysRoute,
+  ForFinancialAdvisorsBrokersRoute: ForFinancialAdvisorsBrokersRoute,
+  ForPlumbersElectriciansRoute: ForPlumbersElectriciansRoute,
+  ServicesAeoRoute: ServicesAeoRoute,
+  ServicesGoogleBusinessProfileRoute: ServicesGoogleBusinessProfileRoute,
+  ServicesSeoRoute: ServicesSeoRoute,
+  ServicesWebDesignRoute: ServicesWebDesignRoute,
   CaseStudiesIndexRoute: CaseStudiesIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

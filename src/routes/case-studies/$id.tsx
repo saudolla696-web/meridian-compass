@@ -71,10 +71,59 @@ function CaseStudyPage() {
             </div>
           </div>
         </Reveal>
-        <Reveal delay={0.2}>
-          <p className="text-ivory/70 leading-relaxed font-light text-lg">{study.body}</p>
-          {/* TESTIMONIAL PENDING — confirm with client before publishing */}
-        </Reveal>
+        {study.disclosure && (
+          <Reveal delay={0.15}>
+            <div className="bg-[#11203A] border border-gold/25 p-6 mb-10">
+              <p className="text-ivory/85 leading-relaxed font-light text-[0.95rem]">
+                {study.disclosure}
+              </p>
+            </div>
+          </Reveal>
+        )}
+
+        {study.brief || study.whatWeBuilt || study.trustEngineering || study.results ? (
+          <div className="space-y-10">
+            {study.brief && (
+              <Reveal delay={0.2}>
+                <div>
+                  <h2 className="font-serif text-ivory text-xl mb-2">The brief</h2>
+                  <p className="text-ivory/70 leading-relaxed font-light">{study.brief}</p>
+                </div>
+              </Reveal>
+            )}
+            {study.whatWeBuilt && (
+              <Reveal delay={0.25}>
+                <div>
+                  <h2 className="font-serif text-ivory text-xl mb-2">What we built</h2>
+                  <p className="text-ivory/70 leading-relaxed font-light">{study.whatWeBuilt}</p>
+                </div>
+              </Reveal>
+            )}
+            {study.trustEngineering && (
+              <Reveal delay={0.3}>
+                <div>
+                  <h2 className="font-serif text-ivory text-xl mb-2">Trust engineering</h2>
+                  <p className="text-ivory/70 leading-relaxed font-light">
+                    {study.trustEngineering}
+                  </p>
+                </div>
+              </Reveal>
+            )}
+            {study.results && (
+              <Reveal delay={0.35}>
+                <div>
+                  <h2 className="font-serif text-ivory text-xl mb-2">Results</h2>
+                  <p className="text-ivory/70 leading-relaxed font-light">{study.results}</p>
+                </div>
+              </Reveal>
+            )}
+          </div>
+        ) : (
+          <Reveal delay={0.2}>
+            <p className="text-ivory/70 leading-relaxed font-light text-lg">{study.body}</p>
+          </Reveal>
+        )}
+        {/* TESTIMONIAL PENDING — confirm with client before publishing */}
       </div>
     </section>
   );

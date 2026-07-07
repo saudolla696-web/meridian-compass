@@ -11,6 +11,51 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.meridiandigital.co.za/services/web-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.meridiandigital.co.za/services/seo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.meridiandigital.co.za/services/google-business-profile</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.meridiandigital.co.za/services/aeo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.meridiandigital.co.za/for/plumbers-electricians</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.meridiandigital.co.za/for/financial-advisors-brokers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.meridiandigital.co.za/for/attorneys</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.meridiandigital.co.za/web-design-durban</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.meridiandigital.co.za/web-design-pietermaritzburg</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.meridiandigital.co.za/case-studies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
