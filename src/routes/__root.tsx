@@ -8,7 +8,6 @@ import { Nav } from "../components/site/Nav";
 import { Footer } from "../components/site/Footer";
 import { NotFound } from "../components/site/NotFound";
 
-const faviconUrl = "/favicon-64.png";
 const appleTouchIconUrl = "/apple-touch-icon.png";
 
 const professionalServiceJsonLd = {
@@ -67,8 +66,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/png", href: faviconUrl },
-      { rel: "apple-touch-icon", href: appleTouchIconUrl },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16.png" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "48x48", href: "/favicon-48.png" },
+      { rel: "icon", type: "image/png", sizes: "64x64", href: "/favicon-64.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: appleTouchIconUrl },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
