@@ -287,8 +287,8 @@ function ServicesPreview() {
 function Founding() {
   const stats = [
     { v: "R6,500", l: "Once-off build" },
-    { v: "R3,200", l: "Per month thereafter" },
-    { v: "12", l: "Months locked in" },
+    { v: "R3,200", l: "Optional monthly care" },
+    { v: "12", l: "Months at this rate" },
   ];
   return (
     <section id="founding" className="py-24 px-6">
@@ -317,9 +317,18 @@ function Founding() {
         </Reveal>
         <Reveal delay={0.18}>
           <p className="text-ivory/70 max-w-2xl mx-auto mt-10 text-sm md:text-base leading-relaxed font-light">
+            The R6,500 build is once-off, full stop. The R3,200 monthly retainer is there if you
+            want it — ongoing SEO/AEO, Google Business Profile management, and a direct line for
+            changes — but it's your call, not a condition of the build. Plenty of clients start with
+            the build alone and add the retainer later, or not at all.
+          </p>
+        </Reveal>
+        <Reveal delay={0.19}>
+          <p className="text-ivory/70 max-w-2xl mx-auto mt-6 text-sm md:text-base leading-relaxed font-light">
             What's one new customer worth to you? For most of the businesses we work with —
-            plumbers, electricians, brokers, attorneys — a single new client covers this for months.
-            If your website isn't producing at least that, it's costing you more than we do.
+            plumbers, electricians, brokers, attorneys — a single new client covers the retainer for
+            months. If you do take it and your website isn't producing at least that, it's costing
+            you more than we do.
           </p>
         </Reveal>
         <Reveal delay={0.2}>

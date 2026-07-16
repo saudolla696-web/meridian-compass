@@ -132,8 +132,8 @@ function Page() {
               <h2 className="font-serif text-ivory text-xl mb-3">How we build it</h2>
               <p className="text-ivory/70 leading-relaxed font-light">
                 Same process everywhere: discovery, build, launch, ongoing care — live in days, not
-                months, at R6,500 once-off and R3,200 a month after that. See the full breakdown on
-                the{" "}
+                months, at R6,500 once-off, with an optional R3,200-a-month retainer after that. See
+                the full breakdown on the{" "}
                 <a
                   href="/services/web-design"
                   className="text-gold hover:text-gold-soft underline underline-offset-2 transition-colors"

@@ -19,7 +19,7 @@ const FAQS = [
   },
   {
     q: "What happens after launch — is it a one-time thing?",
-    a: "The build is once-off (R6,500), but the site needs upkeep to keep performing: security updates, small content changes, and the SEO/AEO/Google Business Profile work that keeps you findable. That's what the R3,200 monthly retainer covers.",
+    a: "The build is once-off (R6,500) and it's yours regardless of what you do next. If you want us to keep it performing — security updates, small content changes, and the SEO/AEO/Google Business Profile work that keeps you findable — that's an optional R3,200 monthly retainer, not a requirement.",
   },
   {
     q: "What if I need changes after the site is live?",
@@ -160,9 +160,10 @@ function WebDesignPage() {
             <div className="mt-12 bg-[#0c1a30] border border-white/8 p-8">
               <h2 className="font-serif text-ivory text-xl mb-3">What it costs</h2>
               <p className="text-ivory/70 leading-relaxed font-light">
-                R6,500 once-off for the build, R3,200 a month after that for hosting, security, and
-                ongoing SEO/AEO/Google Business Profile work. Founding Client rates are available
-                now — see the{" "}
+                R6,500 once-off for the build — no ongoing obligation attached. If you want us to
+                keep hosting, security, and SEO/AEO/Google Business Profile work moving afterward,
+                that's an optional R3,200-a-month retainer, your choice to take or leave. Founding
+                Client rates are available now — see the{" "}
                 <a
                   href="/#founding"
                   className="text-gold hover:text-gold-soft transition-colors underline underline-offset-2"
