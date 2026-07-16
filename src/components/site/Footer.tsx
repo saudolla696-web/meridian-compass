@@ -16,14 +16,24 @@ export function Footer() {
         <p className="text-slate-muted text-xs tracking-wide mb-1">
           A division of Meridian Holdings Group
         </p>
-        <a
-          href="https://www.linkedin.com/company/meridian-digital-holdings/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-slate-muted hover:text-gold text-xs tracking-wide underline underline-offset-2 transition-colors"
-        >
-          Follow on LinkedIn
-        </a>
+        <div className="flex items-center justify-center gap-x-4 gap-y-1 flex-wrap">
+          <a
+            href="https://www.linkedin.com/company/meridian-digital-holdings/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-muted hover:text-gold text-xs tracking-wide underline underline-offset-2 transition-colors"
+          >
+            Follow on LinkedIn
+          </a>
+          <a
+            href="https://www.instagram.com/meridian_digital_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-muted hover:text-gold text-xs tracking-wide underline underline-offset-2 transition-colors"
+          >
+            Follow on Instagram
+          </a>
+        </div>
         <div className="mt-8 mb-2">
           <Link to="/contact" className="btn-gold btn-gold-hover">
             Get Your Free Audit

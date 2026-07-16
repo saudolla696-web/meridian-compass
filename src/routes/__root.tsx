@@ -25,7 +25,10 @@ const professionalServiceJsonLd = {
   },
   image: `${SITE_URL}/logo-lockup.png`,
   logo: `${SITE_URL}/logo-mark.png`,
-  sameAs: ["https://www.linkedin.com/company/meridian-digital-holdings/"],
+  sameAs: [
+    "https://www.linkedin.com/company/meridian-digital-holdings/",
+    "https://www.instagram.com/meridian_digital_/",
+  ],
   url: SITE_URL,
   // [FILL: street address / suburb if Saud wants a specific town listed as the registered locality]
 };
