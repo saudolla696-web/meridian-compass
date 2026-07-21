@@ -30,7 +30,7 @@ const FAQS = [
 export const Route = createFileRoute("/for/plumbers-electricians")({
   head: () => ({
     meta: [
-      { title: "Websites for Plumbers & Electricians in KwaZulu-Natal | Meridian Digital" },
+      { title: "Websites for Plumbers & Electricians in South Africa | Meridian Digital" },
       {
         name: "description",
         content:

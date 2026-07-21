@@ -10,7 +10,7 @@ export const Route = createFileRoute("/case-studies/")({
       {
         name: "description",
         content:
-          "Real project work from Meridian Digital — full site builds and rebuilds for KwaZulu-Natal businesses, built the same way every time.",
+          "Real project work from Meridian Digital — full site builds and rebuilds for South African businesses, built the same way every time.",
       },
       { property: "og:title", content: "Case Studies | Meridian Digital" },
       { property: "og:description", content: "A look at how we build. Same route, every time." },

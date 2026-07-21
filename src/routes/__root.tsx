@@ -15,7 +15,7 @@ const professionalServiceJsonLd = {
   "@type": "ProfessionalService",
   name: "Meridian Digital",
   telephone: "+27658839408",
-  areaServed: ["Durban", "Pietermaritzburg", "KwaZulu-Natal"],
+  areaServed: ["South Africa", "Durban", "Pietermaritzburg"],
   parentOrganization: { "@type": "Organization", name: "Meridian Holdings Group" },
   founder: {
     "@type": "Person",
@@ -39,20 +39,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0A1628" },
-      { title: "Meridian Digital — Web Design, SEO & AEO in KwaZulu-Natal" },
+      { title: "Meridian Digital — Web Design, SEO & AEO in South Africa" },
       {
         name: "description",
         content:
-          "Free 10-point audit of your website and Google presence. Meridian Digital builds websites and search visibility for KwaZulu-Natal businesses — live in days, not months.",
+          "Free 10-point audit of your website and Google presence. Meridian Digital builds websites and search visibility for South African businesses — live in days, not months.",
       },
       {
         property: "og:title",
-        content: "Meridian Digital — Web Design, SEO & AEO in KwaZulu-Natal",
+        content: "Meridian Digital — Web Design, SEO & AEO in South Africa",
       },
       {
         property: "og:description",
         content:
-          "Websites, search presence, and Google visibility for KwaZulu-Natal businesses — live in days, not months. Free audit, no obligation.",
+          "Websites, search presence, and Google visibility for South African businesses — live in days, not months. Free audit, no obligation.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
@@ -63,7 +63,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Meridian Digital" },
       {
         name: "twitter:description",
-        content: "Web design, SEO & AEO for KwaZulu-Natal businesses.",
+        content: "Web design, SEO & AEO for South African businesses.",
       },
       { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
     ],

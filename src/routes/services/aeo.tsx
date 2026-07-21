@@ -34,7 +34,7 @@ export const Route = createFileRoute("/services/aeo")({
       {
         name: "description",
         content:
-          "When people ask AI assistants who's good near them, your business should be the answer. AEO for KwaZulu-Natal businesses — structured so machines can recommend you.",
+          "When people ask AI assistants who's good near them, your business should be the answer. AEO for South African businesses — structured so machines can recommend you.",
       },
       { property: "og:title", content: "AEO | Meridian Digital" },
       {
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/services/aeo")({
           "@type": "Service",
           serviceType: "Answer Engine Optimisation",
           provider: { "@type": "ProfessionalService", name: "Meridian Digital" },
-          areaServed: ["Durban", "Pietermaritzburg", "KwaZulu-Natal"],
+          areaServed: ["South Africa", "Durban", "Pietermaritzburg"],
           description: "We structure sites so AI assistants can find and recommend the business.",
         }),
       },

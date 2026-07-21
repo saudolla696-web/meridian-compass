@@ -34,7 +34,7 @@ export const Route = createFileRoute("/services/seo")({
       {
         name: "description",
         content:
-          "Show up when people in your area search for what you do. Local SEO for KwaZulu-Natal businesses, with monthly reporting you can actually understand.",
+          "Show up when people in your area search for what you do. SEO for South African businesses, with monthly reporting you can actually understand.",
       },
       { property: "og:title", content: "SEO | Meridian Digital" },
       {
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/services/seo")({
           "@type": "Service",
           serviceType: "Local SEO",
           provider: { "@type": "ProfessionalService", name: "Meridian Digital" },
-          areaServed: ["Durban", "Pietermaritzburg", "KwaZulu-Natal"],
+          areaServed: ["South Africa", "Durban", "Pietermaritzburg"],
           description: "Show up when people in your area search for what you do.",
         }),
       },

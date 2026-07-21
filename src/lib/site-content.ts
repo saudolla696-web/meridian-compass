@@ -69,7 +69,7 @@ export const FAQS = [
   },
   {
     q: "Do you only work with businesses in KwaZulu-Natal?",
-    a: "KZN is home turf and where we meet clients in person, but the build process itself works anywhere in South Africa. If you're outside the area, ask — most of the work happens the same way regardless of postcode.",
+    a: "No — we work with businesses across South Africa. KwaZulu-Natal is home turf and where we meet clients in person, but the build process itself works the same way regardless of postcode.",
   },
   {
     q: "I already have a website. Is there a point talking to you?",

@@ -34,7 +34,7 @@ export const Route = createFileRoute("/services/google-business-profile")({
       {
         name: "description",
         content:
-          "The Google map listing that drives local calls — set up properly, optimised, and kept active. Google Business Profile management for KwaZulu-Natal businesses.",
+          "The Google map listing that drives local calls — set up properly, optimised, and kept active. Google Business Profile management for South African businesses.",
       },
       { property: "og:title", content: "Google Business Profile | Meridian Digital" },
       {
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/services/google-business-profile")({
           "@type": "Service",
           serviceType: "Google Business Profile Management",
           provider: { "@type": "ProfessionalService", name: "Meridian Digital" },
-          areaServed: ["Durban", "Pietermaritzburg", "KwaZulu-Natal"],
+          areaServed: ["South Africa", "Durban", "Pietermaritzburg"],
           description: "The Google map listing that drives local calls, set up and kept active.",
         }),
       },

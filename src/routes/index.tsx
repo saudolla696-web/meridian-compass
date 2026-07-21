@@ -7,20 +7,20 @@ import { SERVICES, SITE_URL } from "../lib/site-content";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Meridian Digital — Web Design, SEO & AEO in KwaZulu-Natal" },
+      { title: "Meridian Digital — Web Design, SEO & AEO in South Africa" },
       {
         name: "description",
         content:
-          "Free 10-point audit of your website and Google presence. Meridian Digital builds websites and search visibility for KwaZulu-Natal businesses — live in days, not months.",
+          "Free 10-point audit of your website and Google presence. Meridian Digital builds websites and search visibility for South African businesses — live in days, not months.",
       },
       {
         property: "og:title",
-        content: "Meridian Digital — Web Design, SEO & AEO in KwaZulu-Natal",
+        content: "Meridian Digital — Web Design, SEO & AEO in South Africa",
       },
       {
         property: "og:description",
         content:
-          "Websites, search presence, and Google visibility for KwaZulu-Natal businesses — live in days, not months. Free audit, no obligation.",
+          "Websites, search presence, and Google visibility for South African businesses — live in days, not months. Free audit, no obligation.",
       },
       { property: "og:url", content: SITE_URL },
     ],
@@ -161,13 +161,13 @@ function Hero() {
       <HeroCanvas />
       <Dust />
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <div className="label-eyebrow mb-6">Meridian Digital — KwaZulu-Natal</div>
+        <div className="label-eyebrow mb-6">Meridian Digital — South Africa</div>
         <h1 className="font-serif text-ivory leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem]">
           <span className="italic block">Your customers are searching.</span>
           <span className="block">They're finding someone else.</span>
         </h1>
         <p className="mt-8 text-ivory/75 max-w-2xl mx-auto text-base md:text-[1.05rem] leading-relaxed font-light">
-          We build websites and Google presence for KwaZulu-Natal businesses — so when someone
+          We build websites and Google presence for South African businesses — so when someone
           searches for what you do, they find you, trust you, and phone you.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
@@ -368,9 +368,10 @@ function Founder() {
         <Reveal delay={0.1}>
           <div className="label-eyebrow mb-4">Who you're dealing with</div>
           <p className="text-ivory/80 leading-relaxed font-light mb-5">
-            Meridian Digital is run by Saud Zeyn Olla, founder of the Meridian Holdings Group in
-            KwaZulu-Natal. When you call, you get the person who builds your site and answers for
-            the results — not an account manager, not a call centre, not a ticket number.
+            Meridian Digital is run by Saud Zeyn Olla, founder of the Meridian Holdings Group,
+            serving businesses across South Africa. When you call, you get the person who builds
+            your site and answers for the results — not an account manager, not a call centre, not a
+            ticket number.
           </p>
           <p className="text-ivory/70 leading-relaxed font-light mb-8">
             We're a young agency and we don't pretend otherwise. What you get in exchange:

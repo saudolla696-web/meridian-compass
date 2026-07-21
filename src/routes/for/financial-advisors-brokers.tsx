@@ -34,7 +34,7 @@ export const Route = createFileRoute("/for/financial-advisors-brokers")({
       {
         name: "description",
         content:
-          "Websites for FSP-licensed financial advisors and brokers — licence display, referral-checking credibility, and compliance-aware content, built for KwaZulu-Natal firms.",
+          "Websites for FSP-licensed financial advisors and brokers — licence display, referral-checking credibility, and compliance-aware content, built for South African firms.",
       },
       {
         property: "og:title",

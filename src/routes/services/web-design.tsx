@@ -34,7 +34,7 @@ export const Route = createFileRoute("/services/web-design")({
       {
         name: "description",
         content:
-          "A fast, professional website that works on every phone and turns visitors into phone calls. Live in days, not months. Web design for KwaZulu-Natal businesses.",
+          "A fast, professional website that works on every phone and turns visitors into phone calls. Live in days, not months. Web design for South African businesses.",
       },
       { property: "og:title", content: "Web Design | Meridian Digital" },
       {
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/services/web-design")({
           "@type": "Service",
           serviceType: "Web Design",
           provider: { "@type": "ProfessionalService", name: "Meridian Digital" },
-          areaServed: ["Durban", "Pietermaritzburg", "KwaZulu-Natal"],
+          areaServed: ["South Africa", "Durban", "Pietermaritzburg"],
           description:
             "A fast, professional website that works on every phone and turns visitors into phone calls.",
         }),
