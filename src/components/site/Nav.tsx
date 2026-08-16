@@ -11,6 +11,11 @@ const NAV_LINKS = [
   { to: "/faq" as const, label: "FAQ" },
 ];
 
+const SERVICE_AREA_LINKS = [
+  { to: "/web-design-durban" as const, label: "Web Design Durban" },
+  { to: "/web-design-pietermaritzburg" as const, label: "Web Design Pietermaritzburg" },
+];
+
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -123,6 +128,19 @@ export function Nav() {
                     hashScrollIntoViewOptions={{ behavior: "smooth" }}
                     onClick={() => setOpen(false)}
                     className="text-ivory/90 text-base tracking-wide py-3.5 border-b border-white/5 active:bg-white/5 transition-colors"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+                <div className="text-slate-muted/50 text-[0.65rem] uppercase tracking-[0.2em] pt-4 pb-1">
+                  Service Areas
+                </div>
+                {SERVICE_AREA_LINKS.map((l) => (
+                  <Link
+                    key={l.label}
+                    to={l.to}
+                    onClick={() => setOpen(false)}
+                    className="text-ivory/70 text-sm tracking-wide py-2.5 border-b border-white/5 active:bg-white/5 transition-colors"
                   >
                     {l.label}
                   </Link>

@@ -6,26 +6,30 @@ export const SERVICES = [
     dir: "North",
     title: "Web Design",
     body: "A fast, professional site that works on every phone and turns visitors into phone calls. Live in days, not months.",
+    to: "/services/web-design",
   },
   {
     bearing: "090°",
     dir: "East",
     title: "SEO",
     body: "Show up when people in your area search for what you do. Rankings you can see, explained in plain language.",
+    to: "/services/seo",
   },
   {
     bearing: "180°",
     dir: "South",
     title: "Google Business Profile",
     body: "The map listing that drives local calls. Set up properly, optimised, and kept active.",
+    to: "/services/google-business-profile",
   },
   {
     bearing: "270°",
     dir: "West",
     title: "AEO",
     body: 'When people ask AI assistants "who\'s a good [your trade] near me," your business is the answer. We structure your site so machines can recommend you.',
+    to: "/services/aeo",
   },
-];
+] as const;
 
 export const STEPS = [
   {

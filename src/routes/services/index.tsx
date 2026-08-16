@@ -75,7 +75,10 @@ function ServicesPage() {
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
               {SERVICES.map((s, i) => (
                 <Reveal key={s.bearing} delay={i * 0.08}>
-                  <div className="bg-[#0c1a30]/85 backdrop-blur-sm border border-white/8 p-8 md:p-10 h-full hover:border-gold/40 transition-colors">
+                  <Link
+                    to={s.to}
+                    className="block bg-[#0c1a30]/85 backdrop-blur-sm border border-white/8 p-8 md:p-10 h-full hover:border-gold/40 transition-colors"
+                  >
                     <div className="flex items-baseline justify-between mb-5">
                       <span className="font-mono text-gold text-sm tracking-[0.25em]">
                         {s.bearing}
@@ -88,7 +91,7 @@ function ServicesPage() {
                     <p className="text-ivory/70 leading-relaxed text-[0.95rem] font-light">
                       {s.body}
                     </p>
-                  </div>
+                  </Link>
                 </Reveal>
               ))}
             </div>
