@@ -353,52 +353,6 @@ function Founding() {
   );
 }
 
-/* ---------------- Founder ---------------- */
-function Founder() {
-  return (
-    <section className="py-28 px-6 bg-[#0c1a30] border-t border-b border-white/5">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[220px_1fr] gap-10 md:gap-14 items-start">
-        <Reveal>
-          <div className="mx-auto md:mx-0 w-[180px] md:w-full aspect-square bg-[#0A1628] border border-white/10 flex items-center justify-center text-center p-4">
-            <span className="text-slate-muted text-xs leading-relaxed">
-              [FILL: founder photo — add to /public and reference here before publishing]
-            </span>
-          </div>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <div className="label-eyebrow mb-4">Who you're dealing with</div>
-          <p className="text-ivory/80 leading-relaxed font-light mb-5">
-            Meridian Digital is run by Saud Zeyn Olla, founder of the Meridian Holdings Group,
-            serving businesses across South Africa. When you call, you get the person who builds
-            your site and answers for the results — not an account manager, not a call centre, not a
-            ticket number.
-          </p>
-          <p className="text-ivory/70 leading-relaxed font-light mb-8">
-            We're a young agency and we don't pretend otherwise. What you get in exchange:
-            founder-level attention on your project, straight answers about what's working and what
-            isn't, and pricing that reflects where we are — not where the big agencies' overheads
-            are.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a href="tel:+27658839408" className="btn-ghost-gold">
-              065 883 9408
-            </a>
-            <a
-              href="https://wa.me/27658839408"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-ghost-gold"
-            >
-              WhatsApp Us
-            </a>
-            {/* [FILL: site email address — add a mailto: link here once confirmed] */}
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
 /* ---------------- Closing CTA ---------------- */
 function ClosingCta() {
   return (
@@ -443,7 +397,6 @@ function Page() {
       <Problem />
       <ServicesPreview />
       <Founding />
-      <Founder />
       <ClosingCta />
     </>
   );
