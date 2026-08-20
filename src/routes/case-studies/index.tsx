@@ -1,7 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "../../components/site/Reveal";
 import { BrowserCard } from "../../components/site/BrowserCard";
-import { CASE_STUDIES, SITE_URL } from "../../lib/site-content";
+import { CASE_STUDIES, SITE_URL, buildBreadcrumbJsonLd } from "../../lib/site-content";
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Case Studies", path: "/case-studies" },
+]);
 
 export const Route = createFileRoute("/case-studies/")({
   head: () => ({
@@ -17,6 +22,7 @@ export const Route = createFileRoute("/case-studies/")({
       { property: "og:url", content: `${SITE_URL}/case-studies` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/case-studies` }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd) }],
   }),
   component: CaseStudiesIndex,
 });

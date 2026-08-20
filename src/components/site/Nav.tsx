@@ -7,6 +7,7 @@ const logoMarkUrl = "/logo-mark.png";
 const NAV_LINKS = [
   { to: "/services" as const, label: "Services" },
   { to: "/case-studies" as const, label: "Case Studies" },
+  { to: "/insights" as const, label: "Insights" },
   { to: "/" as const, hash: "founding", label: "Pricing" },
   { to: "/faq" as const, label: "FAQ" },
 ];
@@ -14,6 +15,15 @@ const NAV_LINKS = [
 const SERVICE_AREA_LINKS = [
   { to: "/web-design-durban" as const, label: "Web Design Durban" },
   { to: "/web-design-pietermaritzburg" as const, label: "Web Design Pietermaritzburg" },
+  { to: "/web-design-umhlanga" as const, label: "Web Design Umhlanga" },
+  { to: "/web-design-pinetown" as const, label: "Web Design Pinetown" },
+  { to: "/web-design-ballito" as const, label: "Web Design Ballito" },
+];
+
+const INDUSTRY_LINKS = [
+  { to: "/for/plumbers-electricians" as const, label: "Plumbers & Electricians" },
+  { to: "/for/financial-advisors-brokers" as const, label: "Financial Advisors & Brokers" },
+  { to: "/for/attorneys" as const, label: "Attorneys" },
 ];
 
 export function Nav() {
@@ -71,6 +81,34 @@ export function Nav() {
               {l.label}
             </Link>
           ))}
+          <div className="relative group">
+            <button className="text-ivory/80 hover:text-gold text-sm tracking-wide transition-colors flex items-center gap-1">
+              Industries
+              <svg
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="none"
+                aria-hidden
+                className="mt-px"
+              >
+                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.4" />
+              </svg>
+            </button>
+            <div className="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-opacity duration-150 z-10">
+              <div className="bg-[#0c1a30] border border-white/10 py-2 min-w-[240px] shadow-xl">
+                {INDUSTRY_LINKS.map((l) => (
+                  <Link
+                    key={l.label}
+                    to={l.to}
+                    className="block px-4 py-2.5 text-sm text-ivory/80 hover:text-gold hover:bg-white/5 transition-colors whitespace-nowrap"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
           <Link to="/contact" className="btn-ghost-gold">
             Get Your Free Audit
           </Link>
@@ -128,6 +166,19 @@ export function Nav() {
                     hashScrollIntoViewOptions={{ behavior: "smooth" }}
                     onClick={() => setOpen(false)}
                     className="text-ivory/90 text-base tracking-wide py-3.5 border-b border-white/5 active:bg-white/5 transition-colors"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+                <div className="text-slate-muted/50 text-[0.65rem] uppercase tracking-[0.2em] pt-4 pb-1">
+                  Industries
+                </div>
+                {INDUSTRY_LINKS.map((l) => (
+                  <Link
+                    key={l.label}
+                    to={l.to}
+                    onClick={() => setOpen(false)}
+                    className="text-ivory/70 text-sm tracking-wide py-2.5 border-b border-white/5 active:bg-white/5 transition-colors"
                   >
                     {l.label}
                   </Link>

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "../../components/site/Reveal";
 import { AuditCta } from "../../components/site/AuditCta";
 import { FaqAccordion, buildFaqJsonLd } from "../../components/site/FaqAccordion";
-import { SITE_URL } from "../../lib/site-content";
+import { SITE_URL, ORGANIZATION_ID, buildBreadcrumbJsonLd } from "../../lib/site-content";
 
 const FAQS = [
   {
@@ -51,12 +51,22 @@ export const Route = createFileRoute("/services/google-business-profile")({
           "@context": "https://schema.org",
           "@type": "Service",
           serviceType: "Google Business Profile Management",
-          provider: { "@type": "ProfessionalService", name: "Meridian Digital" },
+          provider: { "@id": ORGANIZATION_ID },
           areaServed: ["South Africa", "Durban", "Pietermaritzburg"],
           description: "The Google map listing that drives local calls, set up and kept active.",
         }),
       },
       { type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Google Business Profile", path: "/services/google-business-profile" },
+          ]),
+        ),
+      },
     ],
   }),
   component: GbpPage,

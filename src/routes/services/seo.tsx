@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "../../components/site/Reveal";
 import { AuditCta } from "../../components/site/AuditCta";
 import { FaqAccordion, buildFaqJsonLd } from "../../components/site/FaqAccordion";
-import { SITE_URL } from "../../lib/site-content";
+import { SITE_URL, ORGANIZATION_ID, buildBreadcrumbJsonLd } from "../../lib/site-content";
 
 const FAQS = [
   {
@@ -51,12 +51,22 @@ export const Route = createFileRoute("/services/seo")({
           "@context": "https://schema.org",
           "@type": "Service",
           serviceType: "Local SEO",
-          provider: { "@type": "ProfessionalService", name: "Meridian Digital" },
+          provider: { "@id": ORGANIZATION_ID },
           areaServed: ["South Africa", "Durban", "Pietermaritzburg"],
           description: "Show up when people in your area search for what you do.",
         }),
       },
       { type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "SEO", path: "/services/seo" },
+          ]),
+        ),
+      },
     ],
   }),
   component: SeoPage,

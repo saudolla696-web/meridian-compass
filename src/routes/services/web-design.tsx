@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "../../components/site/Reveal";
 import { AuditCta } from "../../components/site/AuditCta";
 import { FaqAccordion, buildFaqJsonLd } from "../../components/site/FaqAccordion";
-import { SITE_URL } from "../../lib/site-content";
+import { SITE_URL, ORGANIZATION_ID, buildBreadcrumbJsonLd } from "../../lib/site-content";
 
 const FAQS = [
   {
@@ -51,13 +51,23 @@ export const Route = createFileRoute("/services/web-design")({
           "@context": "https://schema.org",
           "@type": "Service",
           serviceType: "Web Design",
-          provider: { "@type": "ProfessionalService", name: "Meridian Digital" },
+          provider: { "@id": ORGANIZATION_ID },
           areaServed: ["South Africa", "Durban", "Pietermaritzburg"],
           description:
             "A fast, professional website that works on every phone and turns visitors into phone calls.",
         }),
       },
       { type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Web Design", path: "/services/web-design" },
+          ]),
+        ),
+      },
     ],
   }),
   component: WebDesignPage,
@@ -183,7 +193,7 @@ function WebDesignPage() {
                   to="/for/plumbers-electricians"
                   className="text-gold hover:text-gold-soft underline underline-offset-2 transition-colors"
                 >
-                  plumbers and electricians
+                  digital marketing for plumbers and electricians
                 </Link>
                 ,{" "}
                 <Link

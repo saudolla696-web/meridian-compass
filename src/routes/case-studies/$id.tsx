@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { Reveal } from "../../components/site/Reveal";
-import { CASE_STUDIES, SITE_URL } from "../../lib/site-content";
+import { CASE_STUDIES, SITE_URL, buildBreadcrumbJsonLd } from "../../lib/site-content";
 
 export const Route = createFileRoute("/case-studies/$id")({
   loader: ({ params }) => {
@@ -23,6 +23,18 @@ export const Route = createFileRoute("/case-studies/$id")({
           : []),
       ],
       links: [{ rel: "canonical", href: `${SITE_URL}/case-studies/${loaderData.id}` }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            buildBreadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Case Studies", path: "/case-studies" },
+              { name: loaderData.name, path: `/case-studies/${loaderData.id}` },
+            ]),
+          ),
+        },
+      ],
     };
   },
   component: CaseStudyPage,

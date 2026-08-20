@@ -1,6 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "../../components/site/Reveal";
-import { SERVICES, STEPS, SITE_URL } from "../../lib/site-content";
+import { SERVICES, STEPS, SITE_URL, buildBreadcrumbJsonLd } from "../../lib/site-content";
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+]);
 
 export const Route = createFileRoute("/services/")({
   head: () => ({
@@ -20,6 +25,7 @@ export const Route = createFileRoute("/services/")({
       { property: "og:url", content: `${SITE_URL}/services` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/services` }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd) }],
   }),
   component: ServicesPage,
 });

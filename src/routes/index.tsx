@@ -2,7 +2,17 @@ import { useEffect, useMemo, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "../components/site/Reveal";
-import { SERVICES, SITE_URL } from "../lib/site-content";
+import { FaqAccordion, buildFaqJsonLd } from "../components/site/FaqAccordion";
+import { SERVICES, FAQS, SITE_URL } from "../lib/site-content";
+
+const HOME_FAQ_QUESTIONS = [
+  "How fast is 'days, not months'?",
+  "What exactly is the free audit?",
+  "Do you only work with businesses in KwaZulu-Natal?",
+  "I already have a website. Is there a point talking to you?",
+];
+const HOME_FAQS = FAQS.filter((f) => HOME_FAQ_QUESTIONS.includes(f.q));
+const homeFaqJsonLd = buildFaqJsonLd(HOME_FAQS);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,6 +35,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: SITE_URL },
     ],
     links: [{ rel: "canonical", href: SITE_URL }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(homeFaqJsonLd) }],
   }),
   component: Page,
 });
@@ -277,6 +288,16 @@ function ServicesPreview() {
               See the full breakdown, plus how we build it →
             </Link>
           </div>
+          <p className="text-center text-ivory/50 text-sm mt-4">
+            Run a trade business?{" "}
+            <Link
+              to="/for/plumbers-electricians"
+              className="text-gold hover:text-gold-soft underline underline-offset-2 transition-colors"
+            >
+              See our digital marketing for plumbers and electricians
+            </Link>
+            .
+          </p>
         </Reveal>
       </div>
     </section>
@@ -353,6 +374,35 @@ function Founding() {
   );
 }
 
+/* ---------------- Home FAQ ---------------- */
+function HomeFaq() {
+  return (
+    <section className="py-24 px-6 bg-[#060D18]">
+      <div className="max-w-3xl mx-auto">
+        <Reveal>
+          <div className="text-center mb-12">
+            <div className="label-eyebrow mb-4">FAQ</div>
+            <h2 className="font-serif text-ivory text-3xl md:text-4xl">
+              Quick <span className="italic text-gold-soft">questions.</span>
+            </h2>
+          </div>
+        </Reveal>
+        <FaqAccordion items={HOME_FAQS} />
+        <Reveal delay={0.1}>
+          <div className="text-center mt-10">
+            <Link
+              to="/faq"
+              className="text-gold hover:text-gold-soft text-sm tracking-wide transition-colors"
+            >
+              See all FAQs →
+            </Link>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- Closing CTA ---------------- */
 function ClosingCta() {
   return (
@@ -397,6 +447,7 @@ function Page() {
       <Problem />
       <ServicesPreview />
       <Founding />
+      <HomeFaq />
       <ClosingCta />
     </>
   );

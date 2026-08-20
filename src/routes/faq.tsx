@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "../components/site/Reveal";
 import { FaqAccordion, buildFaqJsonLd } from "../components/site/FaqAccordion";
-import { FAQS, SITE_URL } from "../lib/site-content";
+import { FAQS, SITE_URL, buildBreadcrumbJsonLd } from "../lib/site-content";
 
 const faqJsonLd = buildFaqJsonLd(FAQS);
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "FAQ", path: "/faq" },
+]);
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -22,7 +26,10 @@ export const Route = createFileRoute("/faq")({
       { property: "og:url", content: `${SITE_URL}/faq` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/faq` }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(faqJsonLd) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(faqJsonLd) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd) },
+    ],
   }),
   component: FaqPage,
 });

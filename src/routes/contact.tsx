@@ -1,7 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "../components/site/Reveal";
 import { ContactForm } from "../components/site/ContactForm";
-import { SITE_URL } from "../lib/site-content";
+import { SITE_URL, buildBreadcrumbJsonLd } from "../lib/site-content";
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Contact", path: "/contact" },
+]);
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -20,6 +25,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:url", content: `${SITE_URL}/contact` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd) }],
   }),
   component: ContactPage,
 });

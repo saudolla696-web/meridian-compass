@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "../../components/site/Reveal";
 import { AuditCta } from "../../components/site/AuditCta";
 import { FaqAccordion, buildFaqJsonLd } from "../../components/site/FaqAccordion";
-import { SITE_URL } from "../../lib/site-content";
+import { SITE_URL, ORGANIZATION_ID, buildBreadcrumbJsonLd } from "../../lib/site-content";
 
 const FAQS = [
   {
@@ -30,11 +30,11 @@ const FAQS = [
 export const Route = createFileRoute("/services/aeo")({
   head: () => ({
     meta: [
-      { title: "Answer Engine Optimisation (AEO) | Meridian Digital" },
+      { title: "AEO Agency South Africa — Answer Engine Optimisation | Meridian Digital" },
       {
         name: "description",
         content:
-          "When people ask AI assistants who's good near them, your business should be the answer. AEO for South African businesses — structured so machines can recommend you.",
+          "Meridian Digital is an AEO agency in South Africa. When people ask AI assistants who's good near them, your business should be the answer — structured so machines can recommend you.",
       },
       { property: "og:title", content: "AEO | Meridian Digital" },
       {
@@ -51,12 +51,22 @@ export const Route = createFileRoute("/services/aeo")({
           "@context": "https://schema.org",
           "@type": "Service",
           serviceType: "Answer Engine Optimisation",
-          provider: { "@type": "ProfessionalService", name: "Meridian Digital" },
+          provider: { "@id": ORGANIZATION_ID },
           areaServed: ["South Africa", "Durban", "Pietermaritzburg"],
           description: "We structure sites so AI assistants can find and recommend the business.",
         }),
       },
       { type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "AEO", path: "/services/aeo" },
+          ]),
+        ),
+      },
     ],
   }),
   component: AeoPage,
@@ -68,16 +78,16 @@ function AeoPage() {
       <section className="py-28 px-6">
         <div className="max-w-3xl mx-auto">
           <Reveal>
-            <div className="label-eyebrow mb-4">Answer Engine Optimisation</div>
+            <div className="label-eyebrow mb-4">AEO Agency — South Africa</div>
             <h1 className="font-serif text-ivory text-4xl md:text-5xl mb-6 leading-tight">
               Be the answer, <span className="italic text-gold-soft">not the link.</span>
             </h1>
             <p className="text-ivory/70 leading-relaxed font-light text-lg">
-              More people are starting their search for a business by asking an AI assistant
-              directly, instead of scrolling a page of links. "Who's a good electrician near me,"
-              "which security company covers Durban business parks" — the assistant picks one or two
-              answers and names them. AEO is the work of making sure your business is one of the
-              names it gives.
+              Meridian Digital is an AEO agency based in South Africa. More people are starting
+              their search for a business by asking an AI assistant directly, instead of scrolling a
+              page of links. "Who's a good electrician near me," "which security company covers
+              Durban business parks" — the assistant picks one or two answers and names them. AEO is
+              the work of making sure your business is one of the names it gives.
             </p>
           </Reveal>
 

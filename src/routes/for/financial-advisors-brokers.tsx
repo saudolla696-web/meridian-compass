@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "../../components/site/Reveal";
 import { AuditCta } from "../../components/site/AuditCta";
 import { FaqAccordion, buildFaqJsonLd } from "../../components/site/FaqAccordion";
-import { SITE_URL } from "../../lib/site-content";
+import { SITE_URL, buildBreadcrumbJsonLd } from "../../lib/site-content";
 
 const FAQS = [
   {
@@ -22,23 +22,23 @@ const FAQS = [
     a: "Yes — clear credentials, a straightforward explanation of your process, and genuine information about your background (not stock photography and vague mission statements) all give a referred prospect the specific reassurance they're looking for before the first call.",
   },
   {
-    q: "Do you work with independent brokers as well as advisory firms?",
-    a: "Yes — the approach is the same whether you're a sole practitioner or a small firm: license displayed prominently, credibility built through real information rather than marketing language, and a site that works as hard checking you out as your referral network does recommending you.",
+    q: "Do you work with independent financial brokers as well as advisory firms?",
+    a: "Yes — the approach is the same whether you're an independent financial broker or a small advisory firm: license displayed prominently, credibility built through real information rather than marketing language, and a site that works as hard checking you out as your referral network does recommending you.",
   },
 ];
 
 export const Route = createFileRoute("/for/financial-advisors-brokers")({
   head: () => ({
     meta: [
-      { title: "Websites for Financial Advisors & Brokers | Meridian Digital" },
+      { title: "Websites for Financial Brokers & Advisors | Meridian Digital" },
       {
         name: "description",
         content:
-          "Websites for FSP-licensed financial advisors and brokers — licence display, referral-checking credibility, and compliance-aware content, built for South African firms.",
+          "Websites for financial brokers and FSP-licensed financial advisors — licence display, referral-checking credibility, and compliance-aware content, built for South African firms.",
       },
       {
         property: "og:title",
-        content: "Websites for Financial Advisors & Brokers | Meridian Digital",
+        content: "Websites for Financial Brokers & Advisors | Meridian Digital",
       },
       {
         property: "og:description",
@@ -47,7 +47,18 @@ export const Route = createFileRoute("/for/financial-advisors-brokers")({
       { property: "og:url", content: `${SITE_URL}/for/financial-advisors-brokers` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/for/financial-advisors-brokers` }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Financial Advisors & Brokers", path: "/for/financial-advisors-brokers" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: Page,
 });
@@ -60,12 +71,14 @@ function Page() {
           <Reveal>
             <div className="label-eyebrow mb-4">Financial Advisors & Brokers</div>
             <h1 className="font-serif text-ivory text-4xl md:text-5xl mb-6 leading-tight">
-              Credibility, before the <span className="italic text-gold-soft">first call.</span>
+              Credibility for financial brokers,{" "}
+              <span className="italic text-gold-soft">before the first call.</span>
             </h1>
             <p className="text-ivory/70 leading-relaxed font-light text-lg">
-              A prospective client considering handing you their money almost always checks you out
-              online first — even off the back of a strong referral. What they find in those first
-              two minutes either confirms the referral or quietly undermines it.
+              Whether you're a financial broker or a financial advisor, a prospective client
+              considering handing you their money almost always checks you out online first — even
+              off the back of a strong referral. What they find in those first two minutes either
+              confirms the referral or quietly undermines it.
             </p>
           </Reveal>
 

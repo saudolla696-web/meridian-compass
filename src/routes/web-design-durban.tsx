@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "../components/site/Reveal";
 import { AuditCta } from "../components/site/AuditCta";
 import { FaqAccordion, buildFaqJsonLd } from "../components/site/FaqAccordion";
-import { SITE_URL } from "../lib/site-content";
+import { SITE_URL, buildBreadcrumbJsonLd } from "../lib/site-content";
 
 const FAQS = [
   {
@@ -40,7 +40,18 @@ export const Route = createFileRoute("/web-design-durban")({
       { property: "og:url", content: `${SITE_URL}/web-design-durban` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/web-design-durban` }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Web Design Durban", path: "/web-design-durban" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: Page,
 });

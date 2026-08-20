@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "../components/site/Reveal";
 import { AuditCta } from "../components/site/AuditCta";
 import { FaqAccordion, buildFaqJsonLd } from "../components/site/FaqAccordion";
-import { SITE_URL } from "../lib/site-content";
+import { SITE_URL, buildBreadcrumbJsonLd } from "../lib/site-content";
 
 const FAQS = [
   {
@@ -19,20 +19,23 @@ const FAQS = [
   },
   {
     q: "Can you help us rank specifically for Pietermaritzburg searches, not just KZN generally?",
-    a: "Yes — being explicit about Pietermaritzburg and the specific suburbs or nearby towns you serve, in both your content and Google Business Profile, is what separates showing up for a specific local search from being lost in generic province-wide results.",
+    a: "Yes — being explicit about Pietermaritzburg and the specific suburbs or nearby towns you serve, in both your content and Google Business Profile, is what separates showing up for a specific local search from being lost in generic province-wide results. Whether someone searches 'web design Pietermaritzburg,' 'web designer Pietermaritzburg,' or 'website development in Pietermaritzburg,' the goal is the same: your business shows up for the specific phrasing people actually type.",
   },
 ];
 
 export const Route = createFileRoute("/web-design-pietermaritzburg")({
   head: () => ({
     meta: [
-      { title: "Web Design in Pietermaritzburg | Meridian Digital" },
+      {
+        title:
+          "Web Design Pietermaritzburg — Web Designer & Website Development | Meridian Digital",
+      },
       {
         name: "description",
         content:
-          "Web design, SEO, and Google Business Profile management for Pietermaritzburg and Midlands businesses — built for the capital's professional-services market, live in days not months.",
+          "Web design Pietermaritzburg businesses trust: a web designer offering website development, SEO, and Google Business Profile management for the capital's professional-services market — live in days, not months.",
       },
-      { property: "og:title", content: "Web Design in Pietermaritzburg | Meridian Digital" },
+      { property: "og:title", content: "Web Design Pietermaritzburg | Meridian Digital" },
       {
         property: "og:description",
         content: "Websites built for Pietermaritzburg's professional and civic market.",
@@ -40,7 +43,18 @@ export const Route = createFileRoute("/web-design-pietermaritzburg")({
       { property: "og:url", content: `${SITE_URL}/web-design-pietermaritzburg` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/web-design-pietermaritzburg` }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Web Design Pietermaritzburg", path: "/web-design-pietermaritzburg" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: Page,
 });
@@ -53,13 +67,15 @@ function Page() {
           <Reveal>
             <div className="label-eyebrow mb-4">Pietermaritzburg</div>
             <h1 className="font-serif text-ivory text-4xl md:text-5xl mb-6 leading-tight">
-              Web design for <span className="italic text-gold-soft">the capital.</span>
+              Web design Pietermaritzburg{" "}
+              <span className="italic text-gold-soft">businesses trust.</span>
             </h1>
             <p className="text-ivory/70 leading-relaxed font-light text-lg">
               As KwaZulu-Natal's provincial capital and a university city, Pietermaritzburg has a
               strong concentration of legal, financial, and public-sector businesses alongside its
-              trades and retail. Reputation carries real weight here — the website needs to reflect
-              that credibility, not just chase search volume.
+              trades and retail — which is exactly why choosing the right web designer in
+              Pietermaritzburg matters. Reputation carries real weight here — your website
+              development needs to reflect that credibility, not just chase search volume.
             </p>
           </Reveal>
 
@@ -129,7 +145,9 @@ function Page() {
 
           <Reveal delay={0.2}>
             <div className="mt-12 bg-[#0c1a30] border border-white/8 p-8">
-              <h2 className="font-serif text-ivory text-xl mb-3">How we build it</h2>
+              <h2 className="font-serif text-ivory text-xl mb-3">
+                Website development, the same way every time
+              </h2>
               <p className="text-ivory/70 leading-relaxed font-light">
                 Same process everywhere: discovery, build, launch, ongoing care — live in days, not
                 months, at R6,500 once-off, with an optional R3,200-a-month retainer after that. See

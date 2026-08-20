@@ -3,7 +3,7 @@ import { Outlet, createRootRouteWithContext, HeadContent, Scripts } from "@tanst
 import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { SITE_URL } from "../lib/site-content";
+import { SITE_URL, ORGANIZATION_ID } from "../lib/site-content";
 import { Nav } from "../components/site/Nav";
 import { Footer } from "../components/site/Footer";
 import { NotFound } from "../components/site/NotFound";
@@ -13,9 +13,15 @@ const appleTouchIconUrl = "/apple-touch-icon.png";
 const professionalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": ORGANIZATION_ID,
   name: "Meridian Digital",
   telephone: "+27658839408",
-  areaServed: ["South Africa", "Durban", "Pietermaritzburg"],
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "KwaZulu-Natal",
+    addressCountry: "ZA",
+  },
+  areaServed: ["South Africa", "KwaZulu-Natal", "Durban", "Pietermaritzburg"],
   parentOrganization: { "@type": "Organization", name: "Meridian Holdings Group" },
   founder: {
     "@type": "Person",

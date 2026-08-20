@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "../../components/site/Reveal";
 import { AuditCta } from "../../components/site/AuditCta";
 import { FaqAccordion, buildFaqJsonLd } from "../../components/site/FaqAccordion";
-import { SITE_URL } from "../../lib/site-content";
+import { SITE_URL, buildBreadcrumbJsonLd } from "../../lib/site-content";
 
 const FAQS = [
   {
@@ -30,13 +30,16 @@ const FAQS = [
 export const Route = createFileRoute("/for/plumbers-electricians")({
   head: () => ({
     meta: [
-      { title: "Websites for Plumbers & Electricians in South Africa | Meridian Digital" },
+      { title: "Digital Marketing for Plumbers & Electricians | Meridian Digital" },
       {
         name: "description",
         content:
-          "Websites built for plumbers and electricians — PIRB and DoL registration displayed as trust signals, emergency call-out search behaviour, and a WhatsApp-first enquiry flow.",
+          "Digital marketing for plumbers and electricians — a website for plumbers in South Africa built with PIRB/DoL licensing as trust signals, emergency-search behaviour, and WhatsApp-first enquiries.",
       },
-      { property: "og:title", content: "Websites for Plumbers & Electricians | Meridian Digital" },
+      {
+        property: "og:title",
+        content: "Digital Marketing for Plumbers & Electricians | Meridian Digital",
+      },
       {
         property: "og:description",
         content: "Licensing displayed, emergency-search built for, WhatsApp-first enquiries.",
@@ -44,7 +47,18 @@ export const Route = createFileRoute("/for/plumbers-electricians")({
       { property: "og:url", content: `${SITE_URL}/for/plumbers-electricians` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/for/plumbers-electricians` }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(buildFaqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Plumbers & Electricians", path: "/for/plumbers-electricians" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: Page,
 });
@@ -57,13 +71,16 @@ function Page() {
           <Reveal>
             <div className="label-eyebrow mb-4">Plumbers & Electricians</div>
             <h1 className="font-serif text-ivory text-4xl md:text-5xl mb-6 leading-tight">
-              Licensed. Local. <span className="italic text-gold-soft">Findable.</span>
+              Digital marketing for plumbers,{" "}
+              <span className="italic text-gold-soft">done properly.</span>
             </h1>
             <p className="text-ivory/70 leading-relaxed font-light text-lg">
               You're PIRB-registered or DoL-registered, you show up on time, and you do the job
-              properly. None of that matters if the person searching "emergency plumber near me" at
-              11pm can't find you, or finds you but can't tell you're actually licensed before they
-              call someone else instead.
+              properly. What you need is digital marketing for plumbers that actually gets you found
+              — starting with a website for plumbers in South Africa that works as hard as you do.
+              None of that licensing or reliability matters if the person searching "emergency
+              plumber near me" at 11pm can't find you, or finds you but can't tell you're actually
+              licensed before they call someone else instead.
             </p>
           </Reveal>
 

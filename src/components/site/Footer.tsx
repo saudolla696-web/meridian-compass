@@ -53,6 +53,12 @@ export function Footer() {
             Case Studies
           </Link>
           <Link
+            to="/insights"
+            className="text-slate-muted hover:text-gold text-xs tracking-wide transition-colors"
+          >
+            Insights
+          </Link>
+          <Link
             to="/faq"
             className="text-slate-muted hover:text-gold text-xs tracking-wide transition-colors"
           >
@@ -97,6 +103,31 @@ export function Footer() {
               </Link>
             </nav>
           </div>
+          <div className="mb-6">
+            <div className="text-slate-muted/50 text-[0.6rem] uppercase tracking-[0.2em] mb-3">
+              Industries
+            </div>
+            <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+              <Link
+                to="/for/plumbers-electricians"
+                className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+              >
+                Plumbers & Electricians
+              </Link>
+              <Link
+                to="/for/financial-advisors-brokers"
+                className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+              >
+                Financial Advisors & Brokers
+              </Link>
+              <Link
+                to="/for/attorneys"
+                className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+              >
+                Attorneys
+              </Link>
+            </nav>
+          </div>
           <div>
             <div className="text-slate-muted/50 text-[0.6rem] uppercase tracking-[0.2em] mb-3">
               Service Areas
@@ -113,6 +144,24 @@ export function Footer() {
                 className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
               >
                 Web Design Pietermaritzburg
+              </Link>
+              <Link
+                to="/web-design-umhlanga"
+                className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+              >
+                Web Design Umhlanga
+              </Link>
+              <Link
+                to="/web-design-pinetown"
+                className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+              >
+                Web Design Pinetown
+              </Link>
+              <Link
+                to="/web-design-ballito"
+                className="text-slate-muted/70 hover:text-gold text-[0.7rem] tracking-wide transition-colors"
+              >
+                Web Design Ballito
               </Link>
             </nav>
           </div>

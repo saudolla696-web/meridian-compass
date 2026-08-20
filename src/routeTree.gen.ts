@@ -9,22 +9,37 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WebDesignUmhlangaRouteImport } from './routes/web-design-umhlanga'
+import { Route as WebDesignPinetownRouteImport } from './routes/web-design-pinetown'
 import { Route as WebDesignPietermaritzburgRouteImport } from './routes/web-design-pietermaritzburg'
 import { Route as WebDesignDurbanRouteImport } from './routes/web-design-durban'
+import { Route as WebDesignBallitoRouteImport } from './routes/web-design-ballito'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as InsightsIndexRouteImport } from './routes/insights/index'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies/index'
 import { Route as ServicesWebDesignRouteImport } from './routes/services/web-design'
 import { Route as ServicesSeoRouteImport } from './routes/services/seo'
 import { Route as ServicesGoogleBusinessProfileRouteImport } from './routes/services/google-business-profile'
 import { Route as ServicesAeoRouteImport } from './routes/services/aeo'
+import { Route as InsightsSlugRouteImport } from './routes/insights/$slug'
 import { Route as ForPlumbersElectriciansRouteImport } from './routes/for/plumbers-electricians'
 import { Route as ForFinancialAdvisorsBrokersRouteImport } from './routes/for/financial-advisors-brokers'
 import { Route as ForAttorneysRouteImport } from './routes/for/attorneys'
 import { Route as CaseStudiesIdRouteImport } from './routes/case-studies/$id'
 
+const WebDesignUmhlangaRoute = WebDesignUmhlangaRouteImport.update({
+  id: '/web-design-umhlanga',
+  path: '/web-design-umhlanga',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignPinetownRoute = WebDesignPinetownRouteImport.update({
+  id: '/web-design-pinetown',
+  path: '/web-design-pinetown',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WebDesignPietermaritzburgRoute =
   WebDesignPietermaritzburgRouteImport.update({
     id: '/web-design-pietermaritzburg',
@@ -34,6 +49,11 @@ const WebDesignPietermaritzburgRoute =
 const WebDesignDurbanRoute = WebDesignDurbanRouteImport.update({
   id: '/web-design-durban',
   path: '/web-design-durban',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignBallitoRoute = WebDesignBallitoRouteImport.update({
+  id: '/web-design-ballito',
+  path: '/web-design-ballito',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -54,6 +74,11 @@ const IndexRoute = IndexRouteImport.update({
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsIndexRoute = InsightsIndexRouteImport.update({
+  id: '/insights/',
+  path: '/insights/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
@@ -82,6 +107,11 @@ const ServicesAeoRoute = ServicesAeoRouteImport.update({
   path: '/services/aeo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsightsSlugRoute = InsightsSlugRouteImport.update({
+  id: '/insights/$slug',
+  path: '/insights/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ForPlumbersElectriciansRoute = ForPlumbersElectriciansRouteImport.update({
   id: '/for/plumbers-electricians',
   path: '/for/plumbers-electricians',
@@ -108,34 +138,44 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/web-design-ballito': typeof WebDesignBallitoRoute
   '/web-design-durban': typeof WebDesignDurbanRoute
   '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
+  '/web-design-pinetown': typeof WebDesignPinetownRoute
+  '/web-design-umhlanga': typeof WebDesignUmhlangaRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/for/attorneys': typeof ForAttorneysRoute
   '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
   '/for/plumbers-electricians': typeof ForPlumbersElectriciansRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/services/aeo': typeof ServicesAeoRoute
   '/services/google-business-profile': typeof ServicesGoogleBusinessProfileRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/web-design': typeof ServicesWebDesignRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
+  '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/web-design-ballito': typeof WebDesignBallitoRoute
   '/web-design-durban': typeof WebDesignDurbanRoute
   '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
+  '/web-design-pinetown': typeof WebDesignPinetownRoute
+  '/web-design-umhlanga': typeof WebDesignUmhlangaRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/for/attorneys': typeof ForAttorneysRoute
   '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
   '/for/plumbers-electricians': typeof ForPlumbersElectriciansRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/services/aeo': typeof ServicesAeoRoute
   '/services/google-business-profile': typeof ServicesGoogleBusinessProfileRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/web-design': typeof ServicesWebDesignRoute
   '/case-studies': typeof CaseStudiesIndexRoute
+  '/insights': typeof InsightsIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
@@ -143,17 +183,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/web-design-ballito': typeof WebDesignBallitoRoute
   '/web-design-durban': typeof WebDesignDurbanRoute
   '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
+  '/web-design-pinetown': typeof WebDesignPinetownRoute
+  '/web-design-umhlanga': typeof WebDesignUmhlangaRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/for/attorneys': typeof ForAttorneysRoute
   '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
   '/for/plumbers-electricians': typeof ForPlumbersElectriciansRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/services/aeo': typeof ServicesAeoRoute
   '/services/google-business-profile': typeof ServicesGoogleBusinessProfileRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/web-design': typeof ServicesWebDesignRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
+  '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -162,51 +207,66 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/faq'
+    | '/web-design-ballito'
     | '/web-design-durban'
     | '/web-design-pietermaritzburg'
+    | '/web-design-pinetown'
+    | '/web-design-umhlanga'
     | '/case-studies/$id'
     | '/for/attorneys'
     | '/for/financial-advisors-brokers'
     | '/for/plumbers-electricians'
+    | '/insights/$slug'
     | '/services/aeo'
     | '/services/google-business-profile'
     | '/services/seo'
     | '/services/web-design'
     | '/case-studies/'
+    | '/insights/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contact'
     | '/faq'
+    | '/web-design-ballito'
     | '/web-design-durban'
     | '/web-design-pietermaritzburg'
+    | '/web-design-pinetown'
+    | '/web-design-umhlanga'
     | '/case-studies/$id'
     | '/for/attorneys'
     | '/for/financial-advisors-brokers'
     | '/for/plumbers-electricians'
+    | '/insights/$slug'
     | '/services/aeo'
     | '/services/google-business-profile'
     | '/services/seo'
     | '/services/web-design'
     | '/case-studies'
+    | '/insights'
     | '/services'
   id:
     | '__root__'
     | '/'
     | '/contact'
     | '/faq'
+    | '/web-design-ballito'
     | '/web-design-durban'
     | '/web-design-pietermaritzburg'
+    | '/web-design-pinetown'
+    | '/web-design-umhlanga'
     | '/case-studies/$id'
     | '/for/attorneys'
     | '/for/financial-advisors-brokers'
     | '/for/plumbers-electricians'
+    | '/insights/$slug'
     | '/services/aeo'
     | '/services/google-business-profile'
     | '/services/seo'
     | '/services/web-design'
     | '/case-studies/'
+    | '/insights/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
@@ -214,22 +274,41 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
+  WebDesignBallitoRoute: typeof WebDesignBallitoRoute
   WebDesignDurbanRoute: typeof WebDesignDurbanRoute
   WebDesignPietermaritzburgRoute: typeof WebDesignPietermaritzburgRoute
+  WebDesignPinetownRoute: typeof WebDesignPinetownRoute
+  WebDesignUmhlangaRoute: typeof WebDesignUmhlangaRoute
   CaseStudiesIdRoute: typeof CaseStudiesIdRoute
   ForAttorneysRoute: typeof ForAttorneysRoute
   ForFinancialAdvisorsBrokersRoute: typeof ForFinancialAdvisorsBrokersRoute
   ForPlumbersElectriciansRoute: typeof ForPlumbersElectriciansRoute
+  InsightsSlugRoute: typeof InsightsSlugRoute
   ServicesAeoRoute: typeof ServicesAeoRoute
   ServicesGoogleBusinessProfileRoute: typeof ServicesGoogleBusinessProfileRoute
   ServicesSeoRoute: typeof ServicesSeoRoute
   ServicesWebDesignRoute: typeof ServicesWebDesignRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
+  InsightsIndexRoute: typeof InsightsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/web-design-umhlanga': {
+      id: '/web-design-umhlanga'
+      path: '/web-design-umhlanga'
+      fullPath: '/web-design-umhlanga'
+      preLoaderRoute: typeof WebDesignUmhlangaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-design-pinetown': {
+      id: '/web-design-pinetown'
+      path: '/web-design-pinetown'
+      fullPath: '/web-design-pinetown'
+      preLoaderRoute: typeof WebDesignPinetownRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/web-design-pietermaritzburg': {
       id: '/web-design-pietermaritzburg'
       path: '/web-design-pietermaritzburg'
@@ -242,6 +321,13 @@ declare module '@tanstack/react-router' {
       path: '/web-design-durban'
       fullPath: '/web-design-durban'
       preLoaderRoute: typeof WebDesignDurbanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-design-ballito': {
+      id: '/web-design-ballito'
+      path: '/web-design-ballito'
+      fullPath: '/web-design-ballito'
+      preLoaderRoute: typeof WebDesignBallitoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -270,6 +356,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services/'
       preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/': {
+      id: '/insights/'
+      path: '/insights'
+      fullPath: '/insights/'
+      preLoaderRoute: typeof InsightsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies/': {
@@ -307,6 +400,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAeoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/$slug': {
+      id: '/insights/$slug'
+      path: '/insights/$slug'
+      fullPath: '/insights/$slug'
+      preLoaderRoute: typeof InsightsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/for/plumbers-electricians': {
       id: '/for/plumbers-electricians'
       path: '/for/plumbers-electricians'
@@ -342,17 +442,22 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
+  WebDesignBallitoRoute: WebDesignBallitoRoute,
   WebDesignDurbanRoute: WebDesignDurbanRoute,
   WebDesignPietermaritzburgRoute: WebDesignPietermaritzburgRoute,
+  WebDesignPinetownRoute: WebDesignPinetownRoute,
+  WebDesignUmhlangaRoute: WebDesignUmhlangaRoute,
   CaseStudiesIdRoute: CaseStudiesIdRoute,
   ForAttorneysRoute: ForAttorneysRoute,
   ForFinancialAdvisorsBrokersRoute: ForFinancialAdvisorsBrokersRoute,
   ForPlumbersElectriciansRoute: ForPlumbersElectriciansRoute,
+  InsightsSlugRoute: InsightsSlugRoute,
   ServicesAeoRoute: ServicesAeoRoute,
   ServicesGoogleBusinessProfileRoute: ServicesGoogleBusinessProfileRoute,
   ServicesSeoRoute: ServicesSeoRoute,
   ServicesWebDesignRoute: ServicesWebDesignRoute,
   CaseStudiesIndexRoute: CaseStudiesIndexRoute,
+  InsightsIndexRoute: InsightsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
