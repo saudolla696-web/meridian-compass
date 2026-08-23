@@ -307,7 +307,7 @@ function ServicesPreview() {
 /* ---------------- Founding ---------------- */
 function Founding() {
   const stats = [
-    { v: "R6,500", l: "Once-off build" },
+    { v: "R15 000", l: "Once-off build" },
     { v: "R3,200", l: "Optional monthly care" },
     { v: "12", l: "Months at this rate" },
   ];
@@ -338,7 +338,7 @@ function Founding() {
         </Reveal>
         <Reveal delay={0.18}>
           <p className="text-ivory/70 max-w-2xl mx-auto mt-10 text-sm md:text-base leading-relaxed font-light">
-            The R6,500 build is once-off, full stop. The R3,200 monthly retainer is there if you
+            The R15 000 build is once-off, full stop. The R3,200 monthly retainer is there if you
             want it — ongoing SEO/AEO, Google Business Profile management, and a direct line for
             changes — but it's your call, not a condition of the build. Plenty of clients start with
             the build alone and add the retainer later, or not at all.

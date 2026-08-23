@@ -83,7 +83,7 @@ export const FAQS = [
   },
   {
     q: "What happens once the Founding Client rate is no longer available?",
-    a: "Founding pricing is tied to the case-study trade: when we publish results for a business, that page fills up. Once it does, pricing moves to standard rates for new clients. Existing Founding Clients keep their locked R6,500 build price and, if they've taken it, the R3,200 monthly retainer rate for the full 12 months regardless.",
+    a: "Founding pricing is tied to the case-study trade: when we publish results for a business, that page fills up. Once it does, pricing moves to standard rates for new clients. Existing Founding Clients keep their locked R15 000 build price and, if they've taken it, the R3,200 monthly retainer rate for the full 12 months regardless.",
   },
   {
     q: "Do you only work with businesses in KwaZulu-Natal?",
@@ -95,7 +95,7 @@ export const FAQS = [
   },
   {
     q: "Do I have to take the R3,200 monthly retainer?",
-    a: "No. The build is a once-off R6,500 with no ongoing obligation. The retainer is optional — it covers ongoing SEO and AEO maintenance, Google Business Profile management, CRM upkeep, and a direct line to make changes, so the site doesn't go live and get abandoned. Take it if that's useful to you; skip it if it isn't.",
+    a: "No. The build is a once-off R15 000 with no ongoing obligation. The retainer is optional — it covers ongoing SEO and AEO maintenance, Google Business Profile management, CRM upkeep, and a direct line to make changes, so the site doesn't go live and get abandoned. Take it if that's useful to you; skip it if it isn't.",
   },
 ];
 
