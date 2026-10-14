@@ -86,6 +86,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.meridiandigital.co.za/case-studies/ghost-portuguese-inspired</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.meridiandigital.co.za/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -79,7 +79,7 @@ export const FAQS = [
   },
   {
     q: "Do you have client case studies?",
-    a: "One published so far — our own security division, fully disclosed, because we'd rather show you honest work than pad this page. Founding clients get founder pricing partly because their results become the case studies. Early has its advantages.",
+    a: "Yes — including Ghost Portuguese Inspired in Ballito and our own security division, fully disclosed. We'd rather show you honest work than pad the page. Founding clients get founder pricing partly because their results become the case studies. Early has its advantages.",
   },
   {
     q: "What happens once the Founding Client rate is no longer available?",
@@ -119,6 +119,23 @@ export type CaseStudy = {
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
+  {
+    id: "ghost-portuguese-inspired",
+    domain: "ghostportugueseinspired.co.za",
+    initials: "GPI",
+    name: "Ghost Portuguese Inspired",
+    meta: "Portuguese-Inspired Restaurant · Ballito, KwaZulu-Natal",
+    body: "Full website build for a SANHA-certified Halaal restaurant in Ballito — designed to bring the brand's flame-grilled food, reservation journey, and local presence together in one memorable experience.",
+    image: "/proof-ghost-portuguese-inspired.png",
+    brief:
+      "Create a premium digital home for Ghost Portuguese Inspired that reflects its Portuguese soul and Ballito heart, while making it effortless for hungry guests to explore the menu, reserve a table, and find the restaurant.",
+    whatWeBuilt:
+      "A bold, mobile-first restaurant website that leads with the food and brand story, gives guests clear paths to the menu and table enquiries, and keeps key practical details — including location, Halaal certification, and WhatsApp contact — immediately accessible.",
+    trustEngineering:
+      "SANHA-certified Halaal dining is made visible from the first screen, alongside the restaurant's Gregory Park location and direct contact route. These details give new guests the confidence to choose Ghost before they even arrive.",
+    results:
+      "The new site gives Ghost a distinctive, conversion-focused home for its Ballito audience — built to turn local discovery into menu exploration, table enquiries, and visits.",
+  },
   {
     id: "interceptor-rapid-response",
     domain: "interceptorsecurity.co.za",
