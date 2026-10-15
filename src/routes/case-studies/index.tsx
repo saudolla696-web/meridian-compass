@@ -40,12 +40,9 @@ function CaseStudiesIndex() {
             </h1>
           </div>
         </Reveal>
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-2 gap-4 sm:gap-8">
           {CASE_STUDIES.map((p, i) => (
-            <div
-              key={p.id}
-              className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] max-w-md"
-            >
+            <div key={p.id} className="min-w-0">
               <BrowserCard p={p} i={i} />
             </div>
           ))}
