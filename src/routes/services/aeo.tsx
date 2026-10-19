@@ -143,9 +143,9 @@ function AeoPage() {
             <div className="mt-12 bg-[#0c1a30] border border-white/8 p-8">
               <h2 className="font-serif text-ivory text-xl mb-3">How it's priced</h2>
               <p className="text-ivory/70 leading-relaxed font-light">
-                AEO is built into every site we make and maintained as part of the R3,200 monthly
-                retainer alongside SEO and Google Business Profile management — it's not a separate
-                add-on tier.
+                AEO is built into every website package. Ongoing AI search visibility is included in
+                Get Chosen and SEO + AI Growth, our R6,500/month visibility packages with growth
+                tracking — it is not sold as a separate add-on.
               </p>
             </div>
           </Reveal>

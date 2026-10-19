@@ -7,7 +7,7 @@ import { SERVICES, FAQS, SITE_URL } from "../lib/site-content";
 
 const HOME_FAQ_QUESTIONS = [
   "How fast is 'days, not months'?",
-  "What exactly is the free audit?",
+  "What is the Visibility Audit?",
   "Do you only work with businesses in KwaZulu-Natal?",
   "I already have a website. Is there a point talking to you?",
 ];
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Free 10-point audit of your website and Google presence. Meridian Digital builds websites and search visibility for South African businesses — live in days, not months.",
+          "Custom websites, SEO and AI search visibility packages for South African businesses.",
       },
       {
         property: "og:title",
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Websites, search presence, and Google visibility for South African businesses — live in days, not months. Free audit, no obligation.",
+          "Websites, SEO, Google visibility and AI search packages for South African businesses.",
       },
       { property: "og:url", content: SITE_URL },
     ],
@@ -183,7 +183,7 @@ function Hero() {
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
           <Link to="/contact" className="btn-gold btn-gold-hover">
-            Get Your Free Audit
+            Explore Packages
           </Link>
           <a
             href="https://wa.me/27658839408"
@@ -195,8 +195,8 @@ function Hero() {
           </a>
         </div>
         <p className="mt-6 text-slate-muted text-xs md:text-sm max-w-md mx-auto">
-          Free 10-point audit of your website and Google presence. Three specific things to fix —
-          useful whether you hire us or not.
+          Already have a website? Start with a R1,500 Visibility Audit, credited toward your first
+          month when you proceed.
         </p>
       </div>
     </section>
@@ -241,10 +241,10 @@ function Problem() {
         <Reveal delay={0.3}>
           <div className="text-center mt-14">
             <p className="text-ivory/80 font-light text-lg mb-8">
-              We'll show you exactly what's broken — for free — before you spend a rand.
+              Already have a website? We'll show you exactly what is working before you commit to a plan.
             </p>
             <Link to="/contact" className="btn-gold btn-gold-hover">
-              Get Your Free Audit
+              Book a Visibility Audit
             </Link>
           </div>
         </Reveal>
@@ -304,71 +304,45 @@ function ServicesPreview() {
   );
 }
 
-/* ---------------- Founding ---------------- */
-function Founding() {
-  const stats = [
-    { v: "R15 000", l: "Once-off build" },
-    { v: "R3,200", l: "Optional monthly care" },
-    { v: "12", l: "Months at this rate" },
-  ];
+/* ---------------- Packages ---------------- */
+const WEBSITE_PACKAGES = [
+  { name: "Get Online", price: "R10,000", sub: "once-off build + R599/month Meridian Care", items: ["Custom site, up to 6 pages", "Mobile-first, fast-loading design", "Domain, SSL & managed hosting", "Backups, security & maintenance", "Google Analytics & technical support"], best: "A professional website with ongoing care." },
+  { name: "Get Found", price: "R7,500", sub: "once-off build + R3,500/month visibility retainer", items: ["Everything in Get Online", "Monthly on-page SEO", "Google Business Profile management", "Keyword tracking & monthly report", "Local search improvements"], best: "Businesses ready to rank on Google and Maps consistently." },
+  { name: "Get Chosen", price: "R7,500", sub: "once-off build + R6,500/month + growth bonus", items: ["Everything in Get Found", "AI search visibility", "Local map ranking optimisation", "Dedicated tracked call & lead number", "Quarterly strategy review"], best: "Full SEO, AI visibility and growth tracking.", bonus: true },
+];
+
+const VISIBILITY_PACKAGES = [
+  { name: "SEO Essentials", price: "R3,500", sub: "per month · no lock-in", items: ["Monthly on-page SEO", "Google Business Profile management", "Keyword tracking & monthly report", "Local search improvements", "Cancel anytime, no contract"], best: "Existing sites seeking Google and Maps visibility." },
+  { name: "SEO + AI Growth", price: "R6,500", sub: "per month + growth bonus", items: ["Everything in SEO Essentials", "AI search visibility", "Local map ranking optimisation", "Dedicated tracked call & lead number", "Quarterly strategy review"], best: "Businesses that want full visibility and growth tracking.", bonus: true },
+];
+
+function PackageCard({ pkg }: { pkg: (typeof WEBSITE_PACKAGES)[number] }) {
   return (
-    <section id="founding" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto bg-[#11203A] border border-gold/20 px-8 md:px-16 py-16 md:py-20 text-center relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-12 bg-gradient-to-b from-transparent to-gold" />
+    <div className="bg-[#0c1a30] border border-white/10 p-6 text-left h-full">
+      {pkg.bonus && <div className="text-gold text-[0.65rem] tracking-[0.15em] mb-3">GROWTH BONUS INCLUDED</div>}
+      <h3 className="font-serif text-ivory text-2xl">{pkg.name}</h3>
+      <p className="font-serif text-gold text-2xl mt-4">{pkg.price}</p>
+      <p className="text-ivory/60 text-sm mt-1 min-h-10">{pkg.sub}</p>
+      <ul className="mt-6 space-y-2 text-ivory/70 text-sm font-light">{pkg.items.map((item) => <li key={item}>— {item}</li>)}</ul>
+      {pkg.bonus && <p className="text-gold-soft/80 text-xs mt-5">Bonus: R75 per tracked lead above baseline*</p>}
+      <p className="text-ivory/55 text-xs leading-relaxed mt-6">Best for: {pkg.best}</p>
+    </div>
+  );
+}
+
+function Pricing() {
+  return (
+    <section id="pricing" className="py-24 px-6 bg-[#060D18]">
+      <div className="max-w-6xl mx-auto text-center">
         <Reveal>
-          <div className="label-eyebrow mb-4">Founding Client Rate</div>
+          <div className="label-eyebrow mb-4">Packages & Pricing</div>
           <h2 className="font-serif text-ivory text-3xl md:text-5xl max-w-3xl mx-auto leading-tight">
-            The Founding Client rate{" "}
-            <span className="italic text-gold-soft">— and why it exists.</span>
+            Choose where you are. <span className="italic text-gold-soft">We’ll take it from there.</span>
           </h2>
         </Reveal>
-        <Reveal delay={0.15}>
-          <div className="mt-14 grid grid-cols-3 gap-8 md:gap-4 border-y border-white/10 py-10">
-            {stats.map((s) => (
-              <div key={s.l}>
-                <div className="font-serif text-gold text-2xl sm:text-3xl md:text-4xl mb-2">
-                  {s.v}
-                </div>
-                <div className="text-slate-muted text-[0.7rem] uppercase tracking-[0.18em]">
-                  {s.l}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-        <Reveal delay={0.18}>
-          <p className="text-ivory/70 max-w-2xl mx-auto mt-10 text-sm md:text-base leading-relaxed font-light">
-            The R15 000 build is once-off, full stop. The R3,200 monthly retainer is there if you
-            want it — ongoing SEO/AEO, Google Business Profile management, and a direct line for
-            changes — but it's your call, not a condition of the build. Plenty of clients start with
-            the build alone and add the retainer later, or not at all.
-          </p>
-        </Reveal>
-        <Reveal delay={0.19}>
-          <p className="text-ivory/70 max-w-2xl mx-auto mt-6 text-sm md:text-base leading-relaxed font-light">
-            What's one new customer worth to you? For most of the businesses we work with —
-            plumbers, electricians, brokers, attorneys — a single new client covers the retainer for
-            months. If you do take it and your website isn't producing at least that, it's costing
-            you more than we do.
-          </p>
-        </Reveal>
-        <Reveal delay={0.2}>
-          <p className="text-ivory/70 max-w-2xl mx-auto mt-6 text-sm md:text-base leading-relaxed font-light">
-            We're early. You can see that — we've shown you our own work, not a wall of logos. Early
-            is worth something to you: founder pricing, founder attention, and a partner with
-            everything to prove.
-          </p>
-          <p className="text-ivory/70 max-w-2xl mx-auto mt-6 text-sm md:text-base leading-relaxed font-light">
-            In exchange, we ask for one thing: when we get you results, we publish them. Your
-            business becomes a named case study on this page — real numbers, your words.
-          </p>
-          <p className="text-ivory/80 max-w-2xl mx-auto mt-6 text-sm md:text-base leading-relaxed">
-            That's the trade. Founding rates end when the case-study page fills up.
-          </p>
-          <Link to="/contact" className="btn-gold btn-gold-hover mt-8">
-            Get Your Free Audit
-          </Link>
-        </Reveal>
+        <Reveal delay={0.12}><h3 className="font-serif text-ivory text-2xl mt-14 mb-6">Website + Visibility</h3><p className="text-ivory/65 max-w-2xl mx-auto mb-8">For a new website or one that needs replacing. Every tier includes a custom build; the difference is what happens after launch.</p><div className="grid grid-cols-1 md:grid-cols-3 gap-5">{WEBSITE_PACKAGES.map((pkg) => <PackageCard key={pkg.name} pkg={pkg} />)}</div></Reveal>
+        <Reveal delay={0.18}><div className="mt-14 border border-gold/30 bg-[#11203A] p-7"><div className="label-eyebrow mb-3">Existing Website?</div><h3 className="font-serif text-ivory text-2xl">Visibility Audit — R1,500 once-off</h3><p className="text-ivory/70 max-w-2xl mx-auto mt-3 font-light">We check your site’s technical health, local search presence and AI visibility. It is credited toward your first month if you proceed.</p></div></Reveal>
+        <Reveal delay={0.22}><h3 className="font-serif text-ivory text-2xl mt-14 mb-6">SEO & AI Visibility</h3><div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">{VISIBILITY_PACKAGES.map((pkg) => <PackageCard key={pkg.name} pkg={pkg} />)}</div><p className="text-slate-muted text-xs mt-6">*Growth bonus is R75 per tracked lead above the agreed monthly baseline, capped monthly.</p><Link to="/contact" className="btn-gold btn-gold-hover mt-8">Talk through your package</Link></Reveal>
       </div>
     </section>
   );
@@ -411,15 +385,14 @@ function ClosingCta() {
         <Reveal>
           <div className="label-eyebrow mb-4">Get Started</div>
           <h2 className="font-serif text-ivory text-4xl md:text-5xl mb-6 leading-tight">
-            Get your free <span className="italic text-gold-soft">10-point audit.</span>
+            Start with a <span className="italic text-gold-soft">Visibility Audit.</span>
           </h2>
           <p className="text-ivory/70 leading-relaxed font-light text-[1.02rem] max-w-md mx-auto mb-10">
-            No obligation, no jargon — just the three most important things to fix in your online
-            presence.
+            R1,500 once-off for an honest view of your website, local search and AI visibility — credited toward your first month when you proceed.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <Link to="/contact" className="btn-gold btn-gold-hover">
-              Get Your Free Audit
+              Book a Visibility Audit
             </Link>
             <a href="tel:+27658839408" className="btn-ghost-gold">
               065 883 9408
@@ -446,7 +419,7 @@ function Page() {
       <Hero />
       <Problem />
       <ServicesPreview />
-      <Founding />
+      <Pricing />
       <HomeFaq />
       <ClosingCta />
     </>

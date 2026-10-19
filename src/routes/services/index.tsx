@@ -165,11 +165,11 @@ function ServicesPage() {
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <Link to="/contact" className="btn-gold btn-gold-hover">
-              Get Your Free Audit
+              Book a Visibility Audit
             </Link>
             <Link
               to="/"
-              hash="founding"
+              hash="pricing"
               hashScrollIntoViewOptions={{ behavior: "smooth" }}
               className="text-ivory/70 hover:text-gold text-sm tracking-wide transition-colors"
             >

@@ -22,8 +22,8 @@ const FAQS = [
     a: "Yes. SEO earns your place in the free/organic results through site quality and relevance. Paid ads buy a temporary slot at the top and stop working the moment you stop paying. SEO takes longer to build but keeps working after it's built.",
   },
   {
-    q: "What's included in the R3,200 monthly retainer?",
-    a: "Ongoing SEO and AEO maintenance, Google Business Profile management, ongoing technical health checks, and a direct line to us to ask what's working and what isn't — not a support ticket queue.",
+    q: "What are the SEO package options?",
+    a: "For an existing site, start with the R1,500 Visibility Audit. SEO Essentials is R3,500/month with no lock-in. SEO + AI Growth is R6,500/month plus a growth bonus and adds AI visibility, local map ranking, lead tracking and quarterly strategy reviews.",
   },
 ];
 
@@ -157,9 +157,10 @@ function SeoPage() {
             <div className="mt-12 bg-[#0c1a30] border border-white/8 p-8">
               <h2 className="font-serif text-ivory text-xl mb-3">How it's priced</h2>
               <p className="text-ivory/70 leading-relaxed font-light">
-                SEO is bundled into the R3,200 monthly retainer alongside Google Business Profile
-                management and AEO — not sold as a separate line item that competes for budget
-                against the rest of your online presence.
+                Existing sites begin with a R1,500 Visibility Audit, credited toward the first month
+                if you proceed. SEO Essentials is R3,500/month with Google Business Profile
+                management and local optimisation. SEO + AI Growth is R6,500/month plus a growth
+                bonus, adding AI visibility, local map ranking and lead tracking.
               </p>
             </div>
           </Reveal>

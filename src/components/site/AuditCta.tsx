@@ -8,7 +8,7 @@ export function AuditCta({ heading = "Want to know where yours stands?" }: { hea
         <h2 className="font-serif text-ivory text-3xl md:text-4xl mb-8">{heading}</h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <Link to="/contact" className="btn-gold btn-gold-hover">
-            Get Your Free Audit
+            Book a Visibility Audit
           </Link>
           <a
             href="https://wa.me/27658839408"

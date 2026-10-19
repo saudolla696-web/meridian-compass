@@ -11,16 +11,16 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Get Your Free Audit — Meridian Digital" },
+      { title: "Book a Visibility Audit — Meridian Digital" },
       {
         name: "description",
         content:
-          "Get a free 10-point audit of your website and Google presence from Meridian Digital. Three specific things to fix, in plain language — no obligation.",
+          "Book a R1,500 Visibility Audit of your website, local search presence and AI visibility. Credited toward your first month if you proceed.",
       },
-      { property: "og:title", content: "Get Your Free Audit | Meridian Digital" },
+      { property: "og:title", content: "Book a Visibility Audit | Meridian Digital" },
       {
         property: "og:description",
-        content: "No obligation, no jargon — the three most important things to fix, for free.",
+        content: "An honest R1,500 audit of your website, local search and AI visibility.",
       },
       { property: "og:url", content: `${SITE_URL}/contact` },
     ],
@@ -36,19 +36,18 @@ function ContactPage() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
         <Reveal>
           <div>
-            <div className="label-eyebrow mb-4">Free Audit</div>
+            <div className="label-eyebrow mb-4">Visibility Audit</div>
             <h1 className="font-serif text-ivory text-4xl md:text-5xl mb-6 leading-tight">
-              Get your free <span className="italic text-gold-soft">10-point audit.</span>
+              Start with a <span className="italic text-gold-soft">Visibility Audit.</span>
             </h1>
             <p className="text-ivory/70 leading-relaxed font-light text-[1.02rem] max-w-md mb-5">
-              Tell us your business name and website (or Facebook page — no website is exactly the
-              kind of thing we find). Within 2 business days we'll send you a short audit: the three
-              most important things broken or missing in your online presence, and what fixing them
-              would do.
+              For R1,500 once-off, we check your existing site’s technical health, local search
+              presence and AI visibility. If you proceed with a monthly plan, the audit is credited
+              toward your first month.
             </p>
             <p className="text-ivory/70 leading-relaxed font-light text-[1.02rem] max-w-md">
-              No meeting required. No obligation. If you never speak to us again, you'll still know
-              exactly what to fix.
+              We’ll tell you plainly what is working, what needs attention, and whether your site
+              needs rebuilding before we recommend a plan.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="tel:+27658839408" className="btn-ghost-gold">

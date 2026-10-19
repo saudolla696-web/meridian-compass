@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { to: "/services" as const, label: "Services" },
   { to: "/case-studies" as const, label: "Case Studies" },
   { to: "/insights" as const, label: "Insights" },
-  { to: "/" as const, hash: "founding", label: "Pricing" },
+  { to: "/" as const, hash: "pricing", label: "Pricing" },
   { to: "/faq" as const, label: "FAQ" },
 ];
 
@@ -76,7 +76,7 @@ export function Nav() {
             </Link>
           ))}
           <Link to="/contact" className="btn-ghost-gold">
-            Get Your Free Audit
+            Book a Visibility Audit
           </Link>
         </nav>
         <button
@@ -154,7 +154,7 @@ export function Nav() {
                   onClick={() => setOpen(false)}
                   className="btn-ghost-gold self-start mt-5 mb-2"
                 >
-                  Get Your Free Audit
+                  Book a Visibility Audit
                 </Link>
               </nav>
             </motion.div>

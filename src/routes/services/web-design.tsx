@@ -19,7 +19,7 @@ const FAQS = [
   },
   {
     q: "What happens after launch — is it a one-time thing?",
-    a: "The build is once-off (R15 000) and it's yours regardless of what you do next. If you want us to keep it performing — security updates, small content changes, and the SEO/AEO/Google Business Profile work that keeps you findable — that's an optional R3,200 monthly retainer, not a requirement.",
+    a: "Choose the package that fits your next step: Get Online is R10,000 once-off plus R599/month Meridian Care; Get Found and Get Chosen start at R7,500 once-off with visibility retainers. Every package includes a custom build; the difference is the ongoing visibility support.",
   },
   {
     q: "What if I need changes after the site is live?",
@@ -170,17 +170,10 @@ function WebDesignPage() {
             <div className="mt-12 bg-[#0c1a30] border border-white/8 p-8">
               <h2 className="font-serif text-ivory text-xl mb-3">What it costs</h2>
               <p className="text-ivory/70 leading-relaxed font-light">
-                R15 000 once-off for the build — no ongoing obligation attached. If you want us to
-                keep hosting, security, and SEO/AEO/Google Business Profile work moving afterward,
-                that's an optional R3,200-a-month retainer, your choice to take or leave. Founding
-                Client rates are available now — see the{" "}
-                <a
-                  href="/#founding"
-                  className="text-gold hover:text-gold-soft transition-colors underline underline-offset-2"
-                >
-                  pricing section
-                </a>{" "}
-                for why that rate exists and how long it's available.
+                Get Online is R10,000 once-off plus R599/month Meridian Care. If visibility is the
+                priority, Get Found is R7,500 once-off plus R3,500/month, while Get Chosen is
+                R7,500 once-off plus R6,500/month and a growth bonus. See the pricing section for
+                each package’s inclusions.
               </p>
             </div>
           </Reveal>

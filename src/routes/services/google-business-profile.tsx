@@ -160,9 +160,9 @@ function GbpPage() {
             <div className="mt-12 bg-[#0c1a30] border border-white/8 p-8">
               <h2 className="font-serif text-ivory text-xl mb-3">How it's priced</h2>
               <p className="text-ivory/70 leading-relaxed font-light">
-                Google Business Profile setup and ongoing management is included in the R3,200
-                monthly retainer alongside SEO and AEO — one number, not three separate invoices for
-                three parts of the same problem.
+                Google Business Profile setup and management is included in Get Found, Get Chosen,
+                SEO Essentials and SEO + AI Growth — part of one visibility plan rather than a
+                separate invoice for each piece of the problem.
               </p>
             </div>
           </Reveal>

@@ -70,8 +70,8 @@ export const FAQS = [
     a: "Most builds go live within the first week. Speed comes from a modern toolchain and a tight process, not from cutting corners — you'll see the site before it launches and nothing goes live without your sign-off.",
   },
   {
-    q: "What exactly is the free audit?",
-    a: "Ten specific checks on your website and Google presence — speed, mobile experience, whether Google can actually read your pages, how you show up on Maps, and whether AI assistants can find you. You get the three most important findings in plain language, with no obligation.",
+    q: "What is the Visibility Audit?",
+    a: "It is a R1,500 once-off review for businesses with an existing website. We check technical health, local search presence and AI visibility before recommending a monthly plan. If you proceed, the fee is credited toward your first month.",
   },
   {
     q: "What is Answer Engine Optimisation (AEO), in plain terms?",
@@ -79,11 +79,11 @@ export const FAQS = [
   },
   {
     q: "Do you have client case studies?",
-    a: "Yes — including Ghost Portuguese Inspired in Ballito and our own security division, fully disclosed. We'd rather show you honest work than pad the page. Founding clients get founder pricing partly because their results become the case studies. Early has its advantages.",
+    a: "Yes — including Ghost Portuguese Inspired in Ballito and our own security division, fully disclosed. We'd rather show you honest work than pad the page.",
   },
   {
-    q: "What happens once the Founding Client rate is no longer available?",
-    a: "Founding pricing is tied to the case-study trade: when we publish results for a business, that page fills up. Once it does, pricing moves to standard rates for new clients. Existing Founding Clients keep their locked R15 000 build price and, if they've taken it, the R3,200 monthly retainer rate for the full 12 months regardless.",
+    q: "How does the growth bonus work?",
+    a: "On Get Chosen and SEO + AI Growth, we use a dedicated tracked call and lead number. A R75 bonus applies to each tracked lead above the agreed monthly baseline, capped monthly.",
   },
   {
     q: "Do you only work with businesses in KwaZulu-Natal?",
@@ -91,11 +91,11 @@ export const FAQS = [
   },
   {
     q: "I already have a website. Is there a point talking to you?",
-    a: "Usually, yes — most existing sites we audit are missing Google Business Profile setup, have no AEO structure, or haven't been touched since they were built. We'll tell you plainly what's working and what isn't before recommending anything.",
+    a: "Usually, yes — most existing sites we review are missing Google Business Profile setup, have no AEO structure, or haven't been touched since they were built. Start with the R1,500 Visibility Audit and we’ll tell you plainly what’s working before recommending anything.",
   },
   {
-    q: "Do I have to take the R3,200 monthly retainer?",
-    a: "No. The build is a once-off R15 000 with no ongoing obligation. The retainer is optional — it covers ongoing SEO and AEO maintenance, Google Business Profile management, CRM upkeep, and a direct line to make changes, so the site doesn't go live and get abandoned. Take it if that's useful to you; skip it if it isn't.",
+    q: "Is there a contract on the monthly plans?",
+    a: "SEO Essentials is R3,500 per month with no lock-in: you can cancel anytime. We’ll explain the terms of any other package clearly before work begins.",
   },
 ];
 

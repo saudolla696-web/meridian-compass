@@ -49,7 +49,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Free 10-point audit of your website and Google presence. Meridian Digital builds websites and search visibility for South African businesses — live in days, not months.",
+          "Custom websites, SEO and AI search visibility packages for South African businesses.",
       },
       {
         property: "og:title",
@@ -58,7 +58,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Websites, search presence, and Google visibility for South African businesses — live in days, not months. Free audit, no obligation.",
+          "Websites, SEO, Google visibility and AI search packages for South African businesses.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },

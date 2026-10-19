@@ -107,11 +107,11 @@ export function ContactForm() {
           disabled={status === "sending"}
           className="btn-gold btn-gold-hover w-full disabled:opacity-60"
         >
-          {status === "sending" ? "Sending…" : "Send Me My Free Audit"}
+          {status === "sending" ? "Sending…" : "Book My Visibility Audit"}
         </button>
         {status === "ok" && (
           <p className="text-teal text-sm">
-            Got it. Your audit will be with you within 2 business days. If you gave us a phone
+            Got it. We’ll be in touch about your Visibility Audit within 2 business days. If you gave us a phone
             number, it'll arrive on WhatsApp.
           </p>
         )}
