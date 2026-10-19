@@ -17,11 +17,11 @@ const homeFaqJsonLd = buildFaqJsonLd(HOME_FAQS);
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Meridian Digital — Web Design, SEO & AEO in South Africa" },
+      { title: "Web Design, SEO & AEO Agency in KZN | Meridian Digital" },
       {
         name: "description",
         content:
-          "Custom websites, SEO and AI search visibility packages for South African businesses.",
+          "Get a website that earns trust and search visibility that brings enquiries. Web design, SEO and AEO for KwaZulu-Natal businesses.",
       },
       {
         property: "og:title",
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Websites, SEO, Google visibility and AI search packages for South African businesses.",
+          "Web design, SEO and AI search visibility that helps KwaZulu-Natal businesses win more enquiries.",
       },
       { property: "og:url", content: SITE_URL },
     ],
@@ -174,16 +174,16 @@ function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <div className="label-eyebrow mb-6">Meridian Digital — South Africa</div>
         <h1 className="font-serif text-ivory leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem]">
-          <span className="italic block">Your customers are searching.</span>
-          <span className="block">They're finding someone else.</span>
+          <span className="italic block">Be the business they find</span>
+          <span className="block">— and the one they choose.</span>
         </h1>
         <p className="mt-8 text-ivory/75 max-w-2xl mx-auto text-base md:text-[1.05rem] leading-relaxed font-light">
-          We build websites and Google presence for South African businesses — so when someone
-          searches for what you do, they find you, trust you, and phone you.
+          Websites, Google visibility and AI search optimisation for KwaZulu-Natal businesses that
+          need more qualified enquiries — not another pretty site that sits unnoticed.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
           <Link to="/contact" className="btn-gold btn-gold-hover">
-            Explore Packages
+            See Packages & Pricing
           </Link>
           <a
             href="https://wa.me/27658839408"
@@ -195,8 +195,8 @@ function Hero() {
           </a>
         </div>
         <p className="mt-6 text-slate-muted text-xs md:text-sm max-w-md mx-auto">
-          Already have a website? Start with a R1,500 Visibility Audit, credited toward your first
-          month when you proceed.
+          Based in KZN. Built for South Africa. Already have a website? Start with a R1,500 Visibility
+          Audit, credited toward your first month when you proceed.
         </p>
       </div>
     </section>

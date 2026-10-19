@@ -26,11 +26,11 @@ const FAQS = [
 export const Route = createFileRoute("/web-design-umhlanga")({
   head: () => ({
     meta: [
-      { title: "Web Design in Umhlanga | Meridian Digital" },
+      { title: "Web Design Umhlanga for More Qualified Leads | Meridian" },
       {
         name: "description",
         content:
-          "Web design, SEO, and Google Business Profile management for Umhlanga businesses — built for the coast's corporate and hospitality market, live in days not months.",
+          "Premium, mobile-first web design for Umhlanga businesses. Build trust, improve Google visibility and make it easy for customers to enquire.",
       },
       { property: "og:title", content: "Web Design in Umhlanga | Meridian Digital" },
       {

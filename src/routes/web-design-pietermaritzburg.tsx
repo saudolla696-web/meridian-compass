@@ -28,12 +28,12 @@ export const Route = createFileRoute("/web-design-pietermaritzburg")({
     meta: [
       {
         title:
-          "Web Design Pietermaritzburg — Web Designer & Website Development | Meridian Digital",
+          "Web Design Pietermaritzburg That Brings Enquiries | Meridian",
       },
       {
         name: "description",
         content:
-          "Web design Pietermaritzburg businesses trust: a web designer offering website development, SEO, and Google Business Profile management for the capital's professional-services market — live in days, not months.",
+          "Get a fast, trust-building website for your Pietermaritzburg business, with SEO and Google visibility built in from day one.",
       },
       { property: "og:title", content: "Web Design Pietermaritzburg | Meridian Digital" },
       {

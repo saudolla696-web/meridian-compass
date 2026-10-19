@@ -26,11 +26,11 @@ const FAQS = [
 export const Route = createFileRoute("/web-design-ballito")({
   head: () => ({
     meta: [
-      { title: "Web Design in Ballito | Meridian Digital" },
+      { title: "Web Design Ballito That Gets You Chosen | Meridian" },
       {
         name: "description",
         content:
-          "Web design, SEO, and Google Business Profile management for Ballito and the North Coast — built for a fast-growing coastal market, live in days not months.",
+          "Custom Ballito web design for businesses that need to stand out on the North Coast, build trust quickly and attract more enquiries.",
       },
       { property: "og:title", content: "Web Design in Ballito | Meridian Digital" },
       {

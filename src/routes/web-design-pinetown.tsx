@@ -26,11 +26,11 @@ const FAQS = [
 export const Route = createFileRoute("/web-design-pinetown")({
   head: () => ({
     meta: [
-      { title: "Web Design in Pinetown | Meridian Digital" },
+      { title: "Web Design Pinetown Built for Calls & Leads | Meridian" },
       {
         name: "description",
         content:
-          "Web design, SEO, and Google Business Profile management for Pinetown businesses — built for the area's trades, manufacturing, and SME market, live in days not months.",
+          "Fast, professional websites for Pinetown trades, manufacturers and SMEs. Earn trust online and turn local searches into calls.",
       },
       { property: "og:title", content: "Web Design in Pinetown | Meridian Digital" },
       {

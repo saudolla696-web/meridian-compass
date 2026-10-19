@@ -30,11 +30,11 @@ const FAQS = [
 export const Route = createFileRoute("/services/web-design")({
   head: () => ({
     meta: [
-      { title: "Web Design — Fast, Mobile-First Sites | Meridian Digital" },
+      { title: "Web Design in KZN That Wins Enquiries | Meridian Digital" },
       {
         name: "description",
         content:
-          "A fast, professional website that works on every phone and turns visitors into phone calls. Live in days, not months. Web design for South African businesses.",
+          "Get a fast, mobile-first website built to earn trust and turn visitors into calls. Custom web design for KwaZulu-Natal businesses.",
       },
       { property: "og:title", content: "Web Design | Meridian Digital" },
       {

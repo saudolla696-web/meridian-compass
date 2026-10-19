@@ -30,11 +30,11 @@ const FAQS = [
 export const Route = createFileRoute("/for/plumbers-electricians")({
   head: () => ({
     meta: [
-      { title: "Digital Marketing for Plumbers & Electricians | Meridian Digital" },
+      { title: "Web Design & SEO for Plumbers and Electricians | Meridian" },
       {
         name: "description",
         content:
-          "Digital marketing for plumbers and electricians — a website for plumbers in South Africa built with PIRB/DoL licensing as trust signals, emergency-search behaviour, and WhatsApp-first enquiries.",
+          "Win more local plumbing and electrical enquiries with a trust-building website, Google visibility and WhatsApp-first conversion paths.",
       },
       {
         property: "og:title",

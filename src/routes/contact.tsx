@@ -11,11 +11,11 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book a Visibility Audit — Meridian Digital" },
+      { title: "Book a Website Visibility Audit in KZN | Meridian Digital" },
       {
         name: "description",
         content:
-          "Book a R1,500 Visibility Audit of your website, local search presence and AI visibility. Credited toward your first month if you proceed.",
+          "Get clear answers on your website, Google Maps and AI visibility. Book a R1,500 Visibility Audit, credited toward your first month.",
       },
       { property: "og:title", content: "Book a Visibility Audit | Meridian Digital" },
       {

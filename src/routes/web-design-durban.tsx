@@ -26,11 +26,11 @@ const FAQS = [
 export const Route = createFileRoute("/web-design-durban")({
   head: () => ({
     meta: [
-      { title: "Web Design in Durban | Meridian Digital" },
+      { title: "Web Design Durban That Turns Visits Into Leads | Meridian" },
       {
         name: "description",
         content:
-          "Web design, SEO, and Google Business Profile management for Durban businesses — built for how people actually search across the metro, live in days not months.",
+          "Custom web design for Durban businesses that need a fast, credible site and better Google visibility. Built to turn searches into enquiries.",
       },
       { property: "og:title", content: "Web Design in Durban | Meridian Digital" },
       {

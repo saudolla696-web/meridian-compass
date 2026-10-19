@@ -30,11 +30,11 @@ const FAQS = [
 export const Route = createFileRoute("/for/financial-advisors-brokers")({
   head: () => ({
     meta: [
-      { title: "Websites for Financial Brokers & Advisors | Meridian Digital" },
+      { title: "Web Design for Financial Advisors & Brokers | Meridian" },
       {
         name: "description",
         content:
-          "Websites for financial brokers and FSP-licensed financial advisors — licence display, referral-checking credibility, and compliance-aware content, built for South African firms.",
+          "Websites for South African financial advisors and brokers that showcase FSP credibility, explain services clearly and earn enquiries.",
       },
       {
         property: "og:title",

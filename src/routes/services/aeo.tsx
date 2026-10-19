@@ -30,11 +30,11 @@ const FAQS = [
 export const Route = createFileRoute("/services/aeo")({
   head: () => ({
     meta: [
-      { title: "AEO Agency South Africa — Answer Engine Optimisation | Meridian Digital" },
+      { title: "AEO Agency in South Africa | Meridian Digital" },
       {
         name: "description",
         content:
-          "Meridian Digital is an AEO agency in South Africa. When people ask AI assistants who's good near them, your business should be the answer — structured so machines can recommend you.",
+          "Help ChatGPT and Google AI understand and recommend your business. Practical Answer Engine Optimisation for South African companies.",
       },
       { property: "og:title", content: "AEO | Meridian Digital" },
       {

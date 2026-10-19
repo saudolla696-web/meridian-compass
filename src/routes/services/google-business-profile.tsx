@@ -30,11 +30,11 @@ const FAQS = [
 export const Route = createFileRoute("/services/google-business-profile")({
   head: () => ({
     meta: [
-      { title: "Google Business Profile Management | Meridian Digital" },
+      { title: "Google Business Profile Management in KZN | Meridian Digital" },
       {
         name: "description",
         content:
-          "The Google map listing that drives local calls — set up properly, optimised, and kept active. Google Business Profile management for South African businesses.",
+          "Turn your Google Maps listing into more local calls. We set up, optimise and manage Google Business Profiles for KZN businesses.",
       },
       { property: "og:title", content: "Google Business Profile | Meridian Digital" },
       {

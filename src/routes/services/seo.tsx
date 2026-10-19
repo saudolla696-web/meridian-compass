@@ -30,11 +30,11 @@ const FAQS = [
 export const Route = createFileRoute("/services/seo")({
   head: () => ({
     meta: [
-      { title: "SEO — Local Search Visibility | Meridian Digital" },
+      { title: "SEO Services in KZN That Bring Local Leads | Meridian Digital" },
       {
         name: "description",
         content:
-          "Show up when people in your area search for what you do. SEO for South African businesses, with monthly reporting you can actually understand.",
+          "Improve Google and Maps visibility with practical local SEO, clear reporting and no lock-in SEO Essentials for KZN businesses.",
       },
       { property: "og:title", content: "SEO | Meridian Digital" },
       {

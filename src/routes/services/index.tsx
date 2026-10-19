@@ -10,11 +10,11 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Web Design, Search Visibility, CRM & AEO | Meridian Digital" },
+      { title: "Web Design, SEO & AEO Services in KZN | Meridian Digital" },
       {
         name: "description",
         content:
-          "The full breakdown of what Meridian Digital builds: brand-true web design, search visibility, systems & CRM, and Answer Engine Optimisation — plus how we run the build, start to finish.",
+          "Choose a website, SEO, Google Business Profile or AEO service built to earn trust, improve visibility and generate enquiries in KZN.",
       },
       { property: "og:title", content: "Services | Meridian Digital" },
       {

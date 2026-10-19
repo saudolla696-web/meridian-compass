@@ -11,11 +11,11 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 export const Route = createFileRoute("/insights/")({
   head: () => ({
     meta: [
-      { title: "Insights — Meridian Digital" },
+      { title: "Web Design & SEO Insights for KZN Businesses | Meridian" },
       {
         name: "description",
         content:
-          "Notes on web design, SEO, and Answer Engine Optimisation from Meridian Digital — practical, no-jargon writing for South African businesses.",
+          "Practical web design, local SEO and AI-search guidance for KwaZulu-Natal businesses that want more visibility and enquiries.",
       },
       { property: "og:title", content: "Insights | Meridian Digital" },
       {

@@ -30,11 +30,11 @@ const FAQS = [
 export const Route = createFileRoute("/for/attorneys")({
   head: () => ({
     meta: [
-      { title: "Websites for Attorneys & Law Firms | Meridian Digital" },
+      { title: "Web Design for Attorneys & Law Firms in SA | Meridian" },
       {
         name: "description",
         content:
-          "Websites for attorneys and law firms — professional presentation, dedicated practice-area pages, and being findable for searches like 'conveyancing attorney [town].'",
+          "Professional law firm websites that build confidence, clarify practice areas and improve visibility for the legal services clients search for.",
       },
       { property: "og:title", content: "Websites for Attorneys | Meridian Digital" },
       {
