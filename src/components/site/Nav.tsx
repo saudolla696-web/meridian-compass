@@ -83,7 +83,7 @@ export function Nav() {
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
-          className="lg:hidden text-ivory p-3 -mr-1 relative z-[60]"
+          className="text-ivory p-3 -mr-1 relative z-[60]"
         >
           <div
             className="w-6 h-[2px] bg-ivory mb-1.5"
@@ -113,7 +113,7 @@ export function Nav() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="lg:hidden fixed inset-0 top-[68px] bg-black/40 z-[55]"
+              className="fixed inset-0 top-[68px] bg-black/40 z-[55]"
               onClick={() => setOpen(false)}
               aria-hidden
             />
@@ -121,7 +121,7 @@ export function Nav() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden overflow-hidden bg-[#060D18] border-t border-white/5 relative z-[56]"
+              className="overflow-hidden bg-[#060D18] border-t border-white/5 relative z-[56] lg:absolute lg:top-[68px] lg:right-6 lg:w-[23rem] lg:border lg:border-white/10 lg:shadow-2xl"
             >
               <nav className="px-6 py-4 flex flex-col">
                 {NAV_LINKS.map((l) => (
