@@ -63,28 +63,29 @@ export function Nav() {
             Digital
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-8">
-          {NAV_LINKS.map((l) => (
-            <Link
-              key={l.label}
-              to={l.to}
-              hash={l.hash}
-              hashScrollIntoViewOptions={{ behavior: "smooth" }}
-              className="text-ivory/80 hover:text-gold text-sm tracking-wide transition-colors"
-            >
-              {l.label}
+        <div className="flex items-center gap-2 lg:gap-4">
+          <nav className="hidden lg:flex items-center gap-6">
+            {NAV_LINKS.map((l) => (
+              <Link
+                key={l.label}
+                to={l.to}
+                hash={l.hash}
+                hashScrollIntoViewOptions={{ behavior: "smooth" }}
+                className="text-ivory/80 hover:text-gold text-sm tracking-wide transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link to="/contact" className="btn-ghost-gold">
+              Book a Visibility Audit
             </Link>
-          ))}
-          <Link to="/contact" className="btn-ghost-gold">
-            Book a Visibility Audit
-          </Link>
-        </nav>
-        <button
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-          className="text-ivory p-3 -mr-1 relative z-[60]"
-        >
+          </nav>
+          <button
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+            className="text-ivory p-3 -mr-1 relative z-[60]"
+          >
           <div
             className="w-6 h-[2px] bg-ivory mb-1.5"
             style={{
@@ -103,7 +104,8 @@ export function Nav() {
               transition: "transform .25s",
             }}
           />
-        </button>
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
