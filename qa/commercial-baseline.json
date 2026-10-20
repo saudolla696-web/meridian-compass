@@ -1,0 +1,40 @@
+{
+  "capturedAt": "2026-10-20T09:21:41+02:00",
+  "liveSource": "https://www.meridiandigital.co.za/",
+  "fixtures": [
+    {
+      "url": "/",
+      "selector": "section#pricing",
+      "sha256": "98e1c8cbb0b21f7757f58888bbdccdeec9801ff8f2fa6e3d66085d3a2694f3c0",
+      "source": "deployed and local rendered HTML"
+    },
+    {
+      "sourcePath": "src/routes/index.tsx",
+      "sha256": "ce51f33737b9e3542c23532f6d8b13867f45bf2d9482fe28f28640a390cf583f"
+    },
+    {
+      "sourcePath": "src/routes/contact.tsx",
+      "sha256": "4ac421eede6b8d546bb1c033b4991f5f87f34d12c6edbb613112fc35be7075b9"
+    },
+    {
+      "sourcePath": "src/routes/services/web-design.tsx",
+      "sha256": "409eb2c77ca4bba9d664d72df246f4d9199b1b6dd6d673a769c52538affc652a"
+    },
+    {
+      "sourcePath": "src/routes/services/seo.tsx",
+      "sha256": "aa58245c9c93351140849515e632edda3123a2801870ebb37c321a78c8a2dbe7"
+    },
+    {
+      "sourcePath": "src/routes/services/google-business-profile.tsx",
+      "sha256": "a0d6cd6df566e4fe84d22dd50c53a0ce2231820f5419ec2ada2bdc33ef7f5ae7"
+    },
+    {
+      "sourcePath": "src/routes/services/aeo.tsx",
+      "sha256": "df787e37fa9d94fb7b6a4cc2c22ce46af885b0e3cba0b7f4213f1abc5064803f"
+    },
+    {
+      "sourcePath": "src/lib/site-content.ts",
+      "sha256": "63a6ac3006b1d4f583b5493608c171b8dadceba28fb0faf0fd514e0aad9945e8"
+    }
+  ]
+}

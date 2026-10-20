@@ -5,8 +5,8 @@ import type { CaseStudy } from "../../lib/site-content";
 export function BrowserCard({ p, i }: { p: CaseStudy; i: number }) {
   return (
     <Reveal delay={i * 0.1}>
-      <Link to="/case-studies/$id" params={{ id: p.id }} className="block">
-        <div className="bg-[#0c1a30] border border-white/8 overflow-hidden hover:border-gold/30 transition-colors h-full flex flex-col">
+      <Link to="/case-studies/$id" params={{ id: p.id }} className="group block">
+        <div className="case-browser-card bg-[#0c1a30] border border-white/8 overflow-hidden h-full flex flex-col">
           <div className="bg-[#060D18] border-b border-white/8 px-4 py-2.5 flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#3a4a60]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#3a4a60]" />
@@ -19,11 +19,12 @@ export function BrowserCard({ p, i }: { p: CaseStudy; i: number }) {
             className="relative aspect-[16/10] flex items-center justify-center overflow-hidden"
             style={{ background: "linear-gradient(135deg, #0A1628 0%, #11203A 60%, #0c1a30 100%)" }}
           >
+            <span className="case-card-sheen" aria-hidden="true" />
             {p.image ? (
               <img
                 src={p.image}
                 alt={`${p.name} website screenshot`}
-                className="absolute inset-0 w-full h-full object-cover object-top"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                 loading="lazy"
               />
             ) : (

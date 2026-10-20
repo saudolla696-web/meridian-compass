@@ -11,7 +11,8 @@ export const INSIGHTS: Insight[] = [
   {
     slug: "what-makes-a-small-business-website-convert",
     title: "What Makes a Small Business Website Turn Visits Into Enquiries?",
-    excerpt: "Five practical elements that help a South African service-business website earn trust and make the next step obvious.",
+    excerpt:
+      "Five practical elements that help a South African service-business website earn trust and make the next step obvious.",
     date: "2026-10-19",
     category: "Web Design",
     body: [
@@ -23,7 +24,8 @@ export const INSIGHTS: Insight[] = [
   {
     slug: "local-seo-checklist-kzn-businesses",
     title: "Local SEO Checklist for KwaZulu-Natal Businesses",
-    excerpt: "The local-search essentials that help your business appear when customers search for your service in Durban, Ballito, Umhlanga and beyond.",
+    excerpt:
+      "The local-search essentials that help your business appear when customers search for your service in Durban, Ballito, Umhlanga and beyond.",
     date: "2026-10-16",
     category: "Local SEO",
     body: [
@@ -35,7 +37,8 @@ export const INSIGHTS: Insight[] = [
   {
     slug: "how-google-business-profile-drives-local-calls",
     title: "How a Google Business Profile Can Drive More Local Calls",
-    excerpt: "Your Maps listing is often the first impression. Here is what to fix before customers choose a competitor.",
+    excerpt:
+      "Your Maps listing is often the first impression. Here is what to fix before customers choose a competitor.",
     date: "2026-10-10",
     category: "Google Business Profile",
     body: [
@@ -47,7 +50,8 @@ export const INSIGHTS: Insight[] = [
   {
     slug: "what-is-aeo-and-why-it-matters-for-local-businesses",
     title: "What Is AEO and Why Does It Matter for Local Businesses?",
-    excerpt: "Answer Engine Optimisation helps AI tools understand what your business does, where you operate and why you are a credible answer.",
+    excerpt:
+      "Answer Engine Optimisation helps AI tools understand what your business does, where you operate and why you are a credible answer.",
     date: "2026-10-03",
     category: "AEO",
     body: [

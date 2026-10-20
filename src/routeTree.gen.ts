@@ -9,35 +9,52 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WebDesignUmhlangaRouteImport } from './routes/web-design-umhlanga'
-import { Route as WebDesignPinetownRouteImport } from './routes/web-design-pinetown'
-import { Route as WebDesignPietermaritzburgRouteImport } from './routes/web-design-pietermaritzburg'
-import { Route as WebDesignDurbanRouteImport } from './routes/web-design-durban'
-import { Route as WebDesignBallitoRouteImport } from './routes/web-design-ballito'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesIndexRouteImport } from './routes/services/index'
-import { Route as InsightsIndexRouteImport } from './routes/insights/index'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as WebDesignBallitoRouteImport } from './routes/web-design-ballito'
+import { Route as WebDesignDurbanRouteImport } from './routes/web-design-durban'
+import { Route as WebDesignPietermaritzburgRouteImport } from './routes/web-design-pietermaritzburg'
+import { Route as WebDesignPinetownRouteImport } from './routes/web-design-pinetown'
+import { Route as WebDesignUmhlangaRouteImport } from './routes/web-design-umhlanga'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
+import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies/index'
-import { Route as ServicesWebDesignRouteImport } from './routes/services/web-design'
-import { Route as ServicesSeoRouteImport } from './routes/services/seo'
-import { Route as ServicesGoogleBusinessProfileRouteImport } from './routes/services/google-business-profile'
-import { Route as ServicesAeoRouteImport } from './routes/services/aeo'
-import { Route as InsightsSlugRouteImport } from './routes/insights/$slug'
-import { Route as ForPlumbersElectriciansRouteImport } from './routes/for/plumbers-electricians'
-import { Route as ForFinancialAdvisorsBrokersRouteImport } from './routes/for/financial-advisors-brokers'
-import { Route as ForAttorneysRouteImport } from './routes/for/attorneys'
 import { Route as CaseStudiesIdRouteImport } from './routes/case-studies/$id'
+import { Route as ForAttorneysRouteImport } from './routes/for/attorneys'
+import { Route as ForFinancialAdvisorsBrokersRouteImport } from './routes/for/financial-advisors-brokers'
+import { Route as ForPlumbersElectriciansRouteImport } from './routes/for/plumbers-electricians'
+import { Route as InsightsIndexRouteImport } from './routes/insights/index'
+import { Route as InsightsSlugRouteImport } from './routes/insights/$slug'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as ServicesAeoRouteImport } from './routes/services/aeo'
+import { Route as ServicesGoogleBusinessProfileRouteImport } from './routes/services/google-business-profile'
+import { Route as ServicesSeoRouteImport } from './routes/services/seo'
+import { Route as ServicesWebDesignRouteImport } from './routes/services/web-design'
 
-const WebDesignUmhlangaRoute = WebDesignUmhlangaRouteImport.update({
-  id: '/web-design-umhlanga',
-  path: '/web-design-umhlanga',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WebDesignPinetownRoute = WebDesignPinetownRouteImport.update({
-  id: '/web-design-pinetown',
-  path: '/web-design-pinetown',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignBallitoRoute = WebDesignBallitoRouteImport.update({
+  id: '/web-design-ballito',
+  path: '/web-design-ballito',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignDurbanRoute = WebDesignDurbanRouteImport.update({
+  id: '/web-design-durban',
+  path: '/web-design-durban',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WebDesignPietermaritzburgRoute =
@@ -46,39 +63,24 @@ const WebDesignPietermaritzburgRoute =
     path: '/web-design-pietermaritzburg',
     getParentRoute: () => rootRouteImport,
   } as any)
-const WebDesignDurbanRoute = WebDesignDurbanRouteImport.update({
-  id: '/web-design-durban',
-  path: '/web-design-durban',
+const WebDesignPinetownRoute = WebDesignPinetownRouteImport.update({
+  id: '/web-design-pinetown',
+  path: '/web-design-pinetown',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WebDesignBallitoRoute = WebDesignBallitoRouteImport.update({
-  id: '/web-design-ballito',
-  path: '/web-design-ballito',
+const WebDesignUmhlangaRoute = WebDesignUmhlangaRouteImport.update({
+  id: '/web-design-umhlanga',
+  path: '/web-design-umhlanga',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/services/',
-  path: '/services/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InsightsIndexRoute = InsightsIndexRouteImport.update({
-  id: '/insights/',
-  path: '/insights/',
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
@@ -86,35 +88,14 @@ const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
   path: '/case-studies/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesWebDesignRoute = ServicesWebDesignRouteImport.update({
-  id: '/services/web-design',
-  path: '/services/web-design',
+const CaseStudiesIdRoute = CaseStudiesIdRouteImport.update({
+  id: '/case-studies/$id',
+  path: '/case-studies/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesSeoRoute = ServicesSeoRouteImport.update({
-  id: '/services/seo',
-  path: '/services/seo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesGoogleBusinessProfileRoute =
-  ServicesGoogleBusinessProfileRouteImport.update({
-    id: '/services/google-business-profile',
-    path: '/services/google-business-profile',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesAeoRoute = ServicesAeoRouteImport.update({
-  id: '/services/aeo',
-  path: '/services/aeo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InsightsSlugRoute = InsightsSlugRouteImport.update({
-  id: '/insights/$slug',
-  path: '/insights/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForPlumbersElectriciansRoute = ForPlumbersElectriciansRouteImport.update({
-  id: '/for/plumbers-electricians',
-  path: '/for/plumbers-electricians',
+const ForAttorneysRoute = ForAttorneysRouteImport.update({
+  id: '/for/attorneys',
+  path: '/for/attorneys',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForFinancialAdvisorsBrokersRoute =
@@ -123,14 +104,45 @@ const ForFinancialAdvisorsBrokersRoute =
     path: '/for/financial-advisors-brokers',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ForAttorneysRoute = ForAttorneysRouteImport.update({
-  id: '/for/attorneys',
-  path: '/for/attorneys',
+const ForPlumbersElectriciansRoute = ForPlumbersElectriciansRouteImport.update({
+  id: '/for/plumbers-electricians',
+  path: '/for/plumbers-electricians',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CaseStudiesIdRoute = CaseStudiesIdRouteImport.update({
-  id: '/case-studies/$id',
-  path: '/case-studies/$id',
+const InsightsIndexRoute = InsightsIndexRouteImport.update({
+  id: '/insights/',
+  path: '/insights/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsSlugRoute = InsightsSlugRouteImport.update({
+  id: '/insights/$slug',
+  path: '/insights/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesAeoRoute = ServicesAeoRouteImport.update({
+  id: '/services/aeo',
+  path: '/services/aeo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesGoogleBusinessProfileRoute =
+  ServicesGoogleBusinessProfileRouteImport.update({
+    id: '/services/google-business-profile',
+    path: '/services/google-business-profile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesSeoRoute = ServicesSeoRouteImport.update({
+  id: '/services/seo',
+  path: '/services/seo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWebDesignRoute = ServicesWebDesignRouteImport.update({
+  id: '/services/web-design',
+  path: '/services/web-design',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -143,6 +155,7 @@ export interface FileRoutesByFullPath {
   '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
   '/web-design-pinetown': typeof WebDesignPinetownRoute
   '/web-design-umhlanga': typeof WebDesignUmhlangaRoute
+  '/admin/login': typeof AdminLoginRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/for/attorneys': typeof ForAttorneysRoute
   '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
@@ -152,6 +165,7 @@ export interface FileRoutesByFullPath {
   '/services/google-business-profile': typeof ServicesGoogleBusinessProfileRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/web-design': typeof ServicesWebDesignRoute
+  '/admin/': typeof AdminIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
@@ -165,6 +179,7 @@ export interface FileRoutesByTo {
   '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
   '/web-design-pinetown': typeof WebDesignPinetownRoute
   '/web-design-umhlanga': typeof WebDesignUmhlangaRoute
+  '/admin/login': typeof AdminLoginRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/for/attorneys': typeof ForAttorneysRoute
   '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
@@ -174,6 +189,7 @@ export interface FileRoutesByTo {
   '/services/google-business-profile': typeof ServicesGoogleBusinessProfileRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/web-design': typeof ServicesWebDesignRoute
+  '/admin': typeof AdminIndexRoute
   '/case-studies': typeof CaseStudiesIndexRoute
   '/insights': typeof InsightsIndexRoute
   '/services': typeof ServicesIndexRoute
@@ -188,6 +204,7 @@ export interface FileRoutesById {
   '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
   '/web-design-pinetown': typeof WebDesignPinetownRoute
   '/web-design-umhlanga': typeof WebDesignUmhlangaRoute
+  '/admin/login': typeof AdminLoginRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/for/attorneys': typeof ForAttorneysRoute
   '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
@@ -197,6 +214,7 @@ export interface FileRoutesById {
   '/services/google-business-profile': typeof ServicesGoogleBusinessProfileRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/web-design': typeof ServicesWebDesignRoute
+  '/admin/': typeof AdminIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
@@ -212,6 +230,7 @@ export interface FileRouteTypes {
     | '/web-design-pietermaritzburg'
     | '/web-design-pinetown'
     | '/web-design-umhlanga'
+    | '/admin/login'
     | '/case-studies/$id'
     | '/for/attorneys'
     | '/for/financial-advisors-brokers'
@@ -221,6 +240,7 @@ export interface FileRouteTypes {
     | '/services/google-business-profile'
     | '/services/seo'
     | '/services/web-design'
+    | '/admin/'
     | '/case-studies/'
     | '/insights/'
     | '/services/'
@@ -234,6 +254,7 @@ export interface FileRouteTypes {
     | '/web-design-pietermaritzburg'
     | '/web-design-pinetown'
     | '/web-design-umhlanga'
+    | '/admin/login'
     | '/case-studies/$id'
     | '/for/attorneys'
     | '/for/financial-advisors-brokers'
@@ -243,6 +264,7 @@ export interface FileRouteTypes {
     | '/services/google-business-profile'
     | '/services/seo'
     | '/services/web-design'
+    | '/admin'
     | '/case-studies'
     | '/insights'
     | '/services'
@@ -256,6 +278,7 @@ export interface FileRouteTypes {
     | '/web-design-pietermaritzburg'
     | '/web-design-pinetown'
     | '/web-design-umhlanga'
+    | '/admin/login'
     | '/case-studies/$id'
     | '/for/attorneys'
     | '/for/financial-advisors-brokers'
@@ -265,6 +288,7 @@ export interface FileRouteTypes {
     | '/services/google-business-profile'
     | '/services/seo'
     | '/services/web-design'
+    | '/admin/'
     | '/case-studies/'
     | '/insights/'
     | '/services/'
@@ -279,6 +303,7 @@ export interface RootRouteChildren {
   WebDesignPietermaritzburgRoute: typeof WebDesignPietermaritzburgRoute
   WebDesignPinetownRoute: typeof WebDesignPinetownRoute
   WebDesignUmhlangaRoute: typeof WebDesignUmhlangaRoute
+  AdminLoginRoute: typeof AdminLoginRoute
   CaseStudiesIdRoute: typeof CaseStudiesIdRoute
   ForAttorneysRoute: typeof ForAttorneysRoute
   ForFinancialAdvisorsBrokersRoute: typeof ForFinancialAdvisorsBrokersRoute
@@ -288,6 +313,7 @@ export interface RootRouteChildren {
   ServicesGoogleBusinessProfileRoute: typeof ServicesGoogleBusinessProfileRoute
   ServicesSeoRoute: typeof ServicesSeoRoute
   ServicesWebDesignRoute: typeof ServicesWebDesignRoute
+  AdminIndexRoute: typeof AdminIndexRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
@@ -295,46 +321,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/web-design-umhlanga': {
-      id: '/web-design-umhlanga'
-      path: '/web-design-umhlanga'
-      fullPath: '/web-design-umhlanga'
-      preLoaderRoute: typeof WebDesignUmhlangaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/web-design-pinetown': {
-      id: '/web-design-pinetown'
-      path: '/web-design-pinetown'
-      fullPath: '/web-design-pinetown'
-      preLoaderRoute: typeof WebDesignPinetownRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/web-design-pietermaritzburg': {
-      id: '/web-design-pietermaritzburg'
-      path: '/web-design-pietermaritzburg'
-      fullPath: '/web-design-pietermaritzburg'
-      preLoaderRoute: typeof WebDesignPietermaritzburgRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/web-design-durban': {
-      id: '/web-design-durban'
-      path: '/web-design-durban'
-      fullPath: '/web-design-durban'
-      preLoaderRoute: typeof WebDesignDurbanRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/web-design-ballito': {
-      id: '/web-design-ballito'
-      path: '/web-design-ballito'
-      fullPath: '/web-design-ballito'
-      preLoaderRoute: typeof WebDesignBallitoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -344,25 +335,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/': {
-      id: '/services/'
-      path: '/services'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
+    '/web-design-ballito': {
+      id: '/web-design-ballito'
+      path: '/web-design-ballito'
+      fullPath: '/web-design-ballito'
+      preLoaderRoute: typeof WebDesignBallitoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/insights/': {
-      id: '/insights/'
-      path: '/insights'
-      fullPath: '/insights/'
-      preLoaderRoute: typeof InsightsIndexRouteImport
+    '/web-design-durban': {
+      id: '/web-design-durban'
+      path: '/web-design-durban'
+      fullPath: '/web-design-durban'
+      preLoaderRoute: typeof WebDesignDurbanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-design-pietermaritzburg': {
+      id: '/web-design-pietermaritzburg'
+      path: '/web-design-pietermaritzburg'
+      fullPath: '/web-design-pietermaritzburg'
+      preLoaderRoute: typeof WebDesignPietermaritzburgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-design-pinetown': {
+      id: '/web-design-pinetown'
+      path: '/web-design-pinetown'
+      fullPath: '/web-design-pinetown'
+      preLoaderRoute: typeof WebDesignPinetownRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-design-umhlanga': {
+      id: '/web-design-umhlanga'
+      path: '/web-design-umhlanga'
+      fullPath: '/web-design-umhlanga'
+      preLoaderRoute: typeof WebDesignUmhlangaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies/': {
@@ -372,53 +398,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaseStudiesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/web-design': {
-      id: '/services/web-design'
-      path: '/services/web-design'
-      fullPath: '/services/web-design'
-      preLoaderRoute: typeof ServicesWebDesignRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/seo': {
-      id: '/services/seo'
-      path: '/services/seo'
-      fullPath: '/services/seo'
-      preLoaderRoute: typeof ServicesSeoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/google-business-profile': {
-      id: '/services/google-business-profile'
-      path: '/services/google-business-profile'
-      fullPath: '/services/google-business-profile'
-      preLoaderRoute: typeof ServicesGoogleBusinessProfileRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/aeo': {
-      id: '/services/aeo'
-      path: '/services/aeo'
-      fullPath: '/services/aeo'
-      preLoaderRoute: typeof ServicesAeoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/insights/$slug': {
-      id: '/insights/$slug'
-      path: '/insights/$slug'
-      fullPath: '/insights/$slug'
-      preLoaderRoute: typeof InsightsSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/for/plumbers-electricians': {
-      id: '/for/plumbers-electricians'
-      path: '/for/plumbers-electricians'
-      fullPath: '/for/plumbers-electricians'
-      preLoaderRoute: typeof ForPlumbersElectriciansRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/for/financial-advisors-brokers': {
-      id: '/for/financial-advisors-brokers'
-      path: '/for/financial-advisors-brokers'
-      fullPath: '/for/financial-advisors-brokers'
-      preLoaderRoute: typeof ForFinancialAdvisorsBrokersRouteImport
+    '/case-studies/$id': {
+      id: '/case-studies/$id'
+      path: '/case-studies/$id'
+      fullPath: '/case-studies/$id'
+      preLoaderRoute: typeof CaseStudiesIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/for/attorneys': {
@@ -428,11 +412,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForAttorneysRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/case-studies/$id': {
-      id: '/case-studies/$id'
-      path: '/case-studies/$id'
-      fullPath: '/case-studies/$id'
-      preLoaderRoute: typeof CaseStudiesIdRouteImport
+    '/for/financial-advisors-brokers': {
+      id: '/for/financial-advisors-brokers'
+      path: '/for/financial-advisors-brokers'
+      fullPath: '/for/financial-advisors-brokers'
+      preLoaderRoute: typeof ForFinancialAdvisorsBrokersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for/plumbers-electricians': {
+      id: '/for/plumbers-electricians'
+      path: '/for/plumbers-electricians'
+      fullPath: '/for/plumbers-electricians'
+      preLoaderRoute: typeof ForPlumbersElectriciansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/': {
+      id: '/insights/'
+      path: '/insights'
+      fullPath: '/insights/'
+      preLoaderRoute: typeof InsightsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/$slug': {
+      id: '/insights/$slug'
+      path: '/insights/$slug'
+      fullPath: '/insights/$slug'
+      preLoaderRoute: typeof InsightsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/aeo': {
+      id: '/services/aeo'
+      path: '/services/aeo'
+      fullPath: '/services/aeo'
+      preLoaderRoute: typeof ServicesAeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/google-business-profile': {
+      id: '/services/google-business-profile'
+      path: '/services/google-business-profile'
+      fullPath: '/services/google-business-profile'
+      preLoaderRoute: typeof ServicesGoogleBusinessProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/seo': {
+      id: '/services/seo'
+      path: '/services/seo'
+      fullPath: '/services/seo'
+      preLoaderRoute: typeof ServicesSeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/web-design': {
+      id: '/services/web-design'
+      path: '/services/web-design'
+      fullPath: '/services/web-design'
+      preLoaderRoute: typeof ServicesWebDesignRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -447,6 +487,7 @@ const rootRouteChildren: RootRouteChildren = {
   WebDesignPietermaritzburgRoute: WebDesignPietermaritzburgRoute,
   WebDesignPinetownRoute: WebDesignPinetownRoute,
   WebDesignUmhlangaRoute: WebDesignUmhlangaRoute,
+  AdminLoginRoute: AdminLoginRoute,
   CaseStudiesIdRoute: CaseStudiesIdRoute,
   ForAttorneysRoute: ForAttorneysRoute,
   ForFinancialAdvisorsBrokersRoute: ForFinancialAdvisorsBrokersRoute,
@@ -456,6 +497,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesGoogleBusinessProfileRoute: ServicesGoogleBusinessProfileRoute,
   ServicesSeoRoute: ServicesSeoRoute,
   ServicesWebDesignRoute: ServicesWebDesignRoute,
+  AdminIndexRoute: AdminIndexRoute,
   CaseStudiesIndexRoute: CaseStudiesIndexRoute,
   InsightsIndexRoute: InsightsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,

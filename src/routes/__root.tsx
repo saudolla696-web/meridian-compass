@@ -16,19 +16,17 @@ const professionalServiceJsonLd = {
   "@id": ORGANIZATION_ID,
   name: "Meridian Digital",
   telephone: "+27658839408",
-  address: {
-    "@type": "PostalAddress",
-    addressRegion: "KwaZulu-Natal",
-    addressCountry: "ZA",
-  },
-  areaServed: ["South Africa", "KwaZulu-Natal", "Durban", "Pietermaritzburg"],
+  email: "sales@meridiandigital.co.za",
+  areaServed: [
+    "South Africa",
+    "KwaZulu-Natal",
+    "Durban",
+    "Umhlanga",
+    "Ballito",
+    "Pietermaritzburg",
+    "Pinetown",
+  ],
   parentOrganization: { "@type": "Organization", name: "Meridian Holdings Group" },
-  founder: {
-    "@type": "Person",
-    name: "Saud Zeyn Olla",
-    jobTitle: "Founder",
-    sameAs: ["https://www.linkedin.com/in/saud-zeyn-olla-0134a420a/"],
-  },
   image: `${SITE_URL}/logo-lockup.png`,
   logo: `${SITE_URL}/logo-mark.png`,
   sameAs: [
@@ -36,7 +34,6 @@ const professionalServiceJsonLd = {
     "https://www.instagram.com/meridian_digital_/",
   ],
   url: SITE_URL,
-  // [FILL: street address / suburb if Saud wants a specific town listed as the registered locality]
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -61,6 +58,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Websites, SEO, Google visibility and AI search packages for South African businesses.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_ZA" },
       { property: "og:url", content: SITE_URL },
       { property: "og:image", content: `${SITE_URL}/og-image.png` },
       { property: "og:image:width", content: "1200" },

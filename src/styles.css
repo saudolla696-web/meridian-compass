@@ -3,40 +3,46 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-navy: #0A1628;
-  --color-navy-deep: #060D18;
-  --color-navy-soft: #11203A;
-  --color-gold: #C9A84C;
-  --color-gold-soft: #E8D8A8;
-  --color-teal: #00B4D8;
-  --color-amber: #E07B00;
-  --color-ivory: #F4EFE6;
-  --color-slate-muted: #94A0B4;
+  --color-navy: #0a1628;
+  --color-navy-deep: #060d18;
+  --color-navy-soft: #11203a;
+  --color-gold: #c9a84c;
+  --color-gold-soft: #e8d8a8;
+  --color-teal: #00b4d8;
+  --color-amber: #e07b00;
+  --color-ivory: #f4efe6;
+  --color-slate-muted: #94a0b4;
   --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Raleway", sans-serif;
 }
 
 :root {
-  --background: #0A1628;
-  --foreground: #F4EFE6;
+  --background: #0a1628;
+  --foreground: #f4efe6;
 }
 
 @layer base {
   html {
-    background-color: #0A1628;
+    background-color: #0a1628;
     scroll-behavior: smooth;
   }
   body {
-    background-color: #0A1628;
-    color: #F4EFE6;
+    background-color: #0a1628;
+    color: #f4efe6;
     font-family: "Raleway", sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
   }
-  h1, h2, h3, h4 { font-family: "Cormorant Garamond", serif; font-weight: 400; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+  }
   :focus-visible {
-    outline: 2px solid #C9A84C;
+    outline: 2px solid #c9a84c;
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -48,7 +54,7 @@
   letter-spacing: 0.22em;
   font-size: 0.72rem;
   font-weight: 500;
-  color: #C9A84C;
+  color: #c9a84c;
 }
 
 @utility btn-gold {
@@ -56,8 +62,8 @@
   align-items: center;
   justify-content: center;
   padding: 0.85rem 1.6rem;
-  background: #C9A84C;
-  color: #0A1628;
+  background: #c9a84c;
+  color: #0a1628;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -65,10 +71,14 @@
   font-size: 0.78rem;
   border-radius: 2px;
   min-height: 44px;
-  transition: background 0.25s ease, transform 0.25s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 @utility btn-gold-hover {
-  &:hover { background: #E8D8A8; }
+  &:hover {
+    background: #e8d8a8;
+  }
 }
 
 @utility btn-ghost-gold {
@@ -77,8 +87,8 @@
   justify-content: center;
   padding: 0.8rem 1.55rem;
   background: transparent;
-  color: #C9A84C;
-  border: 1px solid #C9A84C;
+  color: #c9a84c;
+  border: 1px solid #c9a84c;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -86,25 +96,146 @@
   font-size: 0.74rem;
   border-radius: 2px;
   min-height: 44px;
-  transition: background 0.25s ease, color 0.25s ease;
-  &:hover { background: rgba(201,168,76,0.1); }
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+  &:hover {
+    background: rgba(201, 168, 76, 0.1);
+  }
 }
 
 @keyframes drift-dust {
-  0% { transform: translateY(0) translateX(0); opacity: 0; }
-  10% { opacity: 0.6; }
-  90% { opacity: 0.4; }
-  100% { transform: translateY(-120vh) translateX(20px); opacity: 0; }
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(20px);
+    opacity: 0;
+  }
 }
 
 @keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.animate-spin-slow { animation: spin-slow 60s linear infinite; }
+.animate-spin-slow {
+  animation: spin-slow 60s linear infinite;
+}
+
+.ambient-backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient-orb {
+  position: absolute;
+  width: min(42vw, 34rem);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  filter: blur(2px);
+  opacity: 0.13;
+  will-change: transform;
+}
+
+.ambient-orb-gold {
+  top: -14rem;
+  right: -12rem;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.75), transparent 68%);
+  animation: ambient-float-gold 18s ease-in-out infinite alternate;
+}
+
+.ambient-orb-teal {
+  bottom: -17rem;
+  left: -15rem;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.42), transparent 70%);
+  animation: ambient-float-teal 23s ease-in-out infinite alternate;
+}
+
+.ambient-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+  background-size: 3.75rem 3.75rem;
+  mask-image: linear-gradient(to bottom, transparent, black 24%, black 76%, transparent);
+}
+
+.case-browser-card {
+  position: relative;
+  transition:
+    border-color 0.45s ease,
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.case-browser-card:hover {
+  border-color: rgba(201, 168, 76, 0.42);
+  transform: translateY(-0.35rem);
+  box-shadow: 0 1.25rem 3.5rem rgba(0, 0, 0, 0.25);
+}
+
+.case-card-sheen {
+  position: absolute;
+  inset: -40%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 42%,
+    rgba(232, 216, 168, 0.16) 50%,
+    transparent 58%
+  );
+  transform: translateX(-75%) rotate(7deg);
+  transition: transform 0.9s ease;
+}
+
+.group:hover .case-card-sheen {
+  transform: translateX(75%) rotate(7deg);
+}
+
+@keyframes ambient-float-gold {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-2.5rem, 3rem, 0) scale(1.08);
+  }
+}
+
+@keyframes ambient-float-teal {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(3rem, -2rem, 0) scale(1.1);
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-spin-slow { animation: none; }
-  html { scroll-behavior: auto; }
+  .animate-spin-slow,
+  .ambient-orb,
+  .case-browser-card,
+  .case-card-sheen {
+    animation: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

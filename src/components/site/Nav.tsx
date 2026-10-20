@@ -149,6 +149,16 @@ export function Nav() {
                     {l.label}
                   </Link>
                 ))}
+                <div className="mt-4 border-t border-white/10 pt-3">
+                  <Link
+                    to="/admin/login"
+                    onClick={() => setOpen(false)}
+                    className="inline-flex items-center gap-2 text-ivory/65 hover:text-gold text-sm tracking-wide transition-colors"
+                  >
+                    <span aria-hidden="true">↗</span>
+                    Admin sign in
+                  </Link>
+                </div>
                 <Link
                   to="/contact"
                   onClick={() => setOpen(false)}

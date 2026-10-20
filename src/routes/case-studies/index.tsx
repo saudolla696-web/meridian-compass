@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "../../components/site/Reveal";
+import { AmbientBackdrop } from "../../components/site/AmbientBackdrop";
 import { BrowserCard } from "../../components/site/BrowserCard";
 import { CASE_STUDIES, SITE_URL, buildBreadcrumbJsonLd } from "../../lib/site-content";
 
@@ -29,8 +30,9 @@ export const Route = createFileRoute("/case-studies/")({
 
 function CaseStudiesIndex() {
   return (
-    <section className="py-28 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative isolate py-28 px-6 overflow-hidden">
+      <AmbientBackdrop />
+      <div className="relative max-w-6xl mx-auto">
         <Reveal>
           <div className="text-center mb-16">
             <div className="label-eyebrow mb-4">Case Studies</div>
