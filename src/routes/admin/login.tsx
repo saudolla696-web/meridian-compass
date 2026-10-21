@@ -96,7 +96,14 @@ function AdminLoginPage() {
           </button>
         </form>
 
-        <Link to="/" className="mt-7 inline-block text-sm text-slate-muted underline underline-offset-4 hover:text-gold">
+        <Link
+          to="/admin/reset-password"
+          className="mt-5 inline-block text-sm text-slate-muted underline underline-offset-4 hover:text-gold"
+        >
+          Forgot your password?
+        </Link>
+
+        <Link to="/" className="mt-5 inline-block text-sm text-slate-muted underline underline-offset-4 hover:text-gold">
           Return to website
         </Link>
       </section>

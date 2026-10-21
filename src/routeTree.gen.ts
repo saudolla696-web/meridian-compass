@@ -19,6 +19,7 @@ import { Route as WebDesignPinetownRouteImport } from './routes/web-design-pinet
 import { Route as WebDesignUmhlangaRouteImport } from './routes/web-design-umhlanga'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
+import { Route as AdminResetPasswordRouteImport } from './routes/admin/reset-password'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies/index'
 import { Route as CaseStudiesIdRouteImport } from './routes/case-studies/$id'
 import { Route as ForAttorneysRouteImport } from './routes/for/attorneys'
@@ -81,6 +82,11 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
 const AdminLoginRoute = AdminLoginRouteImport.update({
   id: '/admin/login',
   path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminResetPasswordRoute = AdminResetPasswordRouteImport.update({
+  id: '/admin/reset-password',
+  path: '/admin/reset-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
@@ -156,6 +162,7 @@ export interface FileRoutesByFullPath {
   '/web-design-pinetown': typeof WebDesignPinetownRoute
   '/web-design-umhlanga': typeof WebDesignUmhlangaRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/reset-password': typeof AdminResetPasswordRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/for/attorneys': typeof ForAttorneysRoute
   '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
@@ -180,6 +187,7 @@ export interface FileRoutesByTo {
   '/web-design-pinetown': typeof WebDesignPinetownRoute
   '/web-design-umhlanga': typeof WebDesignUmhlangaRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/reset-password': typeof AdminResetPasswordRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/for/attorneys': typeof ForAttorneysRoute
   '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
@@ -205,6 +213,7 @@ export interface FileRoutesById {
   '/web-design-pinetown': typeof WebDesignPinetownRoute
   '/web-design-umhlanga': typeof WebDesignUmhlangaRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/reset-password': typeof AdminResetPasswordRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/for/attorneys': typeof ForAttorneysRoute
   '/for/financial-advisors-brokers': typeof ForFinancialAdvisorsBrokersRoute
@@ -231,6 +240,7 @@ export interface FileRouteTypes {
     | '/web-design-pinetown'
     | '/web-design-umhlanga'
     | '/admin/login'
+    | '/admin/reset-password'
     | '/case-studies/$id'
     | '/for/attorneys'
     | '/for/financial-advisors-brokers'
@@ -255,6 +265,7 @@ export interface FileRouteTypes {
     | '/web-design-pinetown'
     | '/web-design-umhlanga'
     | '/admin/login'
+    | '/admin/reset-password'
     | '/case-studies/$id'
     | '/for/attorneys'
     | '/for/financial-advisors-brokers'
@@ -279,6 +290,7 @@ export interface FileRouteTypes {
     | '/web-design-pinetown'
     | '/web-design-umhlanga'
     | '/admin/login'
+    | '/admin/reset-password'
     | '/case-studies/$id'
     | '/for/attorneys'
     | '/for/financial-advisors-brokers'
@@ -304,6 +316,7 @@ export interface RootRouteChildren {
   WebDesignPinetownRoute: typeof WebDesignPinetownRoute
   WebDesignUmhlangaRoute: typeof WebDesignUmhlangaRoute
   AdminLoginRoute: typeof AdminLoginRoute
+  AdminResetPasswordRoute: typeof AdminResetPasswordRoute
   CaseStudiesIdRoute: typeof CaseStudiesIdRoute
   ForAttorneysRoute: typeof ForAttorneysRoute
   ForFinancialAdvisorsBrokersRoute: typeof ForFinancialAdvisorsBrokersRoute
@@ -389,6 +402,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/login'
       fullPath: '/admin/login'
       preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reset-password': {
+      id: '/admin/reset-password'
+      path: '/admin/reset-password'
+      fullPath: '/admin/reset-password'
+      preLoaderRoute: typeof AdminResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies/': {
@@ -488,6 +508,7 @@ const rootRouteChildren: RootRouteChildren = {
   WebDesignPinetownRoute: WebDesignPinetownRoute,
   WebDesignUmhlangaRoute: WebDesignUmhlangaRoute,
   AdminLoginRoute: AdminLoginRoute,
+  AdminResetPasswordRoute: AdminResetPasswordRoute,
   CaseStudiesIdRoute: CaseStudiesIdRoute,
   ForAttorneysRoute: ForAttorneysRoute,
   ForFinancialAdvisorsBrokersRoute: ForFinancialAdvisorsBrokersRoute,
