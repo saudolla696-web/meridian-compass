@@ -49,7 +49,11 @@ function ResetPasswordPage() {
 
     if (error) {
       setStatus("error");
-      setMessage("We could not send the reset email. Please try again.");
+      if (error.status === 429 || /rate limit|too many requests/i.test(error.message)) {
+        setMessage("A reset email was requested recently. Wait one minute, then use the newest reset email only.");
+      } else {
+        setMessage("We could not send the reset email. Please check your connection and try again.");
+      }
       return;
     }
 
