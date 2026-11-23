@@ -141,11 +141,11 @@ function AeoPage() {
 
           <Reveal delay={0.25}>
             <div className="mt-12 bg-[#0c1a30] border border-white/8 p-8">
-              <h2 className="font-serif text-ivory text-xl mb-3">How it's priced</h2>
+              <h2 className="font-serif text-ivory text-xl mb-3">How it fits in</h2>
               <p className="text-ivory/70 leading-relaxed font-light">
-                AEO is built into every website package. Ongoing AI search visibility is included in
-                Get Chosen and SEO + AI Growth, our R6,500/month visibility packages with growth
-                tracking — it is not sold as a separate add-on.
+                AEO structure is built into every website we create. Ongoing AI search visibility is
+                part of our broader visibility work, alongside local map ranking and lead tracking —
+                it is not treated as a disconnected add-on.
               </p>
             </div>
           </Reveal>

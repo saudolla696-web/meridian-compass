@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "Do you handle review responses for me?",
-    a: "Yes, as part of the monthly retainer. Reviews get a considered, on-brand response — not a copy-pasted 'Thank you for your feedback' that reads like nobody's actually reading them.",
+    a: "Yes, as part of ongoing profile management. Reviews get a considered, on-brand response — not a copy-pasted 'Thank you for your feedback' that reads like nobody's actually reading them.",
   },
 ];
 

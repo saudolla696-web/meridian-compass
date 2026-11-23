@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { to: "/services" as const, label: "Services" },
   { to: "/case-studies" as const, label: "Case Studies" },
   { to: "/insights" as const, label: "Insights" },
-  { to: "/pricing" as const, label: "Pricing" },
   { to: "/faq" as const, label: "FAQ" },
 ];
 
@@ -69,8 +68,6 @@ export function Nav() {
               <Link
                 key={l.label}
                 to={l.to}
-                hash={l.hash}
-                hashScrollIntoViewOptions={{ behavior: "smooth" }}
                 className="text-ivory/80 hover:text-gold text-sm tracking-wide transition-colors"
               >
                 {l.label}
@@ -86,24 +83,24 @@ export function Nav() {
             onClick={() => setOpen((o) => !o)}
             className="text-ivory p-3 -mr-1 relative z-[60]"
           >
-          <div
-            className="w-6 h-[2px] bg-ivory mb-1.5"
-            style={{
-              transform: open ? "translateY(7px) rotate(45deg)" : "none",
-              transition: "transform .25s",
-            }}
-          />
-          <div
-            className="w-6 h-[2px] bg-ivory mb-1.5"
-            style={{ opacity: open ? 0 : 1, transition: "opacity .2s" }}
-          />
-          <div
-            className="w-6 h-[2px] bg-ivory"
-            style={{
-              transform: open ? "translateY(-7px) rotate(-45deg)" : "none",
-              transition: "transform .25s",
-            }}
-          />
+            <div
+              className="w-6 h-[2px] bg-ivory mb-1.5"
+              style={{
+                transform: open ? "translateY(7px) rotate(45deg)" : "none",
+                transition: "transform .25s",
+              }}
+            />
+            <div
+              className="w-6 h-[2px] bg-ivory mb-1.5"
+              style={{ opacity: open ? 0 : 1, transition: "opacity .2s" }}
+            />
+            <div
+              className="w-6 h-[2px] bg-ivory"
+              style={{
+                transform: open ? "translateY(-7px) rotate(-45deg)" : "none",
+                transition: "transform .25s",
+              }}
+            />
           </button>
         </div>
       </div>
@@ -130,8 +127,6 @@ export function Nav() {
                   <Link
                     key={l.label}
                     to={l.to}
-                    hash={l.hash}
-                    hashScrollIntoViewOptions={{ behavior: "smooth" }}
                     onClick={() => setOpen(false)}
                     className="text-ivory/90 text-base tracking-wide py-3.5 border-b border-white/5 active:bg-white/5 transition-colors"
                   >

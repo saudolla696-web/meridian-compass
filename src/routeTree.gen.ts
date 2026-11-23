@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
-import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as WebDesignBallitoRouteImport } from './routes/web-design-ballito'
 import { Route as WebDesignDurbanRouteImport } from './routes/web-design-durban'
 import { Route as WebDesignPietermaritzburgRouteImport } from './routes/web-design-pietermaritzburg'
@@ -47,11 +46,6 @@ const ContactRoute = ContactRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WebDesignBallitoRoute = WebDesignBallitoRouteImport.update({
@@ -162,7 +156,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/pricing': typeof PricingRoute
   '/web-design-ballito': typeof WebDesignBallitoRoute
   '/web-design-durban': typeof WebDesignDurbanRoute
   '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
@@ -188,7 +181,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/pricing': typeof PricingRoute
   '/web-design-ballito': typeof WebDesignBallitoRoute
   '/web-design-durban': typeof WebDesignDurbanRoute
   '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
@@ -215,7 +207,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/pricing': typeof PricingRoute
   '/web-design-ballito': typeof WebDesignBallitoRoute
   '/web-design-durban': typeof WebDesignDurbanRoute
   '/web-design-pietermaritzburg': typeof WebDesignPietermaritzburgRoute
@@ -243,7 +234,6 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/faq'
-    | '/pricing'
     | '/web-design-ballito'
     | '/web-design-durban'
     | '/web-design-pietermaritzburg'
@@ -269,7 +259,6 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/faq'
-    | '/pricing'
     | '/web-design-ballito'
     | '/web-design-durban'
     | '/web-design-pietermaritzburg'
@@ -295,7 +284,6 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/faq'
-    | '/pricing'
     | '/web-design-ballito'
     | '/web-design-durban'
     | '/web-design-pietermaritzburg'
@@ -322,7 +310,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
-  PricingRoute: typeof PricingRoute
   WebDesignBallitoRoute: typeof WebDesignBallitoRoute
   WebDesignDurbanRoute: typeof WebDesignDurbanRoute
   WebDesignPietermaritzburgRoute: typeof WebDesignPietermaritzburgRoute
@@ -366,13 +353,6 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/web-design-ballito': {
@@ -522,7 +502,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
-  PricingRoute: PricingRoute,
   WebDesignBallitoRoute: WebDesignBallitoRoute,
   WebDesignDurbanRoute: WebDesignDurbanRoute,
   WebDesignPietermaritzburgRoute: WebDesignPietermaritzburgRoute,

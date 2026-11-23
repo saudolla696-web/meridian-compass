@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "What are the SEO package options?",
-    a: "For an existing site, start with the R1,500 Visibility Audit. SEO Essentials is R3,500/month with no lock-in. SEO + AI Growth is R6,500/month plus a growth bonus and adds AI visibility, local map ranking, lead tracking and quarterly strategy reviews.",
+    a: "For an existing site, start with a Visibility Audit. From there, we recommend the level of ongoing work that actually fits your goals — from core local SEO through to full AI visibility, local map ranking, lead tracking and quarterly strategy reviews. The scope and terms are confirmed in writing first.",
   },
 ];
 
@@ -155,12 +155,13 @@ function SeoPage() {
 
           <Reveal delay={0.25}>
             <div className="mt-12 bg-[#0c1a30] border border-white/8 p-8">
-              <h2 className="font-serif text-ivory text-xl mb-3">How it's priced</h2>
+              <h2 className="font-serif text-ivory text-xl mb-3">How we start</h2>
               <p className="text-ivory/70 leading-relaxed font-light">
-                Existing sites begin with a R1,500 Visibility Audit, credited toward the first month
-                if you proceed. SEO Essentials is R3,500/month with Google Business Profile
-                management and local optimisation. SEO + AI Growth is R6,500/month plus a growth
-                bonus, adding AI visibility, local map ranking and lead tracking.
+                Existing sites begin with a Visibility Audit covering technical health, local search
+                presence and AI visibility. If ongoing work makes sense, we scope the level that
+                fits — from core local SEO and Google Business Profile management through to AI
+                visibility, local map ranking and lead tracking — and confirm the terms in writing
+                before anything begins.
               </p>
             </div>
           </Reveal>

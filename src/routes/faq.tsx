@@ -21,7 +21,7 @@ export const Route = createFileRoute("/faq")({
       { property: "og:title", content: "FAQ | Meridian Digital" },
       {
         property: "og:description",
-        content: "Straight answers about pricing, Visibility Audits, SEO and AI search.",
+        content: "Straight answers about Visibility Audits, SEO, AEO and AI search.",
       },
       { property: "og:url", content: `${SITE_URL}/faq` },
     ],

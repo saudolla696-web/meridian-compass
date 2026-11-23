@@ -15,12 +15,12 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Get clear answers on your website, Google Maps and AI visibility. Book a R1,500 Visibility Audit, credited toward your first month.",
+          "Get clear answers on your website, Google Maps and AI visibility. Book a Visibility Audit and find out what is working before you commit.",
       },
       { property: "og:title", content: "Book a Visibility Audit | Meridian Digital" },
       {
         property: "og:description",
-        content: "An honest R1,500 audit of your website, local search and AI visibility.",
+        content: "An honest audit of your website, local search and AI visibility.",
       },
       { property: "og:url", content: `${SITE_URL}/contact` },
     ],
@@ -41,9 +41,8 @@ function ContactPage() {
               Start with a <span className="italic text-gold-soft">Visibility Audit.</span>
             </h1>
             <p className="text-ivory/70 leading-relaxed font-light text-[1.02rem] max-w-md mb-5">
-              For R1,500 once-off, we check your existing site’s technical health, local search
-              presence and AI visibility. If you proceed with a monthly plan, the audit is credited
-              toward your first month.
+              We check your existing site’s technical health, local search presence and AI
+              visibility, then confirm the scope and any costs in writing before work begins.
             </p>
             <p className="text-ivory/70 leading-relaxed font-light text-[1.02rem] max-w-md">
               We’ll tell you plainly what is working, what needs attention, and whether your site

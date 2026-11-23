@@ -168,12 +168,10 @@ function ServicesPage() {
               Book a Visibility Audit
             </Link>
             <Link
-              to="/"
-              hash="pricing"
-              hashScrollIntoViewOptions={{ behavior: "smooth" }}
+              to="/case-studies"
               className="text-ivory/70 hover:text-gold text-sm tracking-wide transition-colors"
             >
-              See Pricing
+              See the work
             </Link>
           </div>
         </Reveal>

@@ -3,13 +3,12 @@ import { useReducedMotion } from "framer-motion";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "../components/site/Reveal";
 import { FaqAccordion, buildFaqJsonLd } from "../components/site/FaqAccordion";
-import { PricingPackageCard } from "../components/site/PricingPackageCard";
-import { VISIBILITY_PACKAGES, WEBSITE_PACKAGES } from "../lib/pricing";
-import { SERVICES, FAQS, SITE_URL } from "../lib/site-content";
+import { BrowserCard } from "../components/site/BrowserCard";
+import { CASE_STUDIES, SERVICES, STEPS, FAQS, SITE_URL } from "../lib/site-content";
 
 const HOME_FAQ_QUESTIONS = [
   "How fast is 'days, not months'?",
-  "What is the Visibility Audit?",
+  "What is Answer Engine Optimisation (AEO), in plain terms?",
   "Do you only work with businesses in KwaZulu-Natal?",
   "I already have a website. Is there a point talking to you?",
 ];
@@ -23,7 +22,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Get a website that earns trust and search visibility that brings enquiries. Web design, SEO and AEO for KwaZulu-Natal businesses.",
+          "Get a website that earns trust and search visibility that brings enquiries. Web design, SEO, Google Business Profile and AEO for KwaZulu-Natal businesses.",
       },
       {
         property: "og:title",
@@ -54,8 +53,8 @@ function HeroCanvas() {
     if (!ctx) return;
     let raf = 0;
     let w = 0,
-      h = 0,
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      h = 0;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const resize = () => {
       w = canvas.clientWidth;
       h = canvas.clientHeight;
@@ -174,7 +173,7 @@ function Hero() {
       <HeroCanvas />
       <Dust />
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <div className="label-eyebrow mb-6">Meridian Digital — South Africa</div>
+        <div className="label-eyebrow mb-6">Meridian Digital — KwaZulu-Natal, South Africa</div>
         <h1 className="font-serif text-ivory leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem]">
           <span className="italic block">Be the business they find</span>
           <span className="block">— and the one they choose.</span>
@@ -185,7 +184,7 @@ function Hero() {
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
           <Link to="/contact" className="btn-gold btn-gold-hover">
-            See Packages & Pricing
+            Book a Visibility Audit
           </Link>
           <a
             href="https://wa.me/27658839408"
@@ -196,9 +195,9 @@ function Hero() {
             WhatsApp Us
           </a>
         </div>
-        <p className="mt-6 text-slate-muted text-xs md:text-sm max-w-md mx-auto">
-          Based in KZN. Built for South Africa. Already have a website? Start with a R1,500 Visibility
-          Audit, credited toward your first month when you proceed.
+        <p className="mt-6 text-slate-muted text-xs md:text-sm max-w-lg mx-auto">
+          Web design, SEO, Google Business Profile and AEO — scoped in writing before any work
+          begins. You own the domain, the site and every credential.
         </p>
       </div>
     </section>
@@ -243,7 +242,8 @@ function Problem() {
         <Reveal delay={0.3}>
           <div className="text-center mt-14">
             <p className="text-ivory/80 font-light text-lg mb-8">
-              Already have a website? We'll show you exactly what is working before you commit to a plan.
+              Already have a website? We'll show you exactly what is working before you commit to
+              anything.
             </p>
             <Link to="/contact" className="btn-gold btn-gold-hover">
               Book a Visibility Audit
@@ -306,20 +306,187 @@ function ServicesPreview() {
   );
 }
 
-/* ---------------- Packages ---------------- */
-function Pricing() {
+/* ---------------- Capabilities ---------------- */
+const CAPABILITIES = [
+  { name: "Enquiry & lead forms", note: "Validated, spam-protected and built to convert." },
+  { name: "WhatsApp & live chat", note: "Direct conversation triggers for phone-in-hand buyers." },
+  { name: "Booking & scheduling", note: "Availability, confirmations and calendar flows." },
+  { name: "E-commerce", note: "Product catalogues, carts and secure checkout." },
+  { name: "Google Business Profile", note: "Set up, optimised and kept active." },
+  { name: "On-page SEO & schema", note: "Technical foundations search engines can read." },
+  {
+    name: "Analytics & reporting",
+    note: "Traffic, enquiries and conversion insight in plain language.",
+  },
+  { name: "CRM & payment integrations", note: "Connect the tools your team already uses." },
+];
+
+function Capabilities() {
   return (
-    <section id="pricing" className="py-24 px-6 bg-[#060D18]">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="py-28 px-6 bg-[#060D18] border-y border-white/5">
+      <div className="max-w-6xl mx-auto">
         <Reveal>
-          <div className="label-eyebrow mb-4">Packages & Pricing</div>
-          <h2 className="font-serif text-ivory text-3xl md:text-5xl max-w-3xl mx-auto leading-tight">
-            Choose where you are. <span className="italic text-gold-soft">We’ll take it from there.</span>
-          </h2>
+          <div className="text-center mb-14">
+            <div className="label-eyebrow mb-4">Capabilities</div>
+            <h2 className="font-serif text-ivory text-4xl md:text-5xl">
+              Built around <span className="italic text-gold-soft">your business.</span>
+            </h2>
+            <p className="text-ivory/65 font-light max-w-2xl mx-auto mt-5">
+              Mix the features that matter into one clear project plan. No disconnected line items,
+              no surprises after launch.
+            </p>
+          </div>
         </Reveal>
-        <Reveal delay={0.12}><h3 className="font-serif text-ivory text-2xl mt-14 mb-6">Website + Visibility</h3><p className="text-ivory/65 max-w-2xl mx-auto mb-8">For a new website or one that needs replacing. Every tier includes a custom build; the difference is what happens after launch.</p><div className="grid grid-cols-1 md:grid-cols-3 gap-5">{WEBSITE_PACKAGES.map((pkg) => <PricingPackageCard key={pkg.name} pkg={pkg} />)}</div></Reveal>
-        <Reveal delay={0.18}><div className="mt-14 border border-gold/30 bg-[#11203A] p-7"><div className="label-eyebrow mb-3">Existing Website?</div><h3 className="font-serif text-ivory text-2xl">Visibility Audit — R1,500 once-off</h3><p className="text-ivory/70 max-w-2xl mx-auto mt-3 font-light">We check your site’s technical health, local search presence and AI visibility. It is credited toward your first month if you proceed.</p></div></Reveal>
-        <Reveal delay={0.22}><h3 className="font-serif text-ivory text-2xl mt-14 mb-6">SEO & AI Visibility</h3><div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">{VISIBILITY_PACKAGES.map((pkg) => <PricingPackageCard key={pkg.name} pkg={pkg} />)}</div><p className="text-slate-muted text-xs mt-6">*Growth bonus is R75 per tracked lead above the agreed monthly baseline, capped monthly.</p><Link to="/contact" className="btn-gold btn-gold-hover mt-8">Talk through your package</Link></Reveal>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {CAPABILITIES.map((c, i) => (
+            <Reveal key={c.name} delay={i * 0.05}>
+              <div className="border border-white/8 bg-[#0c1a30]/70 p-5 h-full hover:border-gold/40 transition-colors">
+                <h3 className="font-serif text-ivory text-lg mb-1.5">{c.name}</h3>
+                <p className="text-ivory/55 text-xs leading-relaxed font-light">{c.note}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Approach ---------------- */
+const PILLARS = [
+  {
+    label: "Radical transparency",
+    body: "You receive every account credential — domain, hosting, source files and CMS logins. We do not hold your website hostage, and nothing is hidden behind proprietary lock-in.",
+  },
+  {
+    label: "Senior attention",
+    body: "We keep the number of new builds small so the people you meet are the people doing the work. Your launch date is agreed in writing before anything begins.",
+  },
+  {
+    label: "Care without lock-in",
+    body: "Ongoing care is optional. We can keep the site secure and improving every month, or hand over full control after launch. Either way, the choice stays yours.",
+  },
+];
+
+function Approach() {
+  return (
+    <section className="py-28 px-6">
+      <div className="max-w-6xl mx-auto">
+        <Reveal>
+          <div className="text-center mb-16">
+            <div className="label-eyebrow mb-4">The Meridian Approach</div>
+            <h2 className="font-serif text-ivory text-4xl md:text-5xl leading-tight">
+              Clear scope. <span className="italic text-gold-soft">Full ownership.</span>
+            </h2>
+          </div>
+        </Reveal>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {PILLARS.map((p, i) => (
+            <Reveal key={p.label} delay={i * 0.08}>
+              <div className="border border-white/8 bg-[#0c1a30]/85 p-8 h-full">
+                <span className="font-mono text-gold text-xs tracking-[0.25em]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-serif text-ivory text-2xl mt-4 mb-3">{p.label}</h3>
+                <p className="text-ivory/65 text-sm leading-relaxed font-light">{p.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Process ---------------- */
+function Process() {
+  return (
+    <section id="process" className="py-28 px-6 bg-[#060D18] border-y border-white/5">
+      <div className="max-w-6xl mx-auto">
+        <Reveal>
+          <div className="text-center mb-20">
+            <div className="label-eyebrow mb-4">Process</div>
+            <h2 className="font-serif text-ivory text-4xl md:text-5xl">
+              One line. <span className="italic text-gold-soft">Four points.</span>
+            </h2>
+            <p className="text-ivory/65 font-light max-w-xl mx-auto mt-5">
+              From first conversation to launch, and the monthly checks that follow.
+            </p>
+          </div>
+        </Reveal>
+
+        {/* Desktop horizontal */}
+        <div className="hidden md:block relative">
+          <div className="absolute top-[18px] left-[8%] right-[8%] h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+          <div className="grid grid-cols-4 gap-6 relative">
+            {STEPS.map((st, i) => (
+              <Reveal key={st.title} delay={i * 0.1}>
+                <div className="text-center px-2">
+                  <div className="relative mx-auto w-9 h-9 rounded-full bg-[#0A1628] border-2 border-gold flex items-center justify-center mb-6">
+                    <span className="text-gold text-xs font-mono">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-ivory text-2xl mb-3">{st.title}</h3>
+                  <p className="text-ivory/65 text-sm leading-relaxed font-light">{st.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile vertical */}
+        <div className="md:hidden relative pl-10">
+          <div className="absolute left-[18px] top-2 bottom-2 w-[1px] bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
+          <div className="space-y-10">
+            {STEPS.map((st, i) => (
+              <Reveal key={st.title}>
+                <div className="relative">
+                  <div className="absolute -left-10 top-1 w-9 h-9 rounded-full bg-[#0A1628] border-2 border-gold flex items-center justify-center">
+                    <span className="text-gold text-xs font-mono">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-ivory text-2xl mb-2">{st.title}</h3>
+                  <p className="text-ivory/65 text-sm leading-relaxed font-light">{st.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Selected work ---------------- */
+function SelectedWork() {
+  return (
+    <section className="py-28 px-6">
+      <div className="max-w-6xl mx-auto">
+        <Reveal>
+          <div className="text-center mb-16">
+            <div className="label-eyebrow mb-4">Selected Work</div>
+            <h2 className="font-serif text-ivory text-4xl md:text-5xl">
+              A look at <span className="italic text-gold-soft">how we build.</span>
+            </h2>
+          </div>
+        </Reveal>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {CASE_STUDIES.map((p, i) => (
+            <BrowserCard key={p.id} p={p} i={i} />
+          ))}
+        </div>
+        <Reveal delay={0.25}>
+          <div className="text-center mt-12">
+            <Link
+              to="/case-studies"
+              className="text-gold hover:text-gold-soft text-sm tracking-wide transition-colors"
+            >
+              Read the full case studies →
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -328,7 +495,7 @@ function Pricing() {
 /* ---------------- Home FAQ ---------------- */
 function HomeFaq() {
   return (
-    <section className="py-24 px-6 bg-[#060D18]">
+    <section className="py-24 px-6 bg-[#060D18] border-y border-white/5">
       <div className="max-w-3xl mx-auto">
         <Reveal>
           <div className="text-center mb-12">
@@ -365,7 +532,8 @@ function ClosingCta() {
             Start with a <span className="italic text-gold-soft">Visibility Audit.</span>
           </h2>
           <p className="text-ivory/70 leading-relaxed font-light text-[1.02rem] max-w-md mx-auto mb-10">
-            R1,500 once-off for an honest view of your website, local search and AI visibility — credited toward your first month when you proceed.
+            An honest view of your website, local search and AI visibility — so you can see what is
+            working, what needs attention, and what to do next.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <Link to="/contact" className="btn-gold btn-gold-hover">
@@ -396,7 +564,10 @@ function Page() {
       <Hero />
       <Problem />
       <ServicesPreview />
-      <Pricing />
+      <Capabilities />
+      <Approach />
+      <Process />
+      <SelectedWork />
       <HomeFaq />
       <ClosingCta />
     </>

@@ -45,8 +45,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Meridian Digital — Web Design, SEO & AEO in South Africa" },
       {
         name: "description",
-        content:
-          "Custom websites, SEO and AI search visibility packages for South African businesses.",
+        content: "Custom websites, SEO and AI search visibility for South African businesses.",
       },
       {
         property: "og:title",
@@ -54,8 +53,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         property: "og:description",
-        content:
-          "Websites, SEO, Google visibility and AI search packages for South African businesses.",
+        content: "Websites, SEO, Google visibility and AI search for South African businesses.",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_ZA" },

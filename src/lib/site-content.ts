@@ -71,7 +71,7 @@ export const FAQS = [
   },
   {
     q: "What is the Visibility Audit?",
-    a: "It is a R1,500 once-off review for businesses with an existing website. We check technical health, local search presence and AI visibility before recommending a monthly plan. If you proceed, the fee is credited toward your first month.",
+    a: "It is a focused review for businesses with an existing website. We check technical health, local search presence and AI visibility, then tell you plainly what is working and what needs attention before recommending any ongoing work. The scope and any costs are confirmed in writing first.",
   },
   {
     q: "What is Answer Engine Optimisation (AEO), in plain terms?",
@@ -82,20 +82,16 @@ export const FAQS = [
     a: "Yes — including Ghost Portuguese Inspired in Ballito and our own security division, fully disclosed. We'd rather show you honest work than pad the page.",
   },
   {
-    q: "How does the growth bonus work?",
-    a: "On Get Chosen and SEO + AI Growth, we use a dedicated tracked call and lead number. A R75 bonus applies to each tracked lead above the agreed monthly baseline, capped monthly.",
-  },
-  {
     q: "Do you only work with businesses in KwaZulu-Natal?",
     a: "No — we work with businesses across South Africa. KwaZulu-Natal is home turf and where we meet clients in person, but the build process itself works the same way regardless of postcode.",
   },
   {
     q: "I already have a website. Is there a point talking to you?",
-    a: "Usually, yes — most existing sites we review are missing Google Business Profile setup, have no AEO structure, or haven't been touched since they were built. Start with the R1,500 Visibility Audit and we’ll tell you plainly what’s working before recommending anything.",
+    a: "Usually, yes — most existing sites we review are missing Google Business Profile setup, have no AEO structure, or haven't been touched since they were built. Start with a Visibility Audit and we’ll tell you plainly what’s working before recommending anything.",
   },
   {
-    q: "Is there a contract on the monthly plans?",
-    a: "SEO Essentials is R3,500 per month with no lock-in: you can cancel anytime. We’ll explain the terms of any other package clearly before work begins.",
+    q: "Is there a contract on ongoing work?",
+    a: "No long lock-in. Ongoing visibility work is month-to-month unless we agree otherwise in writing, and you can stop when you need to. Any scope, timeline and commercial terms are confirmed before work begins.",
   },
 ];
 

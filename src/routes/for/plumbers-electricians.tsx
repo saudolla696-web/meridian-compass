@@ -152,7 +152,7 @@ function Page() {
             <div className="mt-12 bg-[#0c1a30] border border-white/8 p-8">
               <h2 className="font-serif text-ivory text-xl mb-3">See how we build this</h2>
               <p className="text-ivory/70 leading-relaxed font-light">
-                The full build approach — pricing, process, and what's included — is on the{" "}
+                The full build approach — process, scope, and what's included — is on the{" "}
                 <Link
                   to="/services/web-design"
                   className="text-gold hover:text-gold-soft underline underline-offset-2 transition-colors"

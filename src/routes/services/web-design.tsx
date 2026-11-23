@@ -19,11 +19,11 @@ const FAQS = [
   },
   {
     q: "What happens after launch — is it a one-time thing?",
-    a: "Choose the package that fits your next step: Get Online is R10,000 once-off plus R999/month Meridian Care; Get Found and Get Chosen start at R7,500 once-off with visibility retainers. Every package includes a custom build; the difference is the ongoing visibility support.",
+    a: "We start with the site your business actually needs. Every build is custom, and you can choose whether to handle changes yourself or keep us on for ongoing visibility work after launch. The scope, timeline and terms are confirmed in writing before anything begins.",
   },
   {
     q: "What if I need changes after the site is live?",
-    a: "You message us directly — not a support ticket queue. Small changes are part of the monthly retainer; larger changes get a plain-language quote before we start.",
+    a: "You message us directly — not a support ticket queue. Small changes are handled as part of ongoing care; larger changes get a plain-language quote before we start.",
   },
 ];
 
@@ -129,9 +129,9 @@ function WebDesignPage() {
                 structure already wired in rather than bolted on afterward.
               </p>
               <p className="text-ivory/70 leading-relaxed font-light">
-                <strong className="text-ivory">Monthly care</strong> — the retainer keeps the site
-                secure, keeps small content changes moving, and keeps the SEO and AEO work active,
-                so the build doesn't sit idle the moment it's live.
+                <strong className="text-ivory">Ongoing care</strong> — optional support keeps the
+                site secure, keeps small content changes moving, and keeps the SEO and AEO work
+                active, so the build doesn't sit idle the moment it's live.
               </p>
             </div>
           </Reveal>
@@ -168,12 +168,12 @@ function WebDesignPage() {
 
           <Reveal delay={0.25}>
             <div className="mt-12 bg-[#0c1a30] border border-white/8 p-8">
-              <h2 className="font-serif text-ivory text-xl mb-3">What it costs</h2>
+              <h2 className="font-serif text-ivory text-xl mb-3">How we scope it</h2>
               <p className="text-ivory/70 leading-relaxed font-light">
-                Get Online is R10,000 once-off plus R999/month Meridian Care. If visibility is the
-                priority, Get Found is R7,500 once-off plus R3,500/month, while Get Chosen is
-                R7,500 once-off plus R6,500/month and a growth bonus. See the pricing section for
-                each package’s inclusions.
+                Every project starts with a short discovery call and a written scope. It confirms
+                the pages, features, launch window and commercial terms before any work begins, so
+                there are no ambiguous clauses or moving targets. If ongoing visibility support
+                makes sense, we will explain exactly what that includes.
               </p>
             </div>
           </Reveal>

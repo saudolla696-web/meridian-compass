@@ -27,8 +27,7 @@ export const Route = createFileRoute("/web-design-pietermaritzburg")({
   head: () => ({
     meta: [
       {
-        title:
-          "Web Design Pietermaritzburg That Brings Enquiries | Meridian",
+        title: "Web Design Pietermaritzburg That Brings Enquiries | Meridian",
       },
       {
         name: "description",
@@ -150,9 +149,8 @@ function Page() {
               </h2>
               <p className="text-ivory/70 leading-relaxed font-light">
                 Same process everywhere: discovery, build, launch, ongoing care — live in days, not
-                months. Get Online is R10,000 once-off plus R999/month Meridian Care; visibility
-                packages start at R7,500 once-off plus R3,500/month. See
-                the full breakdown on the{" "}
+                months. Every project is scoped in writing, and the site, domain and every
+                credential stay yours. See the full breakdown on the{" "}
                 <a
                   href="/services/web-design"
                   className="text-gold hover:text-gold-soft underline underline-offset-2 transition-colors"
